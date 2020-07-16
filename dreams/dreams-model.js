@@ -12,7 +12,7 @@ module.exports = {
 function find() {
     return db('dreams as d')
         .join('users as u', 'u.id', 'd.user_id')
-        .select('d.id', 'd.date', 'd.description')
+        .select('d.id', 'd.date', 'd.description', 'u.username')
 }
 
 function findByUser(user_id) {
