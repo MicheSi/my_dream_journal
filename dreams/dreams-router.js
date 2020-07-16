@@ -65,10 +65,10 @@ router.put('/:id', (req, res) => {
             if (dream) {
                 Dreams.update(changes, id)
                     .then(updatedDream => {
-                    res.statusCode(201).json(updatedDream)
+                        res.status(201).json(updatedDream)
                     })
             } else {
-            res.status(404).json({message: 'Unable to update dream data'})
+                res.status(404).json({message: 'Unable to update dream data'})
             }
         })
         .catch(err => {
