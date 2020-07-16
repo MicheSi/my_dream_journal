@@ -1,9 +1,7 @@
 html, body {
   box-sizing: border-box;
   font-size: 62.5%;
-}
-
-html {
+  margin: 0 auto;
   background-image: url('./components/night_sky.jpg');
   background-size: cover;
   background-attachment: fixed;
