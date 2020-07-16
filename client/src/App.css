@@ -1,7 +1,8 @@
+
 .App {
   text-align: center;
 }
 
-.homePage {
-  background-image: url('./components/night_sky.jpg');
+.homePage h1 {
+  color: white;
 }
