@@ -15,7 +15,7 @@ server.use(cors());
 
 server.use('/api/auth', authRouter);
 server.use('/api/users', restricted, usersRouter);
-// server.use('api/dreams', restricted, dreamsRouter);
+server.use('/api/dreams', restricted, dreamsRouter);
 
 server.get('/', (req, res) => {
     res.send('Server is running!');
