@@ -7,6 +7,7 @@
   color: white;
 }
 
+/* home page styles */
 .homePage {
   display: flex;
   flex-direction: column;
@@ -22,6 +23,16 @@
   margin-top: 3%;
 }
 
+.buttonsDiv {
+  margin-top: 4%;
+}
+
+.ui.button {
+  margin: 0 2rem;
+}
+
+
+/* register form styles */
 .registerForm {
   display: flex;
   flex-direction: column;
@@ -29,4 +40,5 @@
   background-color: white;
   padding: 2% 3%;
   border-radius: 5px;
+  color: black;
 }
