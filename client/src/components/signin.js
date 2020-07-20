@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Button, Icon, Form } from 'semantic-ui-react'
+import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const SigninForm = () => {
+    const [user, setUser] = useState({
+        username: '',
+        password: ''
+    })
+
+    const history = useHistory();
+
+    const handleChange = e => {
+        console.log(e.target.name, e.target.value)
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const signin = e => {
+        e.preventDefault();
+        setUser({...user})
+        AxiosWithAuth()
+            .post('/auth/login', user)
+            .then(res => {
+                console.log(res.date, user)
+                localStorage.setItem('token', res.data.token)
+                history.push('/dashboard');
+                setUser({username: '', password: ''})
+            })
+    }
+
     return (
         <div className='registerForm signinForm'>
             <h2>Please Sign In</h2>
