@@ -1,5 +1,5 @@
 import React from 'react';
-import { React, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 const isAuthenticated = () => {
     return localStorage.getItem('token') ? true: false;

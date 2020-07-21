@@ -25,7 +25,7 @@ const SigninForm = () => {
         AxiosWithAuth()
             .post('/auth/signin', user)
             .then(res => {
-                console.log(res.date, user)
+                console.log(res.data)
                 localStorage.setItem('token', res.data.token)
                 history.push('/dashboard');
                 setUser({username: '', password: ''})

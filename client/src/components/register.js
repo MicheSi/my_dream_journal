@@ -25,7 +25,7 @@ const RegisterForm = () => {
         AxiosWithAuth()
             .post('/auth/register', user)
             .then(res => {
-                console.log(res.data, user)
+                console.log(res.data)
                 setUser(user)
                 history.push('/signin')
                 setUser({username: '', password: ''})
