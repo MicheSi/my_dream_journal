@@ -1,18 +1,65 @@
-import React from 'react';
-import { Button, Icon, Form } from 'semantic-ui-react'
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { Button, Icon, Form } from 'semantic-ui-react';
+import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const RegisterForm = () => {
+    const [user, setUser] = useState({
+        username: '',
+        password: ''
+    })
+
+    const history = useHistory();
+
+    const handleChange = e => {
+        console.log(e.target.name, e.target.value)
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const register = e => {
+        e.preventDefault();
+        setUser({...user})
+        AxiosWithAuth()
+            .post('/auth/register', user)
+            .then(res => {
+                console.log(res.data)
+                setUser(user)
+                history.push('/signin')
+                setUser({username: '', password: ''})
+            })
+            .catch(err => console.log('Registration failed', err))
+    }
+
     return (
         <div className='registerForm'>
             <h2>Register your Account</h2>
-            <Form>
+            <Form onSubmit={register}>
                 <Form.Field>
-                    <label>Username: </label>
-                    <input placeholder='Please enter a username' />
+                    <label for='username'>Username: </label>
+                    <input
+                     required
+                     type='text'
+                     name='username'
+                     id='username'
+                     placeholder='Please enter a username'
+                     value={user.username}
+                     onChange={handleChange}
+                    />
                 </Form.Field>
                 <Form.Field>
-                    <label>Password: </label>
-                    <input placeholder='Please enter a password' />
+                    <label for='password'>Password: </label>
+                    <input
+                     required
+                     type='password'
+                     name='password'
+                     id='password'
+                     placeholder='Please enter a password'
+                     value={user.password}
+                     onChange={handleChange}
+                    />
                 </Form.Field>
                 <Button type='submit' animated>
                     <Button.Content visible>Submit</Button.Content>

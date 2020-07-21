@@ -42,3 +42,14 @@
   border-radius: 5px;
   color: black;
 }
+
+/* new dream form styles */
+.newDreamForm {
+  color: white;
+}
+
+#description {
+  width: 400px;
+  height: 300px;
+  align-items: flex-start;
+}
