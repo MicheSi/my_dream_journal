@@ -28,6 +28,7 @@ const RegisterForm = () => {
                 console.log(res.data, user)
                 setUser(user)
                 history.push('/signin')
+                setUser({username: '', password: ''})
             })
             .catch(err => console.log('Registration failed', err))
     }
