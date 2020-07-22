@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
 
-const DreamsList = () => {
+const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
     const [user, setUser] = useState([]);
 
     useEffect(() => {
+        console.log('This is props', props)
         AxiosWithAuth()
             .get('/dreams')
             .then(res => {
