@@ -1,12 +1,13 @@
 import React from 'react';
-import Nav from './nav';
 import NewDream from './newDream';
+import DreamsList from './dreamsList';
 
-const Dashboard = () => {
+const Dashboard = props => {
     return (
         <div className='dashboard'>
-            <h1>This is your Dream Journal</h1>
+            <h1>Welcome {props.username}</h1>
             <NewDream />
+            <DreamsList />
         </div>
     )
 }

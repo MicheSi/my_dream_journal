@@ -43,13 +43,34 @@
   color: black;
 }
 
+/* dashboard styles */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* new dream form styles */
 .newDreamForm {
-  color: white;
+  background-color: slategray;
+  width: 120%;
+  border-radius: 3px;
+}
+
+.newDreamForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0;
+}
+
+#date {
+  width: 300px;
 }
 
 #description {
   width: 400px;
-  height: 300px;
+  height: 200px;
   align-items: flex-start;
 }
