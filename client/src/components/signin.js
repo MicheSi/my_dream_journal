@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { Button, Icon, Form } from 'semantic-ui-react'
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
-const SigninForm = () => {
+const SigninForm = props => {
     const [user, setUser] = useState({
         username: '',
         password: ''
@@ -17,18 +17,17 @@ const SigninForm = () => {
             ...user,
             [e.target.name]: e.target.value
         })
+        console.log('user', user)
     }
 
     const signin = e => {
         e.preventDefault();
-        setUser({...user})
         AxiosWithAuth()
             .post('/auth/signin', user)
             .then(res => {
-                console.log(res.data)
                 localStorage.setItem('token', res.data.token)
                 history.push('/dashboard');
-                setUser({username: '', password: ''})
+                console.log(res)
             })
             .catch(err => console.log('Unable to sign in', err))
     }

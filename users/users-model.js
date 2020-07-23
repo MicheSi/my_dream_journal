@@ -4,7 +4,10 @@ module.exports = {
     add,
     find,
     findBy,
-    findById
+    findById,
+    findUserDreams,
+    update,
+    remove
 }
 
 function find() {
@@ -25,10 +28,29 @@ function findById(id) {
         .first();
 }
 
+function findUserDreams(user_id) {
+    return db('dreams as d')
+        .join('users as u', 'u.id', 'd.user_id')
+        .select('d.id', 'd.date', 'd.description')
+        .where('d.user_id', user_id);
+}
+
 function add(user) {
     return db('users')
         .insert(user, 'id')
         .then(ids => {
             return findById(ids);
         })
+}
+
+function update(id, changes) {
+    return db('users')
+        .where({id})
+        .update(changes)
+}
+
+function remove(id) {
+    return db('users')
+    .where('id', id)
+    .del();
 }
