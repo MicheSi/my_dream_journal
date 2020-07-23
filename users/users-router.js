@@ -12,4 +12,25 @@ router.get('/', (req, res) => {
         })
 })
 
+router.get('/:id', (req, res) => {
+    Users.findById(req.params.id)
+        .then(user => {
+            if (user) {
+                res.status(200).json(user)
+            } else {
+                res.status(404).json({message: err})
+            }
+        })
+        .catch(err => {
+            console.log(500).json({message: err})
+        })
+})
+
+router.get('/:id/posts', (req, res) => {
+    Users.findUserDreams(req.params.id)
+        .then(dreams => {
+            res.status(200).json(dreams)
+        })
+})
+
 module.exports = router;
