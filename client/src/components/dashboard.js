@@ -3,9 +3,11 @@ import NewDream from './newDream';
 import DreamsList from './dreamsList';
 
 const Dashboard = props => {
+    
+
     return (
         <div className='dashboard'>
-            <h1>Welcome {props.username}</h1>
+            <h1>My Dashboard</h1>
             <NewDream />
             <DreamsList />
         </div>

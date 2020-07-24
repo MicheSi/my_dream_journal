@@ -4,14 +4,14 @@ import DreamCard from './dreamCard';
 
 const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
-    const [user, setUser] = useState([]);
+
+    const id = localStorage.getItem('id')
 
     useEffect(() => {
-        console.log('This is props', props)
+        console.log(id)
         AxiosWithAuth()
-            .get('/dreams')
+            .get(`users/${id}/dreams`)
             .then(res => {
-                console.log(res.data)
                 setDreams(res.data)
             })
             .catch(err => console.log('Cannot retrieve dreams', err))
@@ -19,6 +19,7 @@ const DreamsList = props => {
 
     return (
         <div className='dreamsList'>
+            <h2>My Dreams</h2>
             {dreams.map(dream => (
                 <DreamCard
                  key={dream.id}

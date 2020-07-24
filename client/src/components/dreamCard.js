@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card } from 'semantic-ui-react'
 
 const DreamCard = props => {
+
     return (
         <div className='dreamCard'>
             <Card>
