@@ -3,7 +3,7 @@ const router = require('express').Router();
 const Dreams = require('./dreams-model');
 
 router.get('/', (req, res) => {
-    Dreams.find()
+    Dreams.find(req.decodedToken.user_id)
         .then(dream => {
             res.status(200).json(dream)
         })

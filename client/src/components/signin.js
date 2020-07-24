@@ -22,12 +22,14 @@ const SigninForm = props => {
 
     const signin = e => {
         e.preventDefault();
+        console.log(user)
+        console.log(props)
         AxiosWithAuth()
             .post('/auth/signin', user)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
+                localStorage.setItem('id', res.data.id)
                 history.push('/dashboard');
-                console.log(res)
             })
             .catch(err => console.log('Unable to sign in', err))
     }
