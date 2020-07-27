@@ -4,9 +4,11 @@ import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const NewDream = props => {
     const [dream, setDream] = useState({
-        date: Date.now(),
+        date: '',
         description: ''
     })
+
+    const id = localStorage.getItem('id')
 
     const handleChange = e => {
         setDream({
@@ -18,7 +20,7 @@ const NewDream = props => {
     const addDream = e => {
         e.preventDefault()
         setDream({...dream})
-        AxiosWithAuth()
+        AxiosWithAuth(`/users/${id}/dreams`, dream)
             .post()
             .then(res => {
                 console.log('dream', res.data)
