@@ -1,15 +1,41 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react';
+import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const NewDream = props => {
     const [dream, setDream] = useState({
-        date: Date.now(),
+        date: '',
         description: ''
     })
 
+    const id = localStorage.getItem('id')
+
+    const handleChange = e => {
+        console.log(e.target.name, e.target.value)
+        setDream({
+            ...dream,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const addDream = e => {
+        e.preventDefault()
+        setDream({...dream})
+        AxiosWithAuth()
+            .post(`/users/${id}/dreams`, dream)
+            .then(res => {
+                console.log('dream', res.data)
+                setDream(dream)
+                window.location.reload();
+                setDream({date: '', description: ''})
+            })
+            .catch(err => console.log('Unable to add dream', err))
+    }
+
     return(
         <div className='newDreamForm'>
-            <Form>
+            <Form onSubmit={addDream}>
                 <Form.Field>
                     <label for='date'>Date: </label>
                     <input
@@ -18,8 +44,8 @@ const NewDream = props => {
                      name='date'
                      id='date'
                      placeholder='Date'
-                     // value={}
-                     // onChange={}
+                     value={dream.date}
+                     onChange={handleChange}
                     />
                 </Form.Field>
                 <Form.Field>
@@ -30,8 +56,8 @@ const NewDream = props => {
                      name='description'
                      id='description'
                      placeholder='Description'
-                     //  value={}
-                     //  onChange={}
+                      value={dream.description}
+                      onChange={handleChange}
                     />
                 </Form.Field>
                 <Button type='submit'>Submit</Button>

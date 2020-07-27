@@ -8,9 +8,8 @@ const DreamsList = props => {
     const id = localStorage.getItem('id')
 
     useEffect(() => {
-        console.log(id)
         AxiosWithAuth()
-            .get(`users/${id}/dreams`)
+            .get(`/users/${id}/dreams`)
             .then(res => {
                 setDreams(res.data)
             })
