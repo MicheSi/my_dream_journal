@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
@@ -50,14 +49,14 @@ const NewDream = props => {
                 </Form.Field>
                 <Form.Field>
                     <label for='description'>Description: </label>
-                    <input
+                    <textarea
                      required
-                     type='text'
+                     type='textarea'
                      name='description'
                      id='description'
-                     placeholder='Description'
-                      value={dream.description}
-                      onChange={handleChange}
+                     placeholder='Description of Dream'
+                     value={dream.description}
+                     onChange={handleChange}
                     />
                 </Form.Field>
                 <Button type='submit'>Submit</Button>
