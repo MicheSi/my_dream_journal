@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
@@ -11,6 +12,7 @@ const NewDream = props => {
     const id = localStorage.getItem('id')
 
     const handleChange = e => {
+        console.log(e.target.name, e.target.value)
         setDream({
             ...dream,
             [e.target.name]: e.target.value
@@ -20,10 +22,13 @@ const NewDream = props => {
     const addDream = e => {
         e.preventDefault()
         setDream({...dream})
-        AxiosWithAuth(`/users/${id}/dreams`, dream)
-            .post()
+        AxiosWithAuth()
+            .post(`/users/${id}/dreams`, dream)
             .then(res => {
                 console.log('dream', res.data)
+                setDream(dream)
+                window.location.reload();
+                setDream({date: '', description: ''})
             })
             .catch(err => console.log('Unable to add dream', err))
     }

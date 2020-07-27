@@ -12,18 +12,14 @@ const SigninForm = props => {
     const history = useHistory();
 
     const handleChange = e => {
-        console.log(e.target.name, e.target.value)
         setUser({
             ...user,
             [e.target.name]: e.target.value
         })
-        console.log('user', user)
     }
 
     const signin = e => {
         e.preventDefault();
-        console.log(user)
-        console.log(props)
         AxiosWithAuth()
             .post('/auth/signin', user)
             .then(res => {
