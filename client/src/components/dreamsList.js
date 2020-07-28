@@ -18,7 +18,7 @@ const DreamsList = props => {
 
     return (
         <div className='dreamsList'>
-            <h2>My Dreams</h2>
+            <h2>My Past Dreams</h2>
             <div className='dreams'>
             {dreams.map(dream => (
                 <DreamCard
