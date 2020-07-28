@@ -88,4 +88,12 @@
 }
 
 /* Dream Card styles */
+.dreamCard {
+  margin: 2%;
+  font-size: 1.6rem;
+}
+
+.dreamCard .description {
+  line-height: normal;
+}
 
