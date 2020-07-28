@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Card, Header, Icon, Modal } from 'semantic-ui-react';
+import { Button, Card, Header, Icon, Modal, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const DreamCard = props => {
@@ -20,7 +20,7 @@ const DreamCard = props => {
         }
     }, [props])
 
-    const changeHandler = e => {
+    const handleChange = e => {
         setDream({
             ...dream,
             [e.target.name]: e.target.value
@@ -63,16 +63,36 @@ const DreamCard = props => {
                 </Card.Content>
                 <Card.Content extra>
                     <div className='ui two buttons'>
-                        {/* <Button basic color='violet'>
-                            Edit
-                        </Button> */}
                         <Modal trigger={<Button basic color='violet'>Edit</Button>} closeIcon>
                             <Header icon='archive' content='Archive Old Messages' />
                             <Modal.Content>
-                                <p>
-                                    Your inbox is getting full, would you like us to enable automatic
-                                    archiving of old messages?
-                                </p>
+                                <Form onSubmit={editDream}>
+                                    <Form.Field>
+                                        <label for='date'>Date: </label>
+                                        <input
+                                         required
+                                         type='date'
+                                         name='date'
+                                         id='date'
+                                         placeholder='Date'
+                                         value={dream.date}
+                                         onChange={handleChange}
+                                        />
+                                    </Form.Field>
+                                    <Form.Field>
+                                        <label for='description'>Description: </label>
+                                        <textarea
+                                         required
+                                         type='textarea'
+                                         name='description'
+                                         id='description'
+                                         placeholder='Description of Dream'
+                                         value={dream.description}
+                                         onChange={handleChange}
+                                        />
+                                    </Form.Field>
+                                    <Button type='submit'>Edit Dream</Button>
+                                </Form>
                             </Modal.Content>
                             <Modal.Actions>
                                 <Button color='red'>
@@ -83,7 +103,7 @@ const DreamCard = props => {
                                 </Button>
                             </Modal.Actions>
                         </Modal>
-                        <Button basic color='red'>
+                        <Button basic color='red' onClick={deleteDream}>
                             Delete
                         </Button>
                     </div>
