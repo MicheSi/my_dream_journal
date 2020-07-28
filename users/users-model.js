@@ -6,8 +6,11 @@ module.exports = {
     findBy,
     findById,
     findUserDreams,
+    findByDreamId,
     update,
-    remove
+    remove,
+    updateDream,
+    deleteDream
 }
 
 function find() {
@@ -31,8 +34,13 @@ function findById(id) {
 function findUserDreams(user_id) {
     return db('dreams as d')
         .join('users as u', 'u.id', 'd.user_id')
-        .select('d.id', 'd.date', 'd.description')
+        .select('d.id', 'd.date', 'd.description', 'd.user_id', 'u.username')
         .where('d.user_id', user_id);
+}
+
+function findByDreamId(id) {
+    return db('dreams')
+        .where({id})
 }
 
 function add(user) {
@@ -47,6 +55,13 @@ function update(id, changes) {
     return db('users')
         .where({id})
         .update(changes)
+}
+
+function updateDream(user_id, changes) {
+    return db('dreams as d')
+        .join('users as u', 'u.id', 'd.user_id')
+        .select('d.id', 'd.date', 'd.description')
+        .where('d.user_id', user_id);
 }
 
 function remove(id) {

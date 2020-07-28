@@ -37,6 +37,10 @@ router.get('/:id/dreams', (req, res) => {
         })
 })
 
+router.get('/:id/dreams/dreamId', (req, res) => {
+    Users.findByDreamId(req.params.dreamdId)
+})
+
 router.post('/:id/dreams', (req, res) => {
     const dreamInfo = {...req.body, user_id: req.params.id}
 
@@ -59,10 +63,32 @@ router.delete('/:id', (req, res) => {
         })
 })
 
+router.delete('/:id/dreams/:dreamId', (req, res) => {
+    Dreams.deleteDream(req.params.id)
+        .then(dream => {
+            res.status(201).json(dream)
+        })
+        .catch(err => {
+            res.status(500).json({message: err})
+        })
+})
+
 router.put('/:id', (req, res) => {
     Users.update(req.params.id, req.body)
         .then(user => {
             res.status(200).json(user)
+        })
+        .catch(err => {
+            res.status(500).json({message: err})
+        })
+})
+
+router.put('/:id/dreams', (req, res) => {
+    const dreamInfo = {...req.body, user_id: req.params.id}
+
+    UpdateDream.update(dreamInfo)
+        .then(dream => {
+            res.status(200).json(dream)
         })
         .catch(err => {
             res.status(500).json({message: err})
