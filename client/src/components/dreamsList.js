@@ -19,6 +19,7 @@ const DreamsList = props => {
     return (
         <div className='dreamsList'>
             <h2>My Dreams</h2>
+            <div className='dreams'>
             {dreams.map(dream => (
                 <DreamCard
                  key={dream.id}
@@ -28,6 +29,7 @@ const DreamsList = props => {
                  username={dream.username}
                 />
             ))}
+            </div>
         </div>
     )
 }
