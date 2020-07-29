@@ -23,6 +23,7 @@ const DreamsList = props => {
             {dreams.map(dream => (
                 <DreamCard
                  key={dream.id}
+                 id={dream.id}
                  date={dream.date}
                  description={dream.description}
                 //  user_id={dream.user_id}
