@@ -3,9 +3,12 @@ import { Button, Card, Header, Icon, Modal, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const DreamCard = props => {
+    const id = localStorage.getItem('id')
+
     const initialState = {
         date: '',
-        description: ''
+        description: '',
+        user_id: id
     }
 
     const [dream, setDream] = useState(initialState);
@@ -31,7 +34,7 @@ const DreamCard = props => {
     const editDream = e => {
         e.preventDefault()
         AxiosWithAuth()
-            .put()
+            .put(`/dreams/${props.id}`, dream)
             .then(res => {
                 console.log('updated dream', res)
                 window.location.reload()
@@ -43,7 +46,7 @@ const DreamCard = props => {
     const deleteDream = e => {
         e.preventDefault()
         AxiosWithAuth()
-            .delete()
+            .delete(`/dreams/${props.id}`)
             .then(res => {
                 console.log('deleted dream', res)
                 window.location.reload()
@@ -91,7 +94,7 @@ const DreamCard = props => {
                                          onChange={handleChange}
                                         />
                                     </Form.Field>
-                                    <Button type='submit'>Edit Dream</Button>
+                                    <Button onClick={editDream}>Edit Dream</Button>
                                 </Form>
                             </Modal.Content>
                             <Modal.Actions>
