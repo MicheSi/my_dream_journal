@@ -60,7 +60,7 @@ const NewDream = props => {
                      onChange={handleChange}
                     />
                 </Form.Field>
-                <Button type='submit'>Submit</Button>
+                <Button type='submit' size='big'>Submit</Button>
             </Form>
         </div>
     )
