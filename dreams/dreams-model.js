@@ -25,7 +25,7 @@ function findByUser(user_id) {
 function findById(id) {
     return db('dreams as d')
         .join('users as u', 'u.id', 'd.user_id')
-        .select('d.id', 'd.date', 'd.description', 'd.user_id', 'u.username')
+        .select('d.id', 'd.date', 'd.description')
         .where('d.id', id)
         .first()
 }

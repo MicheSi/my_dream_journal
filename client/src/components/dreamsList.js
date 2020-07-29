@@ -9,7 +9,7 @@ const DreamsList = props => {
 
     useEffect(() => {
         AxiosWithAuth()
-            .get(`/users/${id}/dreams`)
+            .get(`/dreams/users/${id}`)
             .then(res => {
                 setDreams(res.data)
             })
@@ -23,10 +23,11 @@ const DreamsList = props => {
             {dreams.map(dream => (
                 <DreamCard
                  key={dream.id}
+                 id={dream.id}
                  date={dream.date}
                  description={dream.description}
-                 user_id={dream.user_id}
-                 username={dream.username}
+                //  user_id={dream.user_id}
+                //  username={dream.username}
                 />
             ))}
             </div>
