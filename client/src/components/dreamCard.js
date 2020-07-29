@@ -9,7 +9,7 @@ const DreamCard = props => {
     }
 
     const [dream, setDream] = useState(initialState);
-    console.log(props)
+    console.log('this is props', props)
 
     // set props to selected dream
     useEffect(() => {
