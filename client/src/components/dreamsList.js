@@ -26,8 +26,6 @@ const DreamsList = props => {
                  id={dream.id}
                  date={dream.date}
                  description={dream.description}
-                //  user_id={dream.user_id}
-                //  username={dream.username}
                 />
             ))}
             </div>

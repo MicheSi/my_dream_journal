@@ -1,5 +1,6 @@
 
 .App {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +46,7 @@
 
 /* dashboard styles */
 .dashboard {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +55,7 @@
 /* new dream form styles */
 .newDreamForm {
   background-color: slategray;
-  width: 80%;
+  width: 460px;
   border-radius: 3px;
 }
 
@@ -82,6 +84,7 @@
 }
 
 .dreams {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

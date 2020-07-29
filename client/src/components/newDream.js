@@ -11,8 +11,6 @@ const NewDream = props => {
         user_id: id
     })
 
-    
-
     const handleChange = e => {
         console.log(e.target.name, e.target.value)
         setDream({
