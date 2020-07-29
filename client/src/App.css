@@ -1,5 +1,6 @@
 
 .App {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +46,7 @@
 
 /* dashboard styles */
 .dashboard {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +55,7 @@
 /* new dream form styles */
 .newDreamForm {
   background-color: slategray;
-  width: 30%;
+  width: 550px;
   border-radius: 3px;
 }
 
@@ -64,17 +66,27 @@
   padding: 5% 0;
 }
 
+.ui.form .field>label {
+  color: white;
+  font-size: 1.6rem;
+}
+
 #date {
   width: 300px;
+  margin: 2% 0 4%;
+  font-size: 1.4rem;
 }
 
 #description {
-  width: 400px;
+  font-size: 1.6rem;
+  width: 470px;
   height: 200px;
+  margin: 2% 0 4%;
 }
 
 /* Dreams List styles */
 .dreamsList {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,6 +94,7 @@
 }
 
 .dreams {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -93,7 +106,15 @@
   font-size: 1.6rem;
 }
 
+.dreamCard .card {
+  width: 350px;
+}
+
 .dreamCard .description {
   line-height: normal;
+}
+
+.editBtn {
+  width: 150px;
 }
 

@@ -11,8 +11,6 @@ const NewDream = props => {
         user_id: id
     })
 
-    
-
     const handleChange = e => {
         console.log(e.target.name, e.target.value)
         setDream({
@@ -62,7 +60,7 @@ const NewDream = props => {
                      onChange={handleChange}
                     />
                 </Form.Field>
-                <Button type='submit'>Submit</Button>
+                <Button type='submit' size='big'>Submit</Button>
             </Form>
         </div>
     )
