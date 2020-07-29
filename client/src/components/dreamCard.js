@@ -66,8 +66,8 @@ const DreamCard = props => {
                 </Card.Content>
                 <Card.Content extra>
                     <div className='ui two buttons'>
-                        <Modal trigger={<Button basic color='violet'>Edit</Button>} closeIcon>
-                            <Header icon='archive' content='Archive Old Messages' />
+                        <Modal trigger={<Button className='editBtn' color='blue'>Edit</Button>} closeIcon>
+                            <Header icon='edit' content='Edit Dream' />
                             <Modal.Content>
                                 <Form onSubmit={editDream}>
                                     <Form.Field>
@@ -94,21 +94,17 @@ const DreamCard = props => {
                                          onChange={handleChange}
                                         />
                                     </Form.Field>
-                                    <Button onClick={editDream}>Edit Dream</Button>
                                 </Form>
                             </Modal.Content>
                             <Modal.Actions>
-                                <Button color='red'>
-                                    <Icon name='remove' /> No
+                                <Button color='red' onClick={deleteDream}>
+                                    <Icon name='trash' /> Delete
                                 </Button>
-                                <Button color='green'>
-                                    <Icon name='checkmark' /> Yes
+                                <Button color='green' onClick={editDream}>
+                                    <Icon name='save' /> Save
                                 </Button>
                             </Modal.Actions>
                         </Modal>
-                        <Button basic color='red' onClick={deleteDream}>
-                            Delete
-                        </Button>
                     </div>
                 </Card.Content>
             </Card>
