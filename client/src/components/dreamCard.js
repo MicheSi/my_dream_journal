@@ -3,8 +3,10 @@ import { Button, Card, Header, Icon, Modal, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const DreamCard = props => {
+    // retrieving user id from local storage
     const id = localStorage.getItem('id')
 
+    // required info for dream
     const initialState = {
         date: '',
         description: '',
@@ -12,7 +14,6 @@ const DreamCard = props => {
     }
 
     const [dream, setDream] = useState(initialState);
-    console.log('this is props', props)
 
     // set props to selected dream
     useEffect(() => {
@@ -23,6 +24,7 @@ const DreamCard = props => {
         }
     }, [props])
 
+    // change handler for form
     const handleChange = e => {
         setDream({
             ...dream,
@@ -65,6 +67,7 @@ const DreamCard = props => {
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
+                    {/* modal that display when edit button is clicked */}
                     <div className='ui two buttons'>
                         <Modal trigger={<Button className='editBtn' color='blue'>Edit</Button>} closeIcon>
                             <Header icon='edit' content='Edit Dream' />
