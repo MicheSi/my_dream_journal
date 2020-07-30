@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Icon, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const NewDream = props => {
@@ -60,7 +60,12 @@ const NewDream = props => {
                      onChange={handleChange}
                     />
                 </Form.Field>
-                <Button type='submit' size='big'>Submit</Button>
+                <Button type='submit' animated size='big'>
+                    <Button.Content visible>Submit</Button.Content>
+                    <Button.Content hidden>
+                        <Icon name='arrow right' />
+                    </Button.Content>
+                </Button>
             </Form>
         </div>
     )
