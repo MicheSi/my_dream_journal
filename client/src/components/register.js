@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Icon, Form } from 'semantic-ui-react';
+import { Button, Icon, Form, Message } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const RegisterForm = () => {
@@ -52,6 +52,8 @@ const RegisterForm = () => {
                      value={user.username}
                      onChange={handleChange}
                     />
+                    {/* error message */}
+                    
                 </Form.Field>
                 <Form.Field>
                     <label for='password'>Password: </label>
