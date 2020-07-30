@@ -11,6 +11,7 @@ const SigninForm = props => {
 
     const history = useHistory();
 
+    // form change handler
     const handleChange = e => {
         setUser({
             ...user,
@@ -18,13 +19,16 @@ const SigninForm = props => {
         })
     }
 
+    // sign in registered user
     const signin = e => {
         e.preventDefault();
         AxiosWithAuth()
             .post('/auth/signin', user)
             .then(res => {
+                // set token and user id to local storage
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('id', res.data.id)
+                // reroute to user dashboard
                 history.push('/dashboard');
             })
             .catch(err => console.log('Unable to sign in', err))

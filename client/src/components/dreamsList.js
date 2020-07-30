@@ -5,8 +5,10 @@ import DreamCard from './dreamCard';
 const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
 
+    // getting user id from local storage
     const id = localStorage.getItem('id')
 
+    // this retrieves dreams for the logged in user
     useEffect(() => {
         AxiosWithAuth()
             .get(`/dreams/users/${id}`)

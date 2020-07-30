@@ -4,6 +4,7 @@ import DreamsList from './dreamsList';
 import { Button, Icon } from 'semantic-ui-react';
 
 const Dashboard = props => {
+    // code to clear local storage upon user sign out
     const signOut = () => {
         localStorage.clear();
         window.location.href='/'

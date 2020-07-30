@@ -3,14 +3,17 @@ import { Button, Icon, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const NewDream = props => {
+    // retrieve user id from local storage
     const id = localStorage.getItem('id')
 
+    // body required to create a new dream
     const [dream, setDream] = useState({
         date: '',
         description: '',
         user_id: id
     })
 
+    // form change handler
     const handleChange = e => {
         console.log(e.target.name, e.target.value)
         setDream({
@@ -19,6 +22,7 @@ const NewDream = props => {
         })
     }
 
+    // function to add new dream
     const addDream = e => {
         e.preventDefault()
         setDream({...dream})
@@ -28,6 +32,7 @@ const NewDream = props => {
                 console.log('dream', res.data)
                 setDream(res.data)
                 window.location.reload();
+                // reset form after submit
                 setDream({date: '', description: '', user_id: ''})
             })
             .catch(err => console.log('Unable to add dream', err))

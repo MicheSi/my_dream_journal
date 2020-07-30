@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Icon, Form } from 'semantic-ui-react';
+import { Button, Icon, Form, Message } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const RegisterForm = () => {
@@ -11,6 +11,7 @@ const RegisterForm = () => {
 
     const history = useHistory();
 
+    // handle changes to form input
     const handleChange = e => {
         console.log(e.target.name, e.target.value)
         setUser({
@@ -19,6 +20,7 @@ const RegisterForm = () => {
         })
     }
 
+    // submit form info to register new user
     const register = e => {
         e.preventDefault();
         setUser({...user})
@@ -27,7 +29,9 @@ const RegisterForm = () => {
             .then(res => {
                 console.log(res.data)
                 setUser(user)
+                // reroute to sign in page after successful registration
                 history.push('/signin')
+                // reset form
                 setUser({username: '', password: ''})
             })
             .catch(err => console.log('Registration failed', err))
@@ -48,6 +52,8 @@ const RegisterForm = () => {
                      value={user.username}
                      onChange={handleChange}
                     />
+                    {/* error message */}
+                    
                 </Form.Field>
                 <Form.Field>
                     <label for='password'>Password: </label>
