@@ -17,7 +17,6 @@ function App() {
     AxiosWithAuth()
         .get('/dreams')
         .then(res => {
-            console.log(res.data)
             setDreams(res.data)
         })
         .catch(err => console.log('Cannot retrieve dreams', err))
