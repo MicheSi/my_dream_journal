@@ -1,7 +1,7 @@
 import React from 'react';
 import NewDream from './newDream';
 import DreamsList from './dreamsList';
-import { Button } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 
 const Dashboard = props => {
     const signOut = () => {
@@ -11,7 +11,7 @@ const Dashboard = props => {
 
     return (
         <div className='dashContainer'>
-            <Button className='signoutBtn' onClick={signOut}>Sign Out</Button>
+            <Button className='signoutBtn' size='big' onClick={signOut}>Sign Out</Button>
             <div className='dashboard'>
                 <h1>My Dashboard</h1>
                 <NewDream />
