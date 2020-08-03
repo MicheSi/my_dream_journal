@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Icon, Form, Message } from 'semantic-ui-react';
+import { Button, Icon, Form } from 'semantic-ui-react';
+import { useForm } from 'react-hook-form';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const RegisterForm = () => {
@@ -10,6 +11,7 @@ const RegisterForm = () => {
     })
 
     const history = useHistory();
+    const { register, handleSubmit, errors } = useForm();
 
     // handle changes to form input
     const handleChange = e => {
@@ -21,7 +23,7 @@ const RegisterForm = () => {
     }
 
     // submit form info to register new user
-    const register = e => {
+    const submitForm = e => {
         e.preventDefault();
         setUser({...user})
         AxiosWithAuth()
@@ -40,11 +42,11 @@ const RegisterForm = () => {
     return (
         <div className='registerForm'>
             <h3>Register your Account</h3>
-            <Form onSubmit={register}>
+            <Form onSubmit={handleSubmit(submitForm)}>
                 <Form.Field>
                     <label for='username'>Username: </label>
                     <input
-                     required
+                     ref={register({required: true})}
                      type='text'
                      name='username'
                      id='username'
@@ -52,13 +54,12 @@ const RegisterForm = () => {
                      value={user.username}
                      onChange={handleChange}
                     />
-                    {/* error message */}
-                    
                 </Form.Field>
+                {errors.username && <p>Username Required</p>}
                 <Form.Field>
                     <label for='password'>Password: </label>
                     <input
-                     required
+                     ref={register({required: true})}
                      type='password'
                      name='password'
                      id='password'
@@ -67,6 +68,7 @@ const RegisterForm = () => {
                      onChange={handleChange}
                     />
                 </Form.Field>
+                {errors.password && <p>Password Required</p>}
                 <Button type='submit' animated>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>

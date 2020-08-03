@@ -44,6 +44,11 @@
   color: black;
 }
 
+.registerForm p {
+  color: blueviolet;
+  font-size: 1.2rem;
+}
+
 /* dashboard styles */
 .dashContainer {
   width: 100%;
