@@ -55,7 +55,7 @@ const RegisterForm = () => {
                      onChange={handleChange}
                     />
                 </Form.Field>
-                {errors.username && <p>Please enter a username.</p>}
+                {errors.username && <p>Username Required</p>}
                 <Form.Field>
                     <label for='password'>Password: </label>
                     <input
@@ -68,7 +68,7 @@ const RegisterForm = () => {
                      onChange={handleChange}
                     />
                 </Form.Field>
-                {errors.password && <p>Please enter a password.</p>}
+                {errors.password && <p>Password Required</p>}
                 <Button type='submit' animated>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
