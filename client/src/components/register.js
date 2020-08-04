@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button, Icon, Form } from 'semantic-ui-react';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers';
+import * as yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+
+const schema = yup.object().shape({
+    username: yup.string().required(),
+    password: yup.string().required()
+})
 
 const RegisterForm = () => {
     const [user, setUser] = useState({
@@ -11,7 +18,9 @@ const RegisterForm = () => {
     })
 
     const history = useHistory();
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm({
+        resolver: yupResolver(schema)
+    });
 
     // handle changes to form input
     const handleChange = e => {
@@ -23,8 +32,7 @@ const RegisterForm = () => {
     }
 
     // submit form info to register new user
-    const submitForm = e => {
-        e.preventDefault();
+    const submitForm = () => {
         setUser({...user})
         AxiosWithAuth()
             .post('/auth/register', user)
@@ -55,7 +63,7 @@ const RegisterForm = () => {
                      onChange={handleChange}
                     />
                 </Form.Field>
-                {errors.username && <p>Username Required</p>}
+                {errors.username && <p className='errors'>Username Required</p>}
                 <Form.Field>
                     <label for='password'>Password: </label>
                     <input
@@ -68,7 +76,7 @@ const RegisterForm = () => {
                      onChange={handleChange}
                     />
                 </Form.Field>
-                {errors.password && <p>Password Required</p>}
+                {errors.password && <p className='errors'>Password Required</p>}
                 <Button type='submit' animated>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
