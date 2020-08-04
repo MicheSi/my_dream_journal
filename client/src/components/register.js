@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
+// schema requirements
 const schema = yup.object().shape({
     username: yup.string().required(),
     password: yup.string().required()
@@ -18,6 +19,7 @@ const RegisterForm = () => {
     })
 
     const history = useHistory();
+    // form validation
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema)
     });
