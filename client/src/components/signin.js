@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Icon, Form } from 'semantic-ui-react'
+import { Button, Icon, Form } from 'semantic-ui-react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers';
+import * as yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+
+// schema requirements
+const schema = yup.object().shape({
+    username: yup.string().required(),
+    password: yup.string().required()
+})
 
 const SigninForm = props => {
     const [user, setUser] = useState({
@@ -10,6 +19,10 @@ const SigninForm = props => {
     })
 
     const history = useHistory();
+    // form validation
+    const { register, handleSubmit, errors } = useForm({
+        resolver: yupResolver(schema)
+    });
 
     // form change handler
     const handleChange = e => {
@@ -20,8 +33,7 @@ const SigninForm = props => {
     }
 
     // sign in registered user
-    const signin = e => {
-        e.preventDefault();
+    const signin = () => {
         AxiosWithAuth()
             .post('/auth/signin', user)
             .then(res => {
@@ -37,11 +49,11 @@ const SigninForm = props => {
     return (
         <div className='registerForm signinForm'>
             <h3>Please Sign In</h3>
-            <Form onSubmit={signin}>
+            <Form onSubmit={handleSubmit(signin)}>
                 <Form.Field>
                     <label for='username'>Username: </label>
                     <input
-                     required
+                     ref={register({required: true})}
                      type='text'
                      name='username'
                      id='username'
@@ -50,10 +62,11 @@ const SigninForm = props => {
                      onChange={handleChange}
                     />
                 </Form.Field>
+                {errors.username && <p className='errors'>Please enter a valid username</p>}
                 <Form.Field>
                     <label for='password'>Password: </label>
                     <input
-                     required
+                     ref={register({required: true})}
                      type='password'
                      name='password'
                      id='password'
@@ -62,6 +75,7 @@ const SigninForm = props => {
                      onChange={handleChange}
                     />
                 </Form.Field>
+                {errors.password && <p className='errors'>Please enter a valid password</p>}
                 <Button type='submit' animated>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
