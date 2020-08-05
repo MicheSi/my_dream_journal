@@ -1,36 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Icon, Form } from 'semantic-ui-react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers';
-import * as yup from 'yup';
+import { Button, Icon } from 'semantic-ui-react';
+import { withFormik, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
-// schema requirements
-const schema = yup.object().shape({
-    username: yup.string().required(),
-    password: yup.string().required()
-})
 
-const SigninForm = props => {
+const SigninForm = ({
+    values, errors, touched, status
+}) => {
     const [user, setUser] = useState({
         username: '',
         password: ''
     })
 
-    const history = useHistory();
-    // form validation
-    const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(schema)
-    });
+    useEffect(() => {
+        status && setUser(user => [...user, status])
+    }, [status])
 
-    // form change handler
-    const handleChange = e => {
-        setUser({
-            ...user,
-            [e.target.name]: e.target.value
-        })
-    }
+    const history = useHistory();
 
     // sign in registered user
     const signin = () => {
@@ -49,33 +37,35 @@ const SigninForm = props => {
     return (
         <div className='registerForm signinForm'>
             <h3>Please Sign In</h3>
-            <Form onSubmit={handleSubmit(signin)}>
+            <Form>
                 <Form.Field>
                     <label for='username'>Username: </label>
                     <input
-                     ref={register({required: true})}
                      type='text'
                      name='username'
                      id='username'
                      placeholder='Please enter your username'
-                     value={user.username}
-                     onChange={handleChange}
+                    //  value={user.username}
+                    //  onChange={handleChange}
                     />
                 </Form.Field>
-                {errors.username && <p className='errors'>Please enter a valid username</p>}
+                {touched.username && errors.username && (
+                    <p className='errors'>{errors.username}</p>
+                )}
                 <Form.Field>
                     <label for='password'>Password: </label>
                     <input
-                     ref={register({required: true})}
                      type='password'
                      name='password'
                      id='password'
                      placeholder='Please enter your password'
-                     value={user.password}
-                     onChange={handleChange}
+                    //  value={user.password}
+                    //  onChange={handleChange}
                     />
                 </Form.Field>
-                {errors.password && <p className='errors'>Please enter a valid password</p>}
+                {touched.password && errors.password && (
+                    <p className='errors'>{errors.password}</p>
+                )}
                 <Button type='submit' animated>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
@@ -87,4 +77,28 @@ const SigninForm = props => {
     )
 }
 
-export default SigninForm;
+const FormikSigninForm = withFormik({
+    mapPropsToValues({ username, password }) {
+        return {
+            username: username || '',
+            password: password || ''
+        }
+    },
+    validationSchema: Yup.object().shape({
+        username: Yup.string().required(),
+        password: Yup.string().required()
+    }),
+    signin(values, { setStatus }) {
+        AxiosWithAuth()
+            .post('/auth/signin', values)
+            .then(res => {
+                // set token and user id to local storage
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('id', res.data.id)
+                setStatus(res.data)
+            })
+            .catch(err => console.log('Unable to sign in', err.res))
+    }
+})(SigninForm)
+
+export default FormikSigninForm;
