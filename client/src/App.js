@@ -6,7 +6,7 @@ import './App.css';
 
 import Home from './components/home';
 import FormikRegisterForm from './components/register';
-import SigninForm from './components/signin';
+import FormikSigninForm from './components/signin';
 import Dashboard from './components/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
 
@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route path='/register' component={FormikRegisterForm}/>
-        <Route path='/signin' component={SigninForm}/>
+        <Route path='/signin' component={FormikSigninForm}/>
         <PrivateRoute
          path='/dashboard'
          component={Dashboard}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button, Icon } from 'semantic-ui-react';
-import { withFormik, Form, Field } from 'formik';
+import { withFormik, Form } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
@@ -19,29 +19,29 @@ const RegisterForm = ({ values, errors, touched, status }) => {
     }, [status])
 
     // handle changes to form input
-    const handleChange = e => {
-        console.log(e.target.name, e.target.value)
-        setUser({
-            ...user,
-            [e.target.name]: e.target.value
-        })
-    }
+    // const handleChange = e => {
+    //     console.log(e.target.name, e.target.value)
+    //     setUser({
+    //         ...user,
+    //         [e.target.name]: e.target.value
+    //     })
+    // }
 
     // submit form info to register new user
-    const submitForm = () => {
-        setUser({...user})
-        AxiosWithAuth()
-            .post('/auth/register', user)
-            .then(res => {
-                console.log(res.data)
-                setUser(user)
-                // reroute to sign in page after successful registration
-                history.push('/signin')
-                // reset form
-                setUser({username: '', password: ''})
-            })
-            .catch(err => console.log('Registration failed', err))
-    }
+    // const submitForm = () => {
+    //     setUser({...user})
+    //     AxiosWithAuth()
+    //         .post('/auth/register', user)
+    //         .then(res => {
+    //             console.log(res.data)
+    //             setUser(user)
+    //             // reroute to sign in page after successful registration
+    //             history.push('/signin')
+    //             // reset form
+    //             setUser({username: '', password: ''})
+    //         })
+    //         .catch(err => console.log('Registration failed', err))
+    // }
 
     return (
         <div className='registerForm'>
