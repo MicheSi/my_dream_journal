@@ -5,8 +5,8 @@ import AxiosWithAuth from './utils/AxiosWithAuth';
 import './App.css';
 
 import Home from './components/home';
-import FormikRegisterForm from './components/register';
-import FormikSigninForm from './components/signin';
+import RegisterForm from './components/register';
+import SigninForm from './components/signin';
 import Dashboard from './components/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
 
@@ -25,8 +25,8 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path='/register' component={FormikRegisterForm}/>
-        <Route path='/signin' component={FormikSigninForm}/>
+        <Route path='/register' component={RegisterForm}/>
+        <Route path='/signin' component={SigninForm}/>
         <PrivateRoute
          path='/dashboard'
          component={Dashboard}
