@@ -1,28 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Icon, Form } from 'semantic-ui-react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers';
+import { Button, Icon } from 'semantic-ui-react';
+import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
-// schema requirements
-const schema = yup.object().shape({
-    username: yup.string().required(),
-    password: yup.string().required()
-})
-
-const RegisterForm = () => {
+const RegisterForm = ({ values, errors, touched, status }) => {
     const [user, setUser] = useState({
         username: '',
         password: ''
     })
 
     const history = useHistory();
-    // form validation
-    const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(schema)
-    });
+
+    useEffect(() => {
+        status && setUser(user => [...user, status])
+    }, [status])
 
     // handle changes to form input
     const handleChange = e => {
