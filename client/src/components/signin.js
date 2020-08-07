@@ -47,9 +47,9 @@ const SigninForm = props => {
     }
 
     return (
-        <div className='registerForm signinForm'>
+        <div className=' registerDiv signinDiv'>
             <h3>Please Sign In</h3>
-            <Form onSubmit={handleSubmit(signin)}>
+            <Form className='signinForm' onSubmit={handleSubmit(signin)}>
                 <Form.Field>
                     <label for='username'>Username: </label>
                     <input

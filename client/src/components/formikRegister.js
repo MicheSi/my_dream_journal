@@ -13,22 +13,6 @@ const RegisterForm = ({values, errors, touched, status}) => {
         status && setUser(user => [...user, status])
     }, [status])
 
-    // submit form info to register new user
-    // const submitForm = () => {
-    //     setUser({...user})
-    //     AxiosWithAuth()
-    //         .post('/auth/register', user)
-    //         .then(res => {
-    //             console.log(res.data)
-    //             setUser(user)
-    //             // reroute to sign in page after successful registration
-                
-    //             // reset form
-    //             setUser({username: '', password: ''})
-    //         })
-    //         .catch(err => console.log('Registration failed', err))
-    // }
-
     return (
         <div className='registerDiv'>
             <h3>Register your Account</h3>
@@ -53,7 +37,7 @@ const RegisterForm = ({values, errors, touched, status}) => {
                 {touched.password && errors.password && (
                     <p className='errors'>{errors.password}</p>
                 )}
-                <Button type='submit' animated>
+                <Button className='submitBtn' type='submit' animated>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
                         <Icon name='arrow right' />
