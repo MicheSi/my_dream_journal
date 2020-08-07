@@ -56,7 +56,7 @@
   flex-direction: column;
   padding: 2% 3%;
   color: black;
-  background-image: url('./images/moonlight.svg');
+  background-image: url('./images/laptop.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -72,6 +72,11 @@
 /* dashboard styles */
 .dashContainer {
   width: 100%;
+  background-color: black;
+  background-image: url('./images/moonlight.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .signoutBtn {
@@ -84,6 +89,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3%;
+}
+
+.dashboard h1 {
+  color: indianred;
 }
 
 /* new dream form styles */
@@ -126,6 +136,10 @@
   flex-direction: column;
   align-items: center;
   margin: 4%;
+}
+
+.dreamsList h2 {
+  color: indianred;
 }
 
 .dreams {
