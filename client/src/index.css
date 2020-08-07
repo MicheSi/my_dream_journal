@@ -55,9 +55,6 @@ html, body {
   box-sizing: border-box;
   font-size: 62.5%;
   margin: 0 auto;
-  background-image: url('./components/night_sky.jpg');
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 body {
@@ -65,6 +62,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url('./images/dreamer.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; */
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -4,8 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3%;
-  color: white;
 }
 
 /* home page styles */
@@ -14,14 +12,29 @@
   flex-direction: column;
   align-items: center;
   padding: 3% 10%;
+  background-image: url('./images/dreamer.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
 }
 
 .homePage h1 {
-  color: white;
+  color: orangered;
+  margin-top: 2%;
 }
 
-.homePage p {
-  margin-top: 3%;
+.aboutDiv {
+  margin-top: 5%;
+  margin-left: 3%;
+}
+
+.about {
+  margin-top: 4%;
+  margin-right: 46%;
+  text-align: left;
+  width: 50%;
+  color: white;
 }
 
 .buttonsDiv {
@@ -32,16 +45,23 @@
   margin: 0 2rem;
 }
 
+.btnText {
+  color: black;
+}
+
 
 /* register form styles */
-.registerForm {
+.registerDiv {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  background-color: white;
   padding: 2% 3%;
-  border-radius: 5px;
   color: black;
+  background-image: url('./images/moonlight.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
 }
 
 .registerForm p {

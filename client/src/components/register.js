@@ -50,9 +50,9 @@ const RegisterForm = () => {
     }
 
     return (
-        <div className='registerForm'>
+        <div className='registerDiv'>
             <h3>Register your Account</h3>
-            <Form onSubmit={handleSubmit(submitForm)}>
+            <Form className='registerForm' onSubmit={handleSubmit(submitForm)}>
                 <Form.Field>
                     <label for='username'>Username: </label>
                     <input
