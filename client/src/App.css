@@ -54,6 +54,7 @@
 .registerDiv {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 2% 3%;
   color: black;
   background-image: url('./images/laptop.svg');
@@ -64,9 +65,23 @@
   width: 100%;
 }
 
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+#username, #password {
+  height: 30px;
+}
+
 .registerForm p {
   color: blueviolet;
   font-size: 1.2rem;
+}
+
+.submitBtn {
+  width: 100px;
 }
 
 /* dashboard styles */
