@@ -20,8 +20,17 @@
   color: orangered;
 }
 
-.homePage p {
-  margin-top: 3%;
+.aboutDiv {
+  margin-top: 4%;
+  margin-left: 3%;
+}
+
+.about {
+  margin-top: 4%;
+  margin-right: 46%;
+  text-align: left;
+  width: 50%;
+  color: white;
 }
 
 .buttonsDiv {
@@ -30,6 +39,10 @@
 
 .ui.button {
   margin: 0 2rem;
+}
+
+.btnText {
+  color: black;
 }
 
 
