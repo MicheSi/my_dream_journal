@@ -12,6 +12,7 @@
   flex-direction: column;
   align-items: center;
   padding: 3% 10%;
+  /* background-color: #211f2c; */
   background-image: url('./images/dreamer.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,7 +57,8 @@
   flex-direction: column;
   align-items: center;
   padding: 2% 3%;
-  color: black;
+  color: white;
+  background-color: #211f2c;
   background-image: url('./images/laptop.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -65,14 +67,32 @@
   width: 100%;
 }
 
+.registerDiv h3 {
+  margin-top: 2%;
+}
+
 .registerForm {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 350px;
+  margin-top: 1%;
 }
 
 #username, #password {
   height: 30px;
+  margin: 2% 0;
+  border: 1px solid black;
+  border-radius: 2.8px;
+}
+
+#password {
+  margin-bottom: 5%;
+}
+
+.registerForm label {
+  color: white;
+  font-size: 1.6rem;
+  margin-top: 2%;
 }
 
 .registerForm p {
@@ -87,11 +107,14 @@
 /* dashboard styles */
 .dashContainer {
   width: 100%;
-  background-color: black;
+  background-color: #211f2c;
   background-image: url('./images/moonlight.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .signoutBtn {
@@ -102,24 +125,26 @@
 
 .dashboard {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 2%;
+}
+
+.dashContainer h1 {
+  color: indianred;
   margin-top: 3%;
 }
 
-.dashboard h1 {
-  color: indianred;
-}
-
 /* new dream form styles */
-.newDreamForm {
-  background-color: slategray;
+.newDreamDiv {
+  /* background-color: slategray; */
+  color: white;
   width: 550px;
   border-radius: 3px;
   margin-top: 3%;
 }
 
-.newDreamForm form {
+.newDreamForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,7 +171,7 @@
 
 /* Dreams List styles */
 .dreamsList {
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,12 +182,6 @@
   color: indianred;
 }
 
-.dreams {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
 /* Dream Card styles */
 .dreamCard {
@@ -171,7 +190,7 @@
 }
 
 .dreamCard .card {
-  width: 350px;
+  width: 100%;
 }
 
 .dreamCard .description {
