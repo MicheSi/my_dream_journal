@@ -12,6 +12,7 @@
   flex-direction: column;
   align-items: center;
   padding: 3% 10%;
+  /* background-color: #211f2c; */
   background-image: url('./images/dreamer.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,7 +57,8 @@
   flex-direction: column;
   align-items: center;
   padding: 2% 3%;
-  color: black;
+  color: white;
+  background-color: #211f2c;
   background-image: url('./images/laptop.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -105,7 +107,7 @@
 /* dashboard styles */
 .dashContainer {
   width: 100%;
-  background-color: black;
+  background-color: #211f2c;
   background-image: url('./images/moonlight.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -130,14 +132,14 @@
 }
 
 /* new dream form styles */
-.newDreamForm {
+.newDreamDiv {
   background-color: slategray;
   width: 550px;
   border-radius: 3px;
   margin-top: 3%;
 }
 
-.newDreamForm form {
+.newDreamDiv form {
   display: flex;
   flex-direction: column;
   align-items: center;
