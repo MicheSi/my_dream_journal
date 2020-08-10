@@ -1,7 +1,7 @@
 import React from 'react';
-import NewDream from './formikNewDream';
+import NewDream from './newDream';
 import DreamsList from './dreamsList';
-import { Button, Icon } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 const Dashboard = props => {
     // code to clear local storage upon user sign out

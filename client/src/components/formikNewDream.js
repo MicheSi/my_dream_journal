@@ -69,7 +69,7 @@ const NewDream = ({values, errors, touched, status}) => {
 }
 
 const FormikNewDream = withFormik({
-    mapPropsToValues({id, date, description}) {
+    mapPropsToValues(id, {date, description}) {
         return {
             date: date || '',
             description: description || '',
