@@ -72,4 +72,29 @@ const NewDream = ({values, errors, touched, status}) => {
     
 }
 
-export default NewDream;
+const FormikNewDream = withFormik({
+    mapPropsToValues({date, description}) {
+        return {
+            date: date || '',
+            description: description || ''
+        }
+    },
+    validationSchema: Yup.object().shape({
+        date: Yup.date().required(),
+        description: Yup.string().required()
+    }),
+    handleSubmit(values, {setStatus, resetForm}) {
+        console.log('submitting dream', values)
+        AxiosWithAuth()
+            .post('/dreams', values)
+            .then(res => {
+                console.log(res.data)
+                setStatus(res.data)
+                resetForm()
+                window.location.reload();
+            })
+            .catch(err => console.log('Unable to add dream', err.message))
+    }
+})(NewDream)
+
+export default FormikNewDream;
