@@ -4,7 +4,7 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
-const RegisterForm = ({values, errors, touched, status}) => {
+const SigninForm = ({values, errors, touched, status}) => {
     const [user, setUser] = useState([])
     
     useEffect(() => {
@@ -14,7 +14,7 @@ const RegisterForm = ({values, errors, touched, status}) => {
 
     return (
         <div className='registerDiv'>
-            <h3>Register your Account</h3>
+            <h3>Please Sign In</h3>
             <Form className='registerForm'>
                 <label htmlFor='username'>Username: </label>
                 <Field
@@ -47,7 +47,7 @@ const RegisterForm = ({values, errors, touched, status}) => {
     )
 }
 
-const FormikRegisterForm = withFormik({
+const FormikSigninForm = withFormik({
     mapPropsToValues({username, password}) {
         return {
             username: username || '',
@@ -61,15 +61,20 @@ const FormikRegisterForm = withFormik({
     handleSubmit(values, {setStatus, resetForm}) {
         console.log('submitting data', values)
         AxiosWithAuth()
-            .post('/auth/register', values)
+            .post('/auth/signin', values)
             .then(res => {
                 console.log(res.data)
                 setStatus(res.data)
+                // set token and user id to local storage
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('id', res.data.id)
+                // reset form to blank values
                 resetForm()
-                window.location.href='/signin'
+                // reroute to user dashboard
+                window.location.href='/dashboard'
             })
-            .catch(err => console.log('Registration failed', err))
+            .catch(err => console.log('Sign in failed', err))
     }
-})(RegisterForm)
+})(SigninForm)
 
-export default FormikRegisterForm;
+export default FormikSigninForm;

@@ -7,7 +7,7 @@ import './App.css';
 import Home from './components/home';
 // import RegisterForm from './components/register';
 import RegisterForm from './components/formikRegister';
-import SigninForm from './components/signin';
+import SigninForm from './components/formikSignin';
 import Dashboard from './components/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
 
