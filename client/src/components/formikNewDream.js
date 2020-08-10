@@ -9,11 +9,7 @@ const NewDream = ({values, errors, touched, status}) => {
     const id = localStorage.getItem('id')
 
     // body required to create a new dream
-    const [dream, setDream] = useState({
-        date: '',
-        description: '',
-        user_id: id
-    })
+    const [dream, setDream] = useState([])
 
     useEffect(() => {
         console.log('Status change', status);
@@ -21,20 +17,20 @@ const NewDream = ({values, errors, touched, status}) => {
     }, [status])
 
     // function to add new dream
-    const addDream = e => {
-        e.preventDefault()
-        setDream({...dream})
-        AxiosWithAuth()
-            .post(`/dreams`, dream)
-            .then(res => {
-                console.log('dream', res.data)
-                setDream(res.data)
-                window.location.reload();
-                // reset form after submit
-                setDream({date: '', description: '', user_id: ''})
-            })
-            .catch(err => console.log('Unable to add dream', err))
-    }
+    // const addDream = e => {
+    //     e.preventDefault()
+    //     setDream({...dream})
+    //     AxiosWithAuth()
+    //         .post(`/dreams`, dream)
+    //         .then(res => {
+    //             console.log('dream', res.data)
+    //             setDream(res.data)
+    //             window.location.reload();
+    //             // reset form after submit
+    //             setDream({date: '', description: '', user_id: ''})
+    //         })
+    //         .catch(err => console.log('Unable to add dream', err))
+    // }
 
     return(
         <div className='newDreamDiv'>
@@ -49,7 +45,7 @@ const NewDream = ({values, errors, touched, status}) => {
                 {touched.date && errors.date && (
                     <p className='errors'>{errors.date}</p>
                 )}
-                <label for='description'>Description: </label>
+                <label htmlFor='description'>Description: </label>
                 <Field
                  as='textarea'
                  type='text'
@@ -73,10 +69,11 @@ const NewDream = ({values, errors, touched, status}) => {
 }
 
 const FormikNewDream = withFormik({
-    mapPropsToValues({date, description}) {
+    mapPropsToValues({id, date, description}) {
         return {
             date: date || '',
-            description: description || ''
+            description: description || '',
+            user_id: id
         }
     },
     validationSchema: Yup.object().shape({
@@ -86,7 +83,7 @@ const FormikNewDream = withFormik({
     handleSubmit(values, {setStatus, resetForm}) {
         console.log('submitting dream', values)
         AxiosWithAuth()
-            .post('/dreams', values)
+            .post(`/dreams`, values)
             .then(res => {
                 console.log(res.data)
                 setStatus(res.data)

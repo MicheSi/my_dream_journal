@@ -1,5 +1,5 @@
 import React from 'react';
-import NewDream from './newDream';
+import NewDream from './formikNewDream';
 import DreamsList from './dreamsList';
 import { Button, Icon } from 'semantic-ui-react';
 

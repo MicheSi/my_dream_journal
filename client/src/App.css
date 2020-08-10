@@ -133,7 +133,8 @@
 
 /* new dream form styles */
 .newDreamDiv {
-  background-color: slategray;
+  /* background-color: slategray; */
+  color: white;
   width: 550px;
   border-radius: 3px;
   margin-top: 3%;

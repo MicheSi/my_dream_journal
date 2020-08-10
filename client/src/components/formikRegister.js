@@ -26,7 +26,7 @@ const RegisterForm = ({values, errors, touched, status}) => {
                 {touched.username && errors.username && (
                     <p className='errors'>{errors.username}</p>
                 )}
-                <label for='password'>Password: </label>
+                <label htmlFor='password'>Password: </label>
                 <Field
                  type='password'
                  name='password'
