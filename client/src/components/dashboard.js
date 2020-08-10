@@ -12,11 +12,11 @@ const Dashboard = props => {
 
     return (
         <div className='dashContainer'>
+            <h1>My Dashboard</h1>
             <Button className='signoutBtn' size='big' onClick={signOut}>Sign Out</Button>
             <div className='dashboard'>
-                <h1>My Dashboard</h1>
                 <NewDream />
-                <DreamsList />
+                <DreamsList /> 
             </div>
         </div>
     )

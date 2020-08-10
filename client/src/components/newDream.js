@@ -39,8 +39,8 @@ const NewDream = props => {
     }
 
     return(
-        <div className='newDreamForm'>
-            <Form onSubmit={addDream}>
+        <div className='newDreamDiv'>
+            <Form className='newDreamForm' onSubmit={addDream}>
                 <Form.Field>
                     <label for='date'>Date: </label>
                     <input

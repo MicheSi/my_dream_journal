@@ -112,6 +112,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .signoutBtn {
@@ -122,13 +125,14 @@
 
 .dashboard {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 3%;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 2%;
 }
 
-.dashboard h1 {
+.dashContainer h1 {
   color: indianred;
+  margin-top: 3%;
 }
 
 /* new dream form styles */
@@ -140,7 +144,7 @@
   margin-top: 3%;
 }
 
-.newDreamDiv form {
+.newDreamForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,7 +171,7 @@
 
 /* Dreams List styles */
 .dreamsList {
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -178,12 +182,6 @@
   color: indianred;
 }
 
-.dreams {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
 /* Dream Card styles */
 .dreamCard {
@@ -192,7 +190,7 @@
 }
 
 .dreamCard .card {
-  width: 350px;
+  width: 100%;
 }
 
 .dreamCard .description {
