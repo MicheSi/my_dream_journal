@@ -37,7 +37,7 @@ const RegisterForm = ({values, errors, touched, status}) => {
                 {touched.password && errors.password && (
                     <p className='errors'>{errors.password}</p>
                 )}
-                <Button className='submitBtn' type='submit' animated>
+                <Button className='submitBtn' type='submit' animated floated='left'>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
                         <Icon name='arrow right' />

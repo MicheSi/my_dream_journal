@@ -65,14 +65,32 @@
   width: 100%;
 }
 
+.registerDiv h3 {
+  margin-top: 2%;
+}
+
 .registerForm {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 350px;
+  margin-top: 1%;
 }
 
 #username, #password {
   height: 30px;
+  margin: 2% 0;
+  border: 1px solid black;
+  border-radius: 2.8px;
+}
+
+#password {
+  margin-bottom: 5%;
+}
+
+.registerForm label {
+  color: white;
+  font-size: 1.6rem;
+  margin-top: 2%;
 }
 
 .registerForm p {
