@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Pagination } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
 
@@ -30,6 +31,7 @@ const DreamsList = props => {
                  description={dream.description}
                 />
             ))}
+            <Pagination defaultActivePage={1} totalPages={5} limit={2} />
             </div>
         </div>
     )
