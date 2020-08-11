@@ -44,6 +44,22 @@ router.get('/users/:id', (req, res) => {
         })
 })
 
+router.get('/users/:id/page?limit=1', (req, res) => {
+    const id = req.params.id
+
+    Dreams.findByUserLimit(id)
+        .then(dream => {
+            if (dream) {
+                res.status(200).json(dream)
+            } else {
+                res.status(404).json({message: 'Could not find dreams for that user'})
+            }
+        })
+        .catch(err => {
+            res.status(500).json({message: err})
+        })
+})
+
 router.post('/', (req, res) => {
     const dreamInfo = req.body;
 
