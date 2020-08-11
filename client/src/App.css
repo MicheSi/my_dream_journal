@@ -115,6 +115,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* height: 100vh; */
 }
 
 .signoutBtn {
@@ -164,7 +165,7 @@
 #description {
   font-size: 1.6rem;
   width: 470px;
-  height: 200px;
+  height: 300px;
   margin: 2% 0 4%;
 }
 
