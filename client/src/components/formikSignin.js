@@ -42,6 +42,7 @@ const SigninForm = ({values, errors, touched, status}) => {
                         <Icon name='arrow right' />
                     </Button.Content>
                 </Button>
+                <a className='redirect' href='/register'>Register for a new account?</a>
             </Form>
         </div>
     )
