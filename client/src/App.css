@@ -68,7 +68,9 @@
 }
 
 .buttonsDiv {
-  margin-top: 4%;
+  position: absolute;
+  top: 11%;
+  right: 4%;
 }
 
 .ui.button {
