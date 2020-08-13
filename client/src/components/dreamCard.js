@@ -69,11 +69,11 @@ const DreamCard = props => {
                         {props.description}
                     </Card.Description>
                     <Modal
-                        size='tiny'
+                        size='small'
                         onClose={() => setOpen(false)}
                         onOpen={() => setOpen(true)}
                         open={open}
-                        trigger={<Button icon='edit' floated='right'></Button>}
+                        trigger={<Button className='editBtn' icon='edit' floated='right'></Button>}
                     >
                         <Modal.Header>Edit Dream</Modal.Header>
                         <Modal.Content>

@@ -256,6 +256,11 @@ input {
   color: black;
 }
 
-.ui.card>.extra {
-  border-top: none;
+button.ui.icon.right.floated.button.editBtn {
+  margin-top: 5%;
+}
+
+button.ui.icon.right.floated.button.editBtn:hover {
+  background-color: indianred;
+  color: white;
 }
