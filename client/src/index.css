@@ -49,7 +49,7 @@ table {
 
 /* My styling */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:ital@0;1&display=swap');
 
 html, body {
   box-sizing: border-box;

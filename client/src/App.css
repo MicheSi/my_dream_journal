@@ -36,30 +36,41 @@
 
 .dream {
   font: bold;
-  font-size: 2.8rem;
+  font-size: 4rem;
   color: orangered;
 }
 
 .dreamDesc {
   font: bold;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
+}
+
+.noun {
+  font-size: 2.2rem;
+  font-style: italic;
 }
 
 .about {
   margin-top: 2%;
 }
 
-.aboutApp {
-  margin-top: 10%;
+.aboutDreams {
+  margin-top: 8%;
 }
 
-.dreamMeaning {
+.dreamMeaning, .write {
   font-size: 2rem;
   color: orangered;
 }
 
+.aboutApp {
+  margin-top: 8%;
+}
+
 .buttonsDiv {
-  margin-top: 4%;
+  position: absolute;
+  top: 11%;
+  right: 4%;
 }
 
 .ui.button {
@@ -99,7 +110,7 @@
 }
 
 #username, #password {
-  height: 30px;
+  height: 40px;
   margin: 2% 0;
   border: 1px solid black;
   border-radius: 2.8px;
@@ -111,17 +122,36 @@
 
 .registerForm label {
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-top: 2%;
 }
 
-.registerForm p {
-  color: blueviolet;
-  font-size: 1.2rem;
+.errors {
+  color: orangered;
+  font-size: 1.4rem;
+  margin-bottom: 5%;
+}
+
+.usernameError {
+  margin-top: 2%;
+}
+
+input {
+  font-size: 1.6rem;
 }
 
 .submitBtn {
   width: 100px;
+}
+
+.redirect {
+  font-size: 1.6rem;
+  margin-top: 3%;
+  color: white;
+}
+
+.redirect:hover {
+  color: orangered;
 }
 
 /* dashboard styles */
@@ -140,7 +170,7 @@
 
 .signoutBtn {
   position: absolute;
-  top: 8%;
+  top: 9%;
   right: 8%;
 }
 
@@ -158,7 +188,6 @@
 
 /* new dream form styles */
 .newDreamDiv {
-  
   width: 550px;
   border-radius: 3px;
   margin-top: 3%;
@@ -218,6 +247,6 @@
 }
 
 .editBtn {
-  width: 150px;
+  width: 20px;
 }
 

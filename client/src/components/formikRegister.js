@@ -24,7 +24,7 @@ const RegisterForm = ({values, errors, touched, status}) => {
                  placeholder='Please enter a username'
                 />
                 {touched.username && errors.username && (
-                    <p className='errors'>{errors.username}</p>
+                    <p className='errors usernameError'>{errors.username}</p>
                 )}
                 <label htmlFor='password'>Password: </label>
                 <Field
@@ -42,6 +42,7 @@ const RegisterForm = ({values, errors, touched, status}) => {
                         <Icon name='arrow right' />
                     </Button.Content>
                 </Button>
+                <a className='redirect' href='/signin'>Already have an account?</a>
             </Form>
         </div>
     )
@@ -55,8 +56,8 @@ const FormikRegisterForm = withFormik({
         }
     },
     validationSchema: Yup.object().shape({
-        username: Yup.string().required(),
-        password: Yup.string().required()
+        username: Yup.string().required('Username is required'),
+        password: Yup.string().required('Password is required')
     }),
     handleSubmit(values, {setStatus, resetForm}) {
         console.log('submitting data', values)
