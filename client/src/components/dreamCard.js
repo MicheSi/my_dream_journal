@@ -13,7 +13,10 @@ const DreamCard = props => {
         user_id: id
     }
 
+    // dream state
     const [dream, setDream] = useState(initialState);
+    // modal state
+    const [open, setOpen] = useState(false)
 
     // set props to selected dream
     useEffect(() => {
@@ -67,9 +70,17 @@ const DreamCard = props => {
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
+                    <Modal
+                        onClose={() => setOpen(false)}
+                        onOpen={() => setOpen(true)}
+                        open={open}
+                        trigger={<Button icon='edit' floated='right'></Button>}
+                    >
+                    <Modal.Header>Edit Dream</Modal.Header>
+                    </Modal>
                     {/* modal that display when edit button is clicked */}
-                    <div className='ui two buttons'>
-                        <Modal trigger={<Button className='editBtn' color='blue' icon='edit'></Button>} closeIcon>
+                    {/* <div className='ui two buttons'>
+                        <Modal className='editModal' trigger={<Button className='editBtn' color='blue' icon='edit'></Button>} closeIcon>
                             <Header icon='edit' content='Edit Dream' />
                             <Modal.Content>
                                 <Form onSubmit={editDream}>
@@ -108,7 +119,7 @@ const DreamCard = props => {
                                 </Button>
                             </Modal.Actions>
                         </Modal>
-                    </div>
+                    </div> */}
                 </Card.Content>
             </Card>
         </div>
