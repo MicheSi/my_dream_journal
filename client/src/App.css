@@ -177,8 +177,7 @@ input {
 .dashboard {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
-  margin-top: 2%;
+  margin: 2% 2% 0;
 }
 
 .dashContainer h1 {
@@ -188,7 +187,7 @@ input {
 
 /* new dream form styles */
 .newDreamDiv {
-  width: 550px;
+  width: 50%;
   border-radius: 3px;
   margin-top: 3%;
 }
@@ -213,7 +212,7 @@ input {
 
 #description {
   font-size: 1.6rem;
-  width: 470px;
+  width: 500px;
   height: 300px;
   margin: 2% 0 4%;
 }
@@ -246,7 +245,17 @@ input {
   line-height: normal;
 }
 
-.editBtn {
-  width: 20px;
+/* edit modal styles */
+.ui.modal>.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.editForm.ui.form .field>label {
+  color: black;
+}
+
+.ui.card>.extra {
+  border-top: none;
+}
