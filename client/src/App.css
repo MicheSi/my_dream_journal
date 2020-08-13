@@ -8,6 +8,7 @@
 
 /* home page styles */
 .homePage {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,16 +27,35 @@
 }
 
 .aboutDiv {
-  margin-top: 5%;
-  margin-left: 3%;
+  width: 50%;
+  margin: 5% 46% 0 3%;
+  color: white;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.dream {
+  font: bold;
+  font-size: 2.8rem;
+  color: orangered;
+}
+
+.dreamDesc {
+  font: bold;
+  font-size: 1.8rem;
 }
 
 .about {
-  margin-top: 4%;
-  margin-right: 46%;
-  text-align: left;
-  width: 50%;
-  color: white;
+  margin-top: 2%;
+}
+
+.aboutApp {
+  margin-top: 10%;
+}
+
+.dreamMeaning {
+  font-size: 2rem;
+  color: orangered;
 }
 
 .buttonsDiv {
