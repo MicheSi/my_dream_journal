@@ -36,26 +36,35 @@
 
 .dream {
   font: bold;
-  font-size: 2.8rem;
+  font-size: 4rem;
   color: orangered;
 }
 
 .dreamDesc {
   font: bold;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
+}
+
+.noun {
+  font-size: 2.2rem;
+  font-style: italic;
 }
 
 .about {
   margin-top: 2%;
 }
 
-.aboutApp {
-  margin-top: 10%;
+.aboutDreams {
+  margin-top: 8%;
 }
 
-.dreamMeaning {
+.dreamMeaning, .write {
   font-size: 2rem;
   color: orangered;
+}
+
+.aboutApp {
+  margin-top: 8%;
 }
 
 .buttonsDiv {
