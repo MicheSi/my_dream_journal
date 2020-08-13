@@ -69,7 +69,7 @@ const DreamCard = props => {
                 <Card.Content extra>
                     {/* modal that display when edit button is clicked */}
                     <div className='ui two buttons'>
-                        <Modal trigger={<Button className='editBtn' color='blue'>Edit</Button>} closeIcon>
+                        <Modal trigger={<Button className='editBtn' color='blue' icon='edit'></Button>} closeIcon>
                             <Header icon='edit' content='Edit Dream' />
                             <Modal.Content>
                                 <Form onSubmit={editDream}>

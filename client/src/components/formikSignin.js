@@ -56,8 +56,8 @@ const FormikSigninForm = withFormik({
         }
     },
     validationSchema: Yup.object().shape({
-        username: Yup.string().required(),
-        password: Yup.string().required()
+        username: Yup.string().required('Please enter a username'),
+        password: Yup.string().required('Please enter a password')
     }),
     handleSubmit(values, {setStatus, resetForm}) {
         console.log('submitting data', values)
