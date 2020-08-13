@@ -68,22 +68,17 @@ const DreamCard = props => {
                     <Card.Description>
                         {props.description}
                     </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
                     <Modal
+                        size='tiny'
                         onClose={() => setOpen(false)}
                         onOpen={() => setOpen(true)}
                         open={open}
                         trigger={<Button icon='edit' floated='right'></Button>}
                     >
-                    <Modal.Header>Edit Dream</Modal.Header>
-                    </Modal>
-                    {/* modal that display when edit button is clicked */}
-                    {/* <div className='ui two buttons'>
-                        <Modal className='editModal' trigger={<Button className='editBtn' color='blue' icon='edit'></Button>} closeIcon>
-                            <Header icon='edit' content='Edit Dream' />
-                            <Modal.Content>
-                                <Form onSubmit={editDream}>
+                        <Modal.Header>Edit Dream</Modal.Header>
+                        <Modal.Content>
+                            <Modal.Description>
+                                <Form className='editForm' onSubmit={editDream} >
                                     <Form.Field>
                                         <label for='date'>Date: </label>
                                         <input
@@ -109,17 +104,18 @@ const DreamCard = props => {
                                         />
                                     </Form.Field>
                                 </Form>
-                            </Modal.Content>
-                            <Modal.Actions>
-                                <Button color='red' onClick={deleteDream}>
-                                    <Icon name='trash' /> Delete
-                                </Button>
-                                <Button color='green' onClick={editDream}>
-                                    <Icon name='save' /> Save
-                                </Button>
-                            </Modal.Actions>
-                        </Modal>
-                    </div> */}
+                            </Modal.Description>
+                        </Modal.Content>
+                        <Modal.Actions>
+                            <Button color='red' onClick={deleteDream}>
+                                    <Icon name='trash'/> Delete
+                            </Button>
+                            <Button color='green' onClick={editDream}>
+                                <Icon name='save'/> Save
+                            </Button>
+                            <Button icon='close' onClick={() => setOpen(false)}></Button>
+                        </Modal.Actions>
+                    </Modal>
                 </Card.Content>
             </Card>
         </div>

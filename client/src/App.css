@@ -246,6 +246,17 @@ input {
   line-height: normal;
 }
 
-.editBtn {
-  width: 20px;
+/* edit modal styles */
+.ui.modal>.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editForm.ui.form .field>label {
+  color: black;
+}
+
+.ui.card>.extra {
+  border-top: none;
 }
