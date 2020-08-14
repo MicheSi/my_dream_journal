@@ -182,6 +182,10 @@ input {
   right: 8%;
 }
 
+button.ui.big.button.signoutBtn:hover {
+  background: mediumslateblue;
+}
+
 .dashboard {
   display: flex;
   justify-content: space-evenly;
