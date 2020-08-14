@@ -100,6 +100,14 @@ div.ui.item.simple.dropdown {
   left: 2%;
 }
 
+div.item {
+  font-size: 1.2rem;
+}
+
+div.item:hover {
+  background-color: orangered;
+}
+
 /* register form styles */
 .registerDiv {
   display: flex;
