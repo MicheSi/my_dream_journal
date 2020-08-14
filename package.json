@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon"
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.2",
     "knex-cleaner": "^1.3.0",
+    "pg": "^8.3.0",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
