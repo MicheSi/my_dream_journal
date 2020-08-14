@@ -20,7 +20,7 @@ function findByUser(user_id) {
     return db('dreams as d')
         .join('users as u', 'u.id', 'd.user_id')
         .select('d.id', 'd.date', 'd.description')
-        // .orderBy('d.date')
+        .orderBy('d.date', 'desc')
         // .limit(1, 1)
         .where('d.user_id', user_id)
 }
