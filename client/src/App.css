@@ -81,6 +81,9 @@
   color: black;
 }
 
+button.ui.big.animated.button:hover {
+  background-color: mediumslateblue;
+}
 
 /* register form styles */
 .registerDiv {
@@ -144,6 +147,11 @@ input {
   width: 100px;
 }
 
+ button.ui.animated.left.floated.button.submitBtn:hover {
+  background-color: #211f2c;
+  color: white;
+}
+
 .redirect {
   font-size: 1.6rem;
   margin-top: 3%;
@@ -172,6 +180,10 @@ input {
   position: absolute;
   top: 9%;
   right: 8%;
+}
+
+button.ui.big.button.signoutBtn:hover {
+  background: mediumslateblue;
 }
 
 .dashboard {
@@ -250,6 +262,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-color: #211f2c; */
 }
 
 .editForm.ui.form .field>label {

@@ -38,7 +38,7 @@ const DreamsList = props => {
                 )
                 
 })}
-            <Pagination defaultActivePage={1} totalPages={5} limit={2} />
+            {/* <Pagination defaultActivePage={1} totalPages={5} limit={2} /> */}
             </div>
         </div>
     )
