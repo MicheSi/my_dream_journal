@@ -11,6 +11,7 @@ import SigninForm from './components/formikSignin';
 import Dashboard from './components/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
 import MenuBar from './components/menu';
+import Resources from './components/resources';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
          component={Dashboard}
          render={(props) => <Dashboard {...props} dreams={dreams}/>}
         />
+        <Route path='/resources' component={Resources}/>
         <Route exact path='/' component={Home} />
       </Switch>
     </div>

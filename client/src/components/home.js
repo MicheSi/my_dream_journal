@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Icon } from 'semantic-ui-react'
-import MenuBar from './menu';
-
 
 const Home = () => {
     return (
         <div className='homePage'>
-            {/* <MenuBar /> */}
             <h1>My Dream Journal</h1>
             <div className='buttonsDiv'>
                 <Button size='big' animated>
