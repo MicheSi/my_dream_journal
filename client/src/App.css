@@ -67,6 +67,10 @@
   margin-top: 8%;
 }
 
+.aboutAppP3 {
+  margin-top: 3%;
+}
+
 .buttonsDiv {
   position: absolute;
   top: 11%;
@@ -83,6 +87,17 @@
 
 button.ui.big.animated.button:hover {
   background-color: mediumslateblue;
+}
+
+/* Menu styles */
+div.ui.item.simple.dropdown {
+  background-color: #e0e1e2;
+}
+
+.menuBar {
+  position: absolute;
+  top: 3%;
+  left: 2%;
 }
 
 /* register form styles */
