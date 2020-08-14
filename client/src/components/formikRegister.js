@@ -31,7 +31,7 @@ const RegisterForm = ({values, errors, touched, status}) => {
                  type='password'
                  name='password'
                  id='password'
-                 placeholder='Please enter a password'
+                 placeholder='Minimum length of 8 characters'
                 />
                 {touched.password && errors.password && (
                     <p className='errors'>{errors.password}</p>
@@ -57,7 +57,9 @@ const FormikRegisterForm = withFormik({
     },
     validationSchema: Yup.object().shape({
         username: Yup.string().required('Username is required'),
-        password: Yup.string().required('Password is required')
+        password: Yup.string()
+            .min(8, 'Password must be at least 8 characters long')
+            .required('Password is required')
     }),
     handleSubmit(values, {setStatus, resetForm}) {
         console.log('submitting data', values)
