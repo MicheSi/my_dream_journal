@@ -258,6 +258,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-color: #211f2c; */
 }
 
 .editForm.ui.form .field>label {
