@@ -13,7 +13,7 @@ const SigninForm = ({values, errors, touched, status}) => {
     }, [status])
 
     return (
-        <div className='registerDiv'>
+        <div className='registerDiv signinDiv'>
             <h3>Please Sign In</h3>
             <Form className='registerForm'>
                 <label htmlFor='username'>Username: </label>

@@ -67,6 +67,10 @@
   margin-top: 8%;
 }
 
+.aboutAppP3 {
+  margin-top: 3%;
+}
+
 .buttonsDiv {
   position: absolute;
   top: 11%;
@@ -83,6 +87,25 @@
 
 button.ui.big.animated.button:hover {
   background-color: mediumslateblue;
+}
+
+/* Menu styles */
+div.ui.item.simple.dropdown {
+  background-color: #e0e1e2;
+}
+
+.menuBar {
+  position: absolute;
+  top: 3%;
+  left: 2%;
+}
+
+div.item {
+  font-size: 1.2rem;
+}
+
+div.item:hover {
+  background-color: orangered;
 }
 
 /* register form styles */
@@ -147,7 +170,7 @@ input {
   width: 100px;
 }
 
- button.ui.animated.left.floated.button.submitBtn:hover {
+button.ui.animated.left.floated.button.submitBtn:hover {
   background-color: #211f2c;
   color: white;
 }
@@ -162,11 +185,22 @@ input {
   color: orangered;
 }
 
+/* sign in styles */
+.signinDiv {
+  background-color: #211f2c;
+  background-image: url('./images/counting_stars.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
 /* dashboard styles */
 .dashContainer {
   width: 100%;
   background-color: #211f2c;
-  background-image: url('./images/counting_stars.svg');
+  background-image: url('./images/moonlight.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -194,7 +228,7 @@ button.ui.big.button.signoutBtn:hover {
 }
 
 .dashContainer h1 {
-  color: indianred;
+  color: orangered;
   margin-top: 3%;
 }
 
@@ -240,7 +274,7 @@ button.ui.big.button.signoutBtn:hover {
 }
 
 .dreamsList h2 {
-  color: indianred;
+  color: orangered;
 }
 
 
@@ -275,6 +309,24 @@ button.ui.icon.right.floated.button.editBtn {
 }
 
 button.ui.icon.right.floated.button.editBtn:hover {
-  background-color: indianred;
+  background-color: orangered;
   color: white;
+}
+
+/* resources styles */
+.resourcesDiv {
+  background-color: #211f2c;
+  background-image: url('./images/under_construction.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resourcesDiv h1 {
+  color: orangered;
 }

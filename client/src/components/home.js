@@ -2,27 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Icon } from 'semantic-ui-react'
 
-
 const Home = () => {
     return (
         <div className='homePage'>
             <h1>My Dream Journal</h1>
             <div className='buttonsDiv'>
-                    <Button size='big' animated>
-                        <Link to='/register'>
-                            <Button.Content className='btnText' visible>Register</Button.Content>
-                            <Button.Content className='btnText' hidden>
-                                <Icon name='arrow right' />
-                            </Button.Content>
-                        </Link>
-                    </Button>
-                    <Button size ='big' animated='fade'>
-                        <Link to='/signin'>
-                            <Button.Content className='btnText' visible>Already have an account?</Button.Content>
-                            <Button.Content className='btnText' hidden>Sign In</Button.Content>
-                        </Link>
-                    </Button>
-                </div>
+                <Button size='big' animated>
+                    <Link to='/register'>
+                        <Button.Content className='btnText' visible>Register</Button.Content>
+                        <Button.Content className='btnText' hidden>
+                            <Icon name='arrow right' />
+                        </Button.Content>
+                    </Link>
+                </Button>
+                <Button size ='big' animated='fade'>
+                    <Link to='/signin'>
+                        <Button.Content className='btnText' visible>Already have an account?</Button.Content>
+                        <Button.Content className='btnText' hidden>Sign In</Button.Content>
+                    </Link>
+                </Button>
+            </div>
             <div className='aboutDiv'>
                 <p className='dream'>dream</p>
                 <p className='dreamDesc'>/ drēm /</p>
@@ -47,7 +46,7 @@ const Home = () => {
                             It can even help you practice lucid dreaming because you are more aware of your dreams.
                             Dreams can also fuel your creativity. Many famous writers, artists and inventors say that their ideas came from their dreams.
                         </p>
-                        <p>
+                        <p className='aboutAppP3'>
                             Whatever the reason for wanting to keep a record of your dreams, I hope you enjoy using this dream journal. 
                             Let's get writing and sweet dreams!
                         </p>
