@@ -81,6 +81,9 @@
   color: black;
 }
 
+button.ui.big.animated.button:hover {
+  background-color: mediumslateblue;
+}
 
 /* register form styles */
 .registerDiv {
@@ -142,6 +145,11 @@ input {
 
 .submitBtn {
   width: 100px;
+}
+
+ button.ui.animated.left.floated.button.submitBtn:hover {
+  background-color: #211f2c;
+  color: white;
 }
 
 .redirect {
