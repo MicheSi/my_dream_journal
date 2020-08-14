@@ -187,8 +187,9 @@ button.ui.big.button.signoutBtn:hover {
 }
 
 .dashboard {
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   margin: 2% 2% 0;
 }
 
