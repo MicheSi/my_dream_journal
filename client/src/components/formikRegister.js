@@ -31,7 +31,7 @@ const RegisterForm = ({values, errors, touched, status}) => {
                  type='password'
                  name='password'
                  id='password'
-                 placeholder='Minimum length of 8 characters'
+                 placeholder='Minimum length 8 characters'
                 />
                 {touched.password && errors.password && (
                     <p className='errors'>{errors.password}</p>
@@ -59,6 +59,7 @@ const FormikRegisterForm = withFormik({
         username: Yup.string().required('Username is required'),
         password: Yup.string()
             .min(8, 'Password must be at least 8 characters long')
+            .matches(/(?=.*[0-9])/, 'Password must contain a number')
             .required('Password is required')
     }),
     handleSubmit(values, {setStatus, resetForm}) {
@@ -67,8 +68,6 @@ const FormikRegisterForm = withFormik({
             .post('/auth/register', values)
             .then(res => {
                 console.log(res)
-                errors.username = "Username already exists"
-                }
                 setStatus(res.data)
                 resetForm()
                 window.location.href='/signin'
