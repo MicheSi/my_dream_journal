@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Icon } from 'semantic-ui-react';
-import { withFormik, Form, Field } from 'formik';
+import { withFormik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
-const RegisterForm = ({values, errors, touched, status}) => {
+const RegisterForm = ({values, handleChange, handleBlur, errors, touched, status}) => {
     const [user, setUser] = useState([])
     
     useEffect(() => {
@@ -22,6 +22,9 @@ const RegisterForm = ({values, errors, touched, status}) => {
                  name='username'
                  id='username'
                  placeholder='Please enter a username'
+                 value={values.username}
+                 onChange= {handleChange}
+                 onBlur={handleBlur}
                 />
                 {touched.username && errors.username && (
                     <p className='errors usernameError'>{errors.username}</p>
@@ -32,6 +35,9 @@ const RegisterForm = ({values, errors, touched, status}) => {
                  name='password'
                  id='password'
                  placeholder='Minimum length 8 characters'
+                 value={values.password}
+                 onChange= {handleChange}
+                 onBlur={handleBlur}
                 />
                 {touched.password && errors.password && (
                     <p className='errors'>{errors.password}</p>
@@ -56,10 +62,11 @@ const FormikRegisterForm = withFormik({
         }
     },
     validationSchema: Yup.object().shape({
-        username: Yup.string().required('Username is required'),
+        username: Yup.string()
+            .min(4, 'Username must be at least 4 characters')
+            .required('Username is required'),
         password: Yup.string()
             .min(8, 'Password must be at least 8 characters long')
-            .matches(/(?=.*[0-9])/, 'Password must contain a number')
             .required('Password is required')
     }),
     handleSubmit(values, {setStatus, resetForm}) {
@@ -72,7 +79,7 @@ const FormikRegisterForm = withFormik({
                 resetForm()
                 window.location.href='/signin'
             })
-            .catch(err => console.log('Registration failed', err))
+            .catch(err => console.log('Registration failed', err.message))
     }
 })(RegisterForm)
 
