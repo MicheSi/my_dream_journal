@@ -66,7 +66,9 @@ const FormikRegisterForm = withFormik({
         AxiosWithAuth()
             .post('/auth/register', values)
             .then(res => {
-                console.log(res.data)
+                console.log(res)
+                errors.username = "Username already exists"
+                }
                 setStatus(res.data)
                 resetForm()
                 window.location.href='/signin'
