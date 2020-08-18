@@ -4,7 +4,7 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
-const RegisterForm = ({values, handleChange, handleBlur, errors, touched, status}) => {
+const RegisterForm = ({values, errors, touched, status}) => {
     const [user, setUser] = useState([])
     
     useEffect(() => {
@@ -23,8 +23,6 @@ const RegisterForm = ({values, handleChange, handleBlur, errors, touched, status
                  id='username'
                  placeholder='Please enter a username'
                  value={values.username}
-                 onChange= {handleChange}
-                 onBlur={handleBlur}
                 />
                 {touched.username && errors.username && (
                     <p className='errors usernameError'>{errors.username}</p>
@@ -36,8 +34,6 @@ const RegisterForm = ({values, handleChange, handleBlur, errors, touched, status
                  id='password'
                  placeholder='Minimum length 8 characters'
                  value={values.password}
-                 onChange= {handleChange}
-                 onBlur={handleBlur}
                 />
                 {touched.password && errors.password && (
                     <p className='errors'>{errors.password}</p>
@@ -69,7 +65,7 @@ const FormikRegisterForm = withFormik({
             .min(8, 'Password must be at least 8 characters long')
             .required('Password is required')
     }),
-    handleSubmit(values, {setStatus, resetForm}) {
+    handleSubmit(values, setError, {setStatus, resetForm}) {
         console.log('submitting data', values)
         AxiosWithAuth()
             .post('/auth/register', values)
@@ -79,7 +75,9 @@ const FormikRegisterForm = withFormik({
                 resetForm()
                 window.location.href='/signin'
             })
-            .catch(err => console.log('Registration failed', err.message))
+            .catch(err => {
+                console.log('Registration failed', err.message)
+            })
     }
 })(RegisterForm)
 
