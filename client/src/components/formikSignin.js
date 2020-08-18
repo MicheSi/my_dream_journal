@@ -74,7 +74,9 @@ const FormikSigninForm = withFormik({
                 // reroute to user dashboard
                 window.location.href='/dashboard'
             })
-            .catch(err => console.log('Sign in failed', err))
+            .catch(err => {
+                console.log('Sign in failed', err)
+            })
     }
 })(SigninForm)
 
