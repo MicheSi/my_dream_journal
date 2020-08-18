@@ -3,7 +3,6 @@ import { Dropdown, Menu } from 'semantic-ui-react';
 
 const MenuBar = () => (
   <div className='menuBar'>
-    <Menu attached='top'>
       <Dropdown item icon='bars' simple>
         <Dropdown.Menu>
           <Dropdown.Item href='/'>Home</Dropdown.Item>
@@ -15,7 +14,6 @@ const MenuBar = () => (
           <Dropdown.Item>Share</Dropdown.Item> */}
         </Dropdown.Menu>
       </Dropdown>
-    </Menu>
   </div>
 )
 

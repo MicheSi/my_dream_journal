@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3% 10%;
+  padding: 3% 4%;
   background-color: #211f2c;
   background-image: url('./images/dreamer.svg');
   background-repeat: no-repeat;
@@ -21,14 +21,26 @@
   height: 100vh;
 }
 
-.homePage h1 {
-  color: orangered;
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 2%;
+}
+
+header div, header h1 {
+  width: 33%;
+}
+
+header h1 {
+  color: orangered;
+  padding-left: 5%;
 }
 
 .aboutDiv {
   width: 50%;
-  margin: 5% 46% 0 3%;
+  margin: 5% 46% 0 10%;
   color: white;
   text-align: left;
   line-height: 1.5;
@@ -72,9 +84,7 @@
 }
 
 .buttonsDiv {
-  position: absolute;
-  top: 11%;
-  right: 4%;
+  padding-left: 12%;
 }
 
 .ui.button {
@@ -83,6 +93,7 @@
 
 .btnText {
   color: black;
+  width: 65px;
 }
 
 button.ui.big.animated.button:hover {
@@ -92,13 +103,23 @@ button.ui.big.animated.button:hover {
 /* Menu styles */
 div.ui.item.simple.dropdown {
   background-color: #e0e1e2;
+  width: 50px;
+  height: 30px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
 }
 
-.menuBar {
+.ui.dropdown .menu>.item {
+  width: 120px;
+  font-size: 1.4rem;
+}
+
+/* .menuBar {
   position: absolute;
   top: 3%;
   left: 2%;
-}
+} */
 
 div.item {
   font-size: 1.2rem;

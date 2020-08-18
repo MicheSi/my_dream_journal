@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <MenuBar />
+      {/* <MenuBar /> */}
       <Switch>
         <Route path='/register' component={RegisterForm}/>
         <Route path='/signin' component={SigninForm}/>
