@@ -94,6 +94,7 @@ header h1 {
 
 .btnText {
   color: black;
+  width: 65px;
 }
 
 button.ui.big.animated.button:hover {
@@ -103,7 +104,14 @@ button.ui.big.animated.button:hover {
 /* Menu styles */
 div.ui.item.simple.dropdown {
   background-color: #e0e1e2;
+  width: 50px;
+  height: 30px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
 }
+
+
 
 /* .menuBar {
   position: absolute;
