@@ -21,9 +21,20 @@
   height: 100vh;
 }
 
-.homePage h1 {
-  color: orangered;
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 2%;
+}
+
+header div, header h1 {
+  width: 33%;
+}
+
+header h1 {
+  color: orangered;
 }
 
 .aboutDiv {
@@ -71,11 +82,11 @@
   margin-top: 3%;
 }
 
-.buttonsDiv {
+/* .buttonsDiv {
   position: absolute;
   top: 11%;
   right: 4%;
-}
+} */
 
 .ui.button {
   margin: 0 2rem;
@@ -94,11 +105,11 @@ div.ui.item.simple.dropdown {
   background-color: #e0e1e2;
 }
 
-.menuBar {
+/* .menuBar {
   position: absolute;
   top: 3%;
   left: 2%;
-}
+} */
 
 div.item {
   font-size: 1.2rem;
