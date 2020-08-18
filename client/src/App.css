@@ -35,6 +35,7 @@ header div, header h1 {
 
 header h1 {
   color: orangered;
+  padding-left: 5%;
 }
 
 .aboutDiv {
