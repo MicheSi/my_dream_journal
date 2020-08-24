@@ -301,6 +301,7 @@ button.ui.big.button.signoutBtn:hover {
 
 /* Dream Card styles */
 .dreamCard {
+  min-width: 600px;
   margin: 2%;
   font-size: 1.6rem;
 }
