@@ -110,7 +110,7 @@ const DreamCard = props => {
                             <Button color='red' onClick={deleteDream}>
                                     <Icon name='trash'/> Delete
                             </Button>
-                            <Button color='green' onClick={editDream}>
+                            <Button color='teal' onClick={editDream}>
                                 <Icon name='save'/> Save
                             </Button>
                             <Button icon='close' onClick={() => setOpen(false)}></Button>

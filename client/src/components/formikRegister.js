@@ -65,14 +65,13 @@ const FormikRegisterForm = withFormik({
             .min(8, 'Password must be at least 8 characters long')
             .required('Password is required')
     }),
-    handleSubmit(values, {setStatus, resetForm, setFieldError}) {
+    handleSubmit(values, {setStatus, setFieldError}) {
         console.log('submitting data', values)
         AxiosWithAuth()
             .post('/auth/register', values)
             .then(res => {
                 console.log(res)
                 setStatus(res.data)
-                resetForm()
                 window.location.href='/signin'
             })
             .catch(err => {
