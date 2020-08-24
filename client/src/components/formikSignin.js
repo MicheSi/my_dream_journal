@@ -59,7 +59,7 @@ const FormikSigninForm = withFormik({
         username: Yup.string().required('Please enter a username'),
         password: Yup.string().required('Please enter a password')
     }),
-    handleSubmit(values, {setStatus, resetForm}) {
+    handleSubmit(values, {setStatus, resetForm, setFieldError}) {
         console.log('submitting data', values)
         AxiosWithAuth()
             .post('/auth/signin', values)
@@ -76,6 +76,8 @@ const FormikSigninForm = withFormik({
             })
             .catch(err => {
                 console.log('Sign in failed', err)
+                setFieldError('username', 'Please check username')
+                setFieldError('password', 'Please check password')
             })
     }
 })(SigninForm)
