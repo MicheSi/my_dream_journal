@@ -59,7 +59,7 @@ const FormikSigninForm = withFormik({
         username: Yup.string().required('Please enter a username'),
         password: Yup.string().required('Please enter a password')
     }),
-    handleSubmit(values, {setStatus, resetForm, setFieldError}) {
+    handleSubmit(values, {setStatus, setFieldError}) {
         console.log('submitting data', values)
         AxiosWithAuth()
             .post('/auth/signin', values)
@@ -69,8 +69,6 @@ const FormikSigninForm = withFormik({
                 // set token and user id to local storage
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('id', res.data.id)
-                // reset form to blank values
-                resetForm()
                 // reroute to user dashboard
                 window.location.href='/dashboard'
             })

@@ -41,6 +41,7 @@ const NewDream = ({values, errors, touched, status}) => {
                  name='date'
                  id='date'
                  placeholder='Date'
+                 value={values.date}
                 />
                 {touched.date && errors.date && (
                     <p className='errors'>{errors.date}</p>
@@ -52,6 +53,7 @@ const NewDream = ({values, errors, touched, status}) => {
                  name='description'
                  id='description'
                  placeholder='Description of Dream'
+                 value={values.description}
                 />
                 {touched.description && errors.description && (
                     <p className='errors'>{errors.description}</p>
@@ -69,7 +71,7 @@ const NewDream = ({values, errors, touched, status}) => {
 }
 
 const FormikNewDream = withFormik({
-    mapPropsToValues(id, {date, description}) {
+    mapPropsToValues(id, date, description) {
         return {
             date: date || '',
             description: description || '',
@@ -77,10 +79,10 @@ const FormikNewDream = withFormik({
         }
     },
     validationSchema: Yup.object().shape({
-        date: Yup.date().required(),
-        description: Yup.string().required()
+        date: Yup.date().required('Date required'),
+        description: Yup.string().required('Please enter a description of your dream')
     }),
-    handleSubmit(values, {setStatus, resetForm}) {
+    handleSubmit(values, {setStatus, resetForm, setFieldError}) {
         console.log('submitting dream', values)
         AxiosWithAuth()
             .post(`/dreams`, values)
@@ -90,7 +92,10 @@ const FormikNewDream = withFormik({
                 resetForm()
                 window.location.reload();
             })
-            .catch(err => console.log('Unable to add dream', err.message))
+            .catch(err => {
+                console.log('Unable to add dream', err.message)
+                setFieldError('description', 'Error adding dream')
+            })
     }
 })(NewDream)
 
