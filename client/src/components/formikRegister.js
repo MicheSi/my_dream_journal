@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Icon } from 'semantic-ui-react';
-import { withFormik, Form, Field, ErrorMessage } from 'formik';
+import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
@@ -65,7 +65,7 @@ const FormikRegisterForm = withFormik({
             .min(8, 'Password must be at least 8 characters long')
             .required('Password is required')
     }),
-    handleSubmit(values, {setStatus, resetForm}) {
+    handleSubmit(values, {setStatus, resetForm, setFieldError}) {
         console.log('submitting data', values)
         AxiosWithAuth()
             .post('/auth/register', values)
@@ -77,6 +77,7 @@ const FormikRegisterForm = withFormik({
             })
             .catch(err => {
                 console.log('Registration failed', err.message)
+                setFieldError('username', 'Username already exists')
             })
     }
 })(RegisterForm)
