@@ -65,7 +65,7 @@ const FormikRegisterForm = withFormik({
             .min(8, 'Password must be at least 8 characters long')
             .required('Password is required')
     }),
-    handleSubmit(values, setError, {setStatus, resetForm}) {
+    handleSubmit(values, {setStatus, resetForm, setFieldError}) {
         console.log('submitting data', values)
         AxiosWithAuth()
             .post('/auth/register', values)
@@ -77,6 +77,7 @@ const FormikRegisterForm = withFormik({
             })
             .catch(err => {
                 console.log('Registration failed', err.message)
+                setFieldError('username', 'Username already exists')
             })
     }
 })(RegisterForm)
