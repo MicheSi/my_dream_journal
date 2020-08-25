@@ -3,6 +3,7 @@ import { Button, Icon } from 'semantic-ui-react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import MenuBar from './menu';
 
 const SigninForm = ({values, errors, touched, status}) => {
     const [user, setUser] = useState([])
@@ -14,8 +15,11 @@ const SigninForm = ({values, errors, touched, status}) => {
 
     return (
         <div className='registerDiv signinDiv'>
-            <h3>Please Sign In</h3>
+            <header className='regMenu'>
+                <MenuBar/>
+            </header>
             <Form className='registerForm'>
+                <h3>Please Sign In</h3>
                 <label htmlFor='username'>Username: </label>
                 <Field
                  type='text'
