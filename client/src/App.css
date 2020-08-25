@@ -140,15 +140,18 @@ div.item:hover {
   width: 100%;
 }
 
-.registerDiv h3 {
-  margin-top: 2%;
+.regMenu {
+  color: black;
 }
 
 .registerForm {
   display: flex;
   flex-direction: column;
   width: 350px;
-  margin-top: 1%;
+}
+
+.registerForm h3 {
+  text-align: center;
 }
 
 #username, #password {
