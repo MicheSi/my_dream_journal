@@ -30,12 +30,16 @@ header {
 }
 
 header div, header h1 {
-  width: 33%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 34%;
 }
 
 header h1 {
   color: orangered;
-  padding-left: 5%;
+  /* padding-left: 5%; */
 }
 
 .aboutDiv {
@@ -107,6 +111,8 @@ div.ui.item.simple.dropdown {
   height: 30px;
   border-radius: 3px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -115,11 +121,10 @@ div.ui.item.simple.dropdown {
   font-size: 1.4rem;
 }
 
-/* .menuBar {
-  position: absolute;
-  top: 3%;
-  left: 2%;
-} */
+.menuBar {
+  display: flex;
+  justify-content: center;
+}
 
 div.item {
   font-size: 1.2rem;
@@ -351,4 +356,11 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
 .resourcesDiv h1 {
   color: orangered;
+}
+
+/* Media Queries */
+@media (max-width: 1300px) {
+  header div, header h1 {
+    width: 30%;
+  }
 }
