@@ -226,8 +226,6 @@ button.ui.animated.left.floated.button.submitBtn:hover {
   padding: 3% 4%;
 }
 
-
-
 button.ui.big.button.signoutBtn:hover {
   background: mediumslateblue;
 }
@@ -347,5 +345,19 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .dashboard {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  header h1 {
+    margin-left: 8%;
+  }
+
+  .ui.button {
+    margin: 0 .75rem;
+  }
+
+  .btnText {
+    width: 45px;
   }
 }
