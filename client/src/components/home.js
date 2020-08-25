@@ -5,7 +5,7 @@ import NavButtons from './navButtons';
 const Home = () => {
     return (
         <div className='homePage'>
-            <header>
+            <header className='homeHeader'>
                 <MenuBar />
                 <h1>My Dream Journal</h1>
                 <NavButtons />

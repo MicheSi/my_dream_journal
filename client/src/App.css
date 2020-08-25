@@ -34,12 +34,11 @@ header {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  /* width: 33%; */
 }
 
 header h1 {
   color: orangered;
-
+  margin-left: 6%;
 }
 
 .aboutDiv {
@@ -87,10 +86,6 @@ header h1 {
   margin-top: 3%;
 }
 
-.buttonsDiv {
-  padding-left: 12%;
-}
-
 .ui.button {
   margin: 0 2rem;
 }
@@ -98,11 +93,6 @@ header h1 {
 .btnText {
   color: black;
   width: 65px;
-}
-
-.ui.animated.button {
-  overflow: inherit;
-  width: 100px;
 }
 
 button.ui.big.animated.button:hover {
@@ -125,11 +115,6 @@ div.ui.item.simple.dropdown {
   width: 120px;
   font-size: 1.4rem;
 }
-
-/* .menuBar {
-  display: flex;
-  justify-content: center;
-} */
 
 div.item {
   font-size: 1.2rem;
@@ -155,15 +140,18 @@ div.item:hover {
   width: 100%;
 }
 
-.registerDiv h3 {
-  margin-top: 2%;
+.regMenu {
+  color: black;
 }
 
 .registerForm {
   display: flex;
   flex-direction: column;
   width: 350px;
-  margin-top: 1%;
+}
+
+.registerForm h3 {
+  text-align: center;
 }
 
 #username, #password {
@@ -208,7 +196,7 @@ button.ui.animated.left.floated.button.submitBtn:hover {
 
 .redirect {
   font-size: 1.6rem;
-  margin-top: 3%;
+  margin-top: 10%;
   color: white;
 }
 
@@ -238,13 +226,7 @@ button.ui.animated.left.floated.button.submitBtn:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 100vh; */
-}
-
-.signoutBtn {
-  position: absolute;
-  top: 9%;
-  right: 8%;
+  padding: 3% 4%;
 }
 
 button.ui.big.button.signoutBtn:hover {
@@ -254,13 +236,7 @@ button.ui.big.button.signoutBtn:hover {
 .dashboard {
   width: 100%;
   display: flex;
-  /* justify-content: space-evenly; */
   margin: 2% 2% 0;
-}
-
-.dashContainer h1 {
-  color: orangered;
-  margin-top: 3%;
 }
 
 /* new dream form styles */
@@ -364,8 +340,27 @@ button.ui.icon.right.floated.button.editBtn:hover {
 }
 
 /* Media Queries */
-@media (max-width: 1300px) {
-  header div, header h1 {
-    width: 30%;
+@media (max-width: 1024px) {
+  .homePage {
+    height: 100%;
+  }
+
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  header h1 {
+    margin-left: 8%;
+  }
+
+  .ui.button {
+    margin: 0 .75rem;
+  }
+
+  .btnText {
+    width: 45px;
   }
 }
