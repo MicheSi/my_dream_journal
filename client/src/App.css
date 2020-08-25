@@ -34,12 +34,11 @@ header {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  /* width: 33%; */
 }
 
 header h1 {
   color: orangered;
-
+  margin-left: 6%;
 }
 
 .aboutDiv {
@@ -87,10 +86,6 @@ header h1 {
   margin-top: 3%;
 }
 
-.buttonsDiv {
-  padding-left: 12%;
-}
-
 .ui.button {
   margin: 0 2rem;
 }
@@ -98,11 +93,6 @@ header h1 {
 .btnText {
   color: black;
   width: 65px;
-}
-
-.ui.animated.button {
-  overflow: inherit;
-  width: 100px;
 }
 
 button.ui.big.animated.button:hover {
@@ -125,11 +115,6 @@ div.ui.item.simple.dropdown {
   width: 120px;
   font-size: 1.4rem;
 }
-
-/* .menuBar {
-  display: flex;
-  justify-content: center;
-} */
 
 div.item {
   font-size: 1.2rem;
@@ -365,7 +350,5 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
 /* Media Queries */
 @media (max-width: 1300px) {
-  header div, header h1 {
-    width: 30%;
-  }
+  
 }
