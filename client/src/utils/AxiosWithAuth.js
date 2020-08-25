@@ -4,7 +4,7 @@ const AxiosWithAuth = () => {
     const token = localStorage.getItem('token');
 
     return axios.create({
-        baseURL: 'http://localhost:4000/api',
+        baseURL: 'https://mydreamjournal.herokuapp.com/api',
         headers: {
             Authorization: token
         }
