@@ -29,17 +29,17 @@ header {
   margin-top: 2%;
 }
 
-header div, header h1 {
+.buttonsDiv {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  width: 34%;
+  /* width: 33%; */
 }
 
 header h1 {
   color: orangered;
-  /* padding-left: 5%; */
+
 }
 
 .aboutDiv {
@@ -100,6 +100,11 @@ header h1 {
   width: 65px;
 }
 
+.ui.animated.button {
+  overflow: inherit;
+  width: 100px;
+}
+
 button.ui.big.animated.button:hover {
   background-color: mediumslateblue;
 }
@@ -121,10 +126,10 @@ div.ui.item.simple.dropdown {
   font-size: 1.4rem;
 }
 
-.menuBar {
+/* .menuBar {
   display: flex;
   justify-content: center;
-}
+} */
 
 div.item {
   font-size: 1.2rem;
