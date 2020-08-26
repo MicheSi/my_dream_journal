@@ -364,3 +364,38 @@ button.ui.icon.right.floated.button.editBtn:hover {
     width: 45px;
   }
 }
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 600px) {
+  .homePage {
+    background-position: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  div.ui.item.simple.dropdown {
+    text-align: left;
+  }
+
+  header h1 {
+    margin-left: 0;
+  }
+
+  .buttonsDiv {
+    margin-top: 2%;
+  }
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 320px) {
+
+}
