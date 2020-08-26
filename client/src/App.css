@@ -364,3 +364,75 @@ button.ui.icon.right.floated.button.editBtn:hover {
     width: 45px;
   }
 }
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 600px) {
+  .homePage {
+    background-position: center;
+  }
+
+  header {
+    flex-direction: column;
+    margin-top: 3%;
+  }
+
+  header h1 {
+    margin-left: 0;
+  }
+
+  .menuBar {
+    position: absolute;
+    left: 5%;
+    top: 6%;
+  }
+
+  .buttonsDiv {
+    margin-top: 3%;
+  }
+
+  .registerDiv {
+    background-position: center;
+  }
+
+  .registerForm {
+    margin-top: 3%;
+  }
+
+  .signinDiv {
+    background-position: left;
+  }
+
+  .dashContainer {
+    background-position: right;
+  }
+
+  .dashHeader {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .dashHeader h1 {
+    margin-left: 7%;
+  }
+
+  .dashMenu {
+    position: inherit;
+  }
+
+  .ui.button.signoutBtn {
+    width: 70px;
+    height: 30px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 320px) {
+
+}
