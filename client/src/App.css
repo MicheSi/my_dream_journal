@@ -392,6 +392,18 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .buttonsDiv {
     margin-top: 3%;
   }
+
+  .registerDiv {
+    background-position: center;
+  }
+
+  .registerForm {
+    margin-top: 3%;
+  }
+
+  .signinDiv {
+    background-position: left;
+  }
 }
 
 @media (max-width: 480px) {
