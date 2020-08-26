@@ -404,6 +404,29 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .signinDiv {
     background-position: left;
   }
+
+  .dashContainer {
+    background-position: right;
+  }
+
+  .dashHeader {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .dashHeader h1 {
+    margin-left: 7%;
+  }
+
+  .dashMenu {
+    position: inherit;
+  }
+
+  .ui.button.signoutBtn {
+    width: 70px;
+    height: 30px;
+    padding: 0;
+  }
 }
 
 @media (max-width: 480px) {
