@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3% 10%;
+  padding: 3% 4%;
   background-color: #211f2c;
   background-image: url('./images/dreamer.svg');
   background-repeat: no-repeat;
@@ -21,14 +21,29 @@
   height: 100vh;
 }
 
-.homePage h1 {
-  color: orangered;
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 2%;
+}
+
+.buttonsDiv {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  color: orangered;
+  margin-left: 6%;
 }
 
 .aboutDiv {
   width: 50%;
-  margin: 5% 46% 0 3%;
+  margin: 5% 46% 0 10%;
   color: white;
   text-align: left;
   line-height: 1.5;
@@ -67,10 +82,8 @@
   margin-top: 8%;
 }
 
-.buttonsDiv {
-  position: absolute;
-  top: 11%;
-  right: 4%;
+.aboutAppP3 {
+  margin-top: 3%;
 }
 
 .ui.button {
@@ -79,10 +92,36 @@
 
 .btnText {
   color: black;
+  width: 65px;
 }
 
 button.ui.big.animated.button:hover {
   background-color: mediumslateblue;
+}
+
+/* Menu styles */
+div.ui.item.simple.dropdown {
+  background-color: #e0e1e2;
+  width: 50px;
+  height: 30px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui.dropdown .menu>.item {
+  width: 120px;
+  font-size: 1.4rem;
+}
+
+div.item {
+  font-size: 1.2rem;
+}
+
+div.item:hover {
+  background-color: orangered;
 }
 
 /* register form styles */
@@ -101,15 +140,18 @@ button.ui.big.animated.button:hover {
   width: 100%;
 }
 
-.registerDiv h3 {
-  margin-top: 2%;
+.regMenu {
+  color: black;
 }
 
 .registerForm {
   display: flex;
   flex-direction: column;
   width: 350px;
-  margin-top: 1%;
+}
+
+.registerForm h3 {
+  text-align: center;
 }
 
 #username, #password {
@@ -147,14 +189,14 @@ input {
   width: 100px;
 }
 
- button.ui.animated.left.floated.button.submitBtn:hover {
+button.ui.animated.left.floated.button.submitBtn:hover {
   background-color: #211f2c;
   color: white;
 }
 
 .redirect {
   font-size: 1.6rem;
-  margin-top: 3%;
+  margin-top: 10%;
   color: white;
 }
 
@@ -162,24 +204,29 @@ input {
   color: orangered;
 }
 
+/* sign in styles */
+.signinDiv {
+  background-color: #211f2c;
+  background-image: url('./images/counting_stars.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
 /* dashboard styles */
 .dashContainer {
   width: 100%;
   background-color: #211f2c;
-  background-image: url('./images/counting_stars.svg');
+  background-image: url('./images/moonlight.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 100vh; */
-}
-
-.signoutBtn {
-  position: absolute;
-  top: 9%;
-  right: 8%;
+  padding: 3% 4%;
 }
 
 button.ui.big.button.signoutBtn:hover {
@@ -187,14 +234,9 @@ button.ui.big.button.signoutBtn:hover {
 }
 
 .dashboard {
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
   margin: 2% 2% 0;
-}
-
-.dashContainer h1 {
-  color: indianred;
-  margin-top: 3%;
 }
 
 /* new dream form styles */
@@ -239,12 +281,13 @@ button.ui.big.button.signoutBtn:hover {
 }
 
 .dreamsList h2 {
-  color: indianred;
+  color: orangered;
 }
 
 
 /* Dream Card styles */
 .dreamCard {
+  min-width: 600px;
   margin: 2%;
   font-size: 1.6rem;
 }
@@ -274,6 +317,122 @@ button.ui.icon.right.floated.button.editBtn {
 }
 
 button.ui.icon.right.floated.button.editBtn:hover {
-  background-color: indianred;
+  background-color: orangered;
   color: white;
+}
+
+/* resources styles */
+.resourcesDiv {
+  background-color: #211f2c;
+  background-image: url('./images/under_construction.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resourcesDiv h1 {
+  color: orangered;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .homePage {
+    height: 100%;
+  }
+
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  header h1 {
+    margin-left: 8%;
+  }
+
+  .ui.button {
+    margin: 0 .75rem;
+  }
+
+  .btnText {
+    width: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 600px) {
+  .homePage {
+    background-position: center;
+  }
+
+  header {
+    flex-direction: column;
+    margin-top: 3%;
+  }
+
+  header h1 {
+    margin-left: 0;
+  }
+
+  .menuBar {
+    position: absolute;
+    left: 5%;
+    top: 6%;
+  }
+
+  .buttonsDiv {
+    margin-top: 3%;
+  }
+
+  .registerDiv {
+    background-position: center;
+  }
+
+  .registerForm {
+    margin-top: 3%;
+  }
+
+  .signinDiv {
+    background-position: left;
+  }
+
+  .dashContainer {
+    background-position: right;
+  }
+
+  .dashHeader {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .dashHeader h1 {
+    margin-left: 7%;
+  }
+
+  .dashMenu {
+    position: inherit;
+  }
+
+  .ui.button.signoutBtn {
+    width: 70px;
+    height: 30px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 320px) {
+
 }

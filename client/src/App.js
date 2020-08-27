@@ -10,6 +10,9 @@ import RegisterForm from './components/formikRegister';
 import SigninForm from './components/formikSignin';
 import Dashboard from './components/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
+import MenuBar from './components/menu';
+import Resources from './components/resources';
+
 
 function App() {
   const [dreams, setDreams] = useState([])
@@ -25,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* <MenuBar /> */}
       <Switch>
         <Route path='/register' component={RegisterForm}/>
         <Route path='/signin' component={SigninForm}/>
@@ -33,6 +37,7 @@ function App() {
          component={Dashboard}
          render={(props) => <Dashboard {...props} dreams={dreams}/>}
         />
+        <Route path='/resources' component={Resources}/>
         <Route exact path='/' component={Home} />
       </Switch>
     </div>

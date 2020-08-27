@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Icon, Form } from 'semantic-ui-react';
+import { Button, Icon, Form, Message } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const NewDream = props => {
@@ -40,7 +40,7 @@ const NewDream = props => {
 
     return(
         <div className='newDreamDiv'>
-            <Form className='newDreamForm' onSubmit={addDream}>
+            <Form className='newDreamForm' onSubmit={addDream} error>
                 <Form.Field>
                     <label for='date'>Date: </label>
                     <input

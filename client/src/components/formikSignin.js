@@ -3,6 +3,7 @@ import { Button, Icon } from 'semantic-ui-react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import MenuBar from './menu';
 
 const SigninForm = ({values, errors, touched, status}) => {
     const [user, setUser] = useState([])
@@ -13,9 +14,12 @@ const SigninForm = ({values, errors, touched, status}) => {
     }, [status])
 
     return (
-        <div className='registerDiv'>
-            <h3>Please Sign In</h3>
+        <div className='registerDiv signinDiv'>
+            <header className='regMenu'>
+                <MenuBar/>
+            </header>
             <Form className='registerForm'>
+                <h3>Please Sign In</h3>
                 <label htmlFor='username'>Username: </label>
                 <Field
                  type='text'
@@ -59,7 +63,7 @@ const FormikSigninForm = withFormik({
         username: Yup.string().required('Please enter a username'),
         password: Yup.string().required('Please enter a password')
     }),
-    handleSubmit(values, {setStatus, resetForm}) {
+    handleSubmit(values, {setStatus, setFieldError}) {
         console.log('submitting data', values)
         AxiosWithAuth()
             .post('/auth/signin', values)
@@ -69,12 +73,14 @@ const FormikSigninForm = withFormik({
                 // set token and user id to local storage
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('id', res.data.id)
-                // reset form to blank values
-                resetForm()
                 // reroute to user dashboard
                 window.location.href='/dashboard'
             })
-            .catch(err => console.log('Sign in failed', err))
+            .catch(err => {
+                console.log('Sign in failed', err)
+                setFieldError('username', 'Please check username')
+                setFieldError('password', 'Please check password')
+            })
     }
 })(SigninForm)
 
