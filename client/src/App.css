@@ -374,12 +374,18 @@ button.ui.icon.right.floated.button.editBtn:hover {
     background-position-x: 30%;
   }
 
+  .aboutDiv {
+    width: 80%;
+    margin-right: 10%;
+  }
 }
 
 @media (max-width: 600px) {
   .homePage {
     background-position: center;
   }
+
+  
 
   header {
     flex-direction: column;
