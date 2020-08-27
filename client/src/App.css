@@ -284,7 +284,6 @@ button.ui.big.button.signoutBtn:hover {
   color: orangered;
 }
 
-
 /* Dream Card styles */
 .dreamCard {
   min-width: 600px;
@@ -385,8 +384,6 @@ button.ui.icon.right.floated.button.editBtn:hover {
     background-position: center;
   }
 
-  
-
   header {
     flex-direction: column;
     margin-top: 3%;
@@ -420,6 +417,15 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   .dashContainer {
     background-position: right;
+    padding: 3% 0;
+  }
+
+  .dashboard {
+    margin: 2% 0 0;
+  }
+
+  .newDreamDiv {
+    width: 100%;
   }
 
   .ui.button.signoutBtn {
@@ -441,7 +447,64 @@ button.ui.icon.right.floated.button.editBtn:hover {
 }
 
 @media (max-width: 480px) {
+  header {
+    margin-top: 6%;
+  }
 
+  header h1 {
+    font-size: 5rem;
+  }
+
+  .buttonsDiv {
+    margin-top: 5%;
+  }
+
+  .dream {
+    font-size: 3.2rem;
+  }
+
+  .dreamDesc, .noun {
+    font-size: 1.8rem;
+  }
+
+  .about {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  .menuBar {
+    top: 7%;
+  }
+
+  div.ui.item.simple.dropdown {
+    width: 40px;
+  }
+
+  .registerForm {
+    width: 275px;
+    margin-top: 2%;
+  }
+
+  .registerForm label {
+    font-size: 1.6rem;
+  }
+
+  input, .redirect {
+    font-size: 1.4rem;
+  }
+
+  .submitBtn {
+    width: 70px;
+  }
+
+  .registerForm h3 {
+    margin-bottom: 5%;
+  }
+
+  
 }
 
 @media (max-width: 320px) {
