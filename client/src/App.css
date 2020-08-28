@@ -438,7 +438,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
   }
 
   .dreamsList {
-    width: 100%;
+    width: 90%;
   }
 
   .dreamCard {
@@ -504,6 +504,23 @@ button.ui.icon.right.floated.button.editBtn:hover {
     margin-bottom: 5%;
   }
 
+  #date {
+    width: 225px;
+  }
+
+  #description {
+    width: 400px;
+  }
+
+  .dreamCard {
+    min-width: 400px;
+  }
+
+
+
+  .ui.button.signoutBtn {
+    top: 7.5%;
+  }
   
 }
 
