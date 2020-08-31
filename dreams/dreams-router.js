@@ -46,16 +46,28 @@ router.get('/:id', (req, res) => {
 
 router.get('/users/:id', (req, res) => {
     const id = req.params.id
-    const page = req.query.page
-    const limit = req.query.limit
+    const page = parseInt(req.query.page)
+    const limit = parseInt(req.query.limit)
 
     const startIndex = (page - 1) * limit
     const endIndex = page * limit
 
+    const dreamResults = {}
+
+    dreamResults.next = {
+        page: page + 1,
+        limit: limit
+    }
+
+    dreamResults.prev = {
+        page: page - 1,
+        limit: limit
+    }
+
     Dreams.findByUser(id)
         .then(dream => {
             if (dream) {
-                dreamResults = dream.slice(startIndex, endIndex)
+                dreamResults.dreamResults = dream.slice(startIndex, endIndex)
                 res.status(200).json(dreamResults)
             } else {
                 res.status(404).json({message: 'Could not find dreams for that user'})
