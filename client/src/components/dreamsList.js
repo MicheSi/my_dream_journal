@@ -15,9 +15,10 @@ const DreamsList = props => {
     // this retrieves dreams for the logged in user
     useEffect(() => {
         AxiosWithAuth()
-            .get(`/dreams/users/${id}`)
+            .get(`/dreams/users/${id}?page=1&limit=1`)
             .then(res => {
-                setDreams(res.data)
+                console.log(res)
+                setDreams(res.data.dreamResults)
             })
             .catch(err => console.log('Cannot retrieve dreams', err))
     }, [])
