@@ -8,6 +8,7 @@ import DreamCard from './dreamCard';
 
 const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
+    const [page, setPage] = useState(1)
 
     // getting user id from local storage
     const id = localStorage.getItem('id')
@@ -15,13 +16,17 @@ const DreamsList = props => {
     // this retrieves dreams for the logged in user
     useEffect(() => {
         AxiosWithAuth()
-            .get(`/dreams/users/${id}?page=1&limit=1`)
+            .get(`/dreams/users/${id}?page=${page}&limit=1`)
             .then(res => {
                 console.log(res)
                 setDreams(res.data.dreamResults)
             })
             .catch(err => console.log('Cannot retrieve dreams', err))
     }, [])
+
+    const onChange = (e, pageInfo) => {
+        setPage(pageInfo.page)
+    }
 
     return (
         <div className='dreamsList'>
@@ -36,10 +41,14 @@ const DreamsList = props => {
                      date={newDate}
                      description={dream.description}
                     />
-                )
-                
+                )           
 })}
-            {/* <Pagination defaultActivePage={1} totalPages={5} limit={2} /> */}
+            <Pagination
+             ellipsisItem={null}
+             activePage={page}
+             onChange={onChange}
+             totalPages={10}
+            />
             </div>
         </div>
     )
