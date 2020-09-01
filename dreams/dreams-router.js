@@ -54,18 +54,22 @@ router.get('/users/:id', (req, res) => {
 
     const dreamResults = {}
 
-    dreamResults.next = {
-        page: page + 1,
-        limit: limit
-    }
-
-    dreamResults.prev = {
-        page: page - 1,
-        limit: limit
-    }
-
     Dreams.findByUser(id)
         .then(dream => {
+            if (endIndex < dream.length) {
+                dreamResults.next = {
+                    page: page + 1,
+                    limit: limit
+                }
+            }
+        
+            if (startIndex > 0) {
+                dreamResults.prev = {
+                    page: page - 1,
+                    limit: limit
+                }
+            }
+
             if (dream) {
                 dreamResults.dreamResults = dream.slice(startIndex, endIndex)
                 res.status(200).json(dreamResults)
