@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
         })
 })
 
-// router.get('/users/:id', (req, res) => {
+// router.get('/users/:id', paginatedResults(Dreams), (req, res) => {
 //     const id = req.params.id;
 
 //     Dreams.findByUser(id)
@@ -54,18 +54,22 @@ router.get('/users/:id', (req, res) => {
 
     const dreamResults = {}
 
-    dreamResults.next = {
-        page: page + 1,
-        limit: limit
-    }
-
-    dreamResults.prev = {
-        page: page - 1,
-        limit: limit
-    }
-
     Dreams.findByUser(id)
         .then(dream => {
+            if (endIndex < dream.length) {
+                dreamResults.next = {
+                    page: page + 1,
+                    limit: limit
+                }
+            }
+        
+            if (startIndex > 0) {
+                dreamResults.prev = {
+                    page: page - 1,
+                    limit: limit
+                }
+            }
+
             if (dream) {
                 dreamResults.dreamResults = dream.slice(startIndex, endIndex)
                 res.status(200).json(dreamResults)
@@ -125,5 +129,37 @@ router.delete('/:id', (req, res) => {
             res.status(500).json({message: err})
         })
 })
+
+
+// function paginatedResults(model) {
+//     return (req, res, next) => {
+//         const page = parseInt(req.query.page)
+//         const limit = parseInt(req.query.limit)
+
+//         const startIndex = (page - 1) * limit
+//         const endIndex = page * limit
+
+//         const results = {}
+
+//         if (endIndex < model.length) {
+//             results.next = {
+//                 page: page + 1,
+//                 limit: limit
+//             }
+//         }
+    
+//         if (startIndex > 0) {
+//             results.prev = {
+//                 page: page - 1,
+//                 limit: limit
+//             }
+//         }
+
+//         results.results = model.slice(startIndex, endIndex)
+
+//         res.paginatedResults = results
+//         next
+//     }
+// }
 
 module.exports = router;
