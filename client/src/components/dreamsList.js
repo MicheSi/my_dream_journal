@@ -4,7 +4,6 @@ import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
 
-
 const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
     const [page, setPage] = useState(1)
@@ -51,32 +50,7 @@ const DreamsList = props => {
             </div>
             <Pagination size='lg' aria-label="Page navigation example">
                 <PaginationItem>
-                    <PaginationLink onClick={prevPage} previous href="" />
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink href="#">
-                     1
-                    </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink href="#">
-                     2
-                    </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink href="#">
-                     3
-                    </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink href="#">
-                     4
-                    </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink href="#">
-                     5
-                    </PaginationLink>
+                    <PaginationLink onClick={prevPage} previous href=""/>
                 </PaginationItem>
                 <PaginationItem>
                     <PaginationLink onClick={nextPage} next href="" />
