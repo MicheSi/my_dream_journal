@@ -451,6 +451,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
 }
 
 @media (max-width: 480px) {
+  .homePage {
+    background-position-x: 55%;
+  }
+
   header {
     margin-top: 6%;
   }
@@ -508,6 +512,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
     margin-bottom: 5%;
   }
 
+  .signinDiv {
+    background-position-x: 15%;
+  }
+
   #date {
     width: 225px;
   }
@@ -528,6 +536,6 @@ button.ui.icon.right.floated.button.editBtn:hover {
   
 }
 
-@media (max-width: 320px) {
+@media (max-width: 360px) {
 
 }
