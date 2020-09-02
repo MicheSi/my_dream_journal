@@ -64,8 +64,8 @@ const DreamCard = props => {
         <div className='dreamCard'>
             <Card>
                 <Card.Content>
-                    <Card.Header>{props.date}</Card.Header>
-                    <Card.Description>
+                    <Card.Header className='dreamDate'>{props.date}</Card.Header>
+                    <Card.Description className='dreamDesc'>
                         {props.description}
                     </Card.Description>
                     <Modal

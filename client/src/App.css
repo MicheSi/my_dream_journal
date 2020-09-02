@@ -356,6 +356,14 @@ button.ui.icon.right.floated.button.editBtn:hover {
     flex-direction: column;
     align-items: center;
   }
+
+  .ui.card > .content > .header:not(.ui) {
+    font-size: 1.8rem;
+  }
+
+  .dreamDesc {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -537,6 +545,14 @@ button.ui.icon.right.floated.button.editBtn:hover {
     min-width: 400px;
   }
 
+  .ui.card > .content > .header:not(.ui) {
+    font-size: 1.6rem;
+  }
+
+  .dreamDesc {
+    font-size: 1.4rem;
+  }
+
   .ui.button.signoutBtn {
     top: 7.5%;
   }
@@ -623,6 +639,14 @@ button.ui.icon.right.floated.button.editBtn:hover {
   button.ui.big.animated.button.submitNew {
     display: flex;
     justify-content: center;
+  }
+
+  .ui.card > .content > .header:not(.ui) {
+    font-size: 1.4rem;
+  }
+
+  .dreamDesc {
+    font-size: 1.2rem;
   }
 
 }
