@@ -284,6 +284,10 @@ button.ui.big.button.signoutBtn:hover {
   color: orangered;
 }
 
+.pagination {
+  display: flex;
+}
+
 /* Dream Card styles */
 .dreamCard {
   min-width: 600px;

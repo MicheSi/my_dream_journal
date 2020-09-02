@@ -15,7 +15,7 @@ const NavButtons = () => {
                 </Button>
                 <Button size ='big' animated='fade'>
                     <Link to='/signin'>
-                        <Button.Content className='btnText btnSignin' visible>Sign In</Button.Content>
+                        <Button.Content className='btnText' visible>Sign In</Button.Content>
                         <Button.Content className='btnText' hidden>
                             <Icon name='arrow right' />
                         </Button.Content>

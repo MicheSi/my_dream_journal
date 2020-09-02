@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+// import { Pagination } from 'semantic-ui-react';
+import {Button} from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
@@ -23,7 +25,7 @@ const DreamsList = props => {
     }, [page])
 
     const prevPage = e => {
-        if (page > 0) {
+        if (page > 1) {
             setPage(page - 1)
         }
     }
@@ -48,14 +50,18 @@ const DreamsList = props => {
                 )           
             })}
             </div>
-            <Pagination size='lg' aria-label="Page navigation example">
+            <div className='pagination'>
+            <Button className='prev' size='big' icon='arrow left' onClick={prevPage}></Button>
+            <Button className='prev' size='big' icon='arrow right' onClick={nextPage}></Button>
+            {/* <Pagination size='lg' aria-label="Page navigation example">
                 <PaginationItem>
                     <PaginationLink onClick={prevPage} previous href=""/>
                 </PaginationItem>
                 <PaginationItem>
                     <PaginationLink onClick={nextPage} next href="" />
                 </PaginationItem>
-            </Pagination>
+            </Pagination> */}
+            </div>
         </div>
     )
 }
