@@ -111,6 +111,10 @@ div.ui.item.simple.dropdown {
   align-items: center;
 }
 
+i.bars.icon {
+  margin-right: 0;
+}
+
 .ui.dropdown .menu>.item {
   width: 120px;
   font-size: 1.4rem;
@@ -558,11 +562,11 @@ button.ui.icon.right.floated.button.editBtn:hover {
   }
 
   button.ui.big.animated.button {
-    width: 65px;
+    width: 60px;
     height: 25px;
     font-size: 1rem;
     text-align: center;
-    padding-left: 6%;
+    padding-left: 5%;
   }
 
   .dream {
@@ -580,4 +584,45 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .write {
     font-size: 1.8rem;
   }
+
+  .registerDiv h3 {
+    font-size: 2.8rem;
+    margin-left: 2%;
+  }
+
+  .registerForm {
+    width: 225px;
+  }
+
+  .registerForm label {
+    font-size: 1.4rem;
+  }
+
+  input {
+    font-size: 1.2rem;
+  }
+
+  #username, #password {
+    height: 30px;
+  }
+
+  #date {
+    width: 175px;
+    height: 30px;
+  }
+
+  #description {
+    width: 300px;
+    font-size: 1.2rem;
+  }
+
+  .dreamCard {
+    min-width: 300px;
+  }
+
+  button.ui.big.animated.button.submitNew {
+    display: flex;
+    justify-content: center;
+  }
+
 }

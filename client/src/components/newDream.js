@@ -65,7 +65,7 @@ const NewDream = props => {
                      onChange={handleChange}
                     />
                 </Form.Field>
-                <Button type='submit' animated size='big'>
+                <Button className='submitNew' type='submit' animated size='big'>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
                         <Icon name='arrow right' />
