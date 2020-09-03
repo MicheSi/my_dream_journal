@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-// import { Pagination } from 'semantic-ui-react';
-import {Button} from 'semantic-ui-react';
+import { Button, Popup } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
@@ -55,16 +53,10 @@ const DreamsList = props => {
             })}
             </div>
             <div className='pagination'>
-            <Button className='prev' size='big' icon='arrow left' onClick={prevPage}></Button>
-            <Button className='prev' size='big' icon='arrow right' onClick={nextPage}></Button>
-            {/* <Pagination size='lg' aria-label="Page navigation example">
-                <PaginationItem>
-                    <PaginationLink onClick={prevPage} previous href=""/>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink onClick={nextPage} next href="" />
-                </PaginationItem>
-            </Pagination> */}
+                <Popup content='View Previous Dream' trigger={<Button className='prev' size='big' icon='arrow left' onClick={prevPage}/>}/>
+                <Popup content='View Next Dream' trigger={<Button className='prev' size='big' icon='arrow right' onClick={nextPage}/>}/>
+            {/* <Button className='prev' size='big' icon='arrow left' onClick={prevPage}></Button> */}
+            {/* <Button className='prev' size='big' icon='arrow right' onClick={nextPage}></Button> */}
             </div>
         </div>
     )
