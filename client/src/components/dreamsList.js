@@ -9,6 +9,7 @@ import DreamCard from './dreamCard';
 const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
     const [page, setPage] = useState(1)
+    const [next, setNext] = useState()
 
     // getting user id from local storage
     const id = localStorage.getItem('id')
@@ -20,6 +21,7 @@ const DreamsList = props => {
             .then(res => {
                 console.log(res)
                 setDreams(res.data.dreamResults)
+                setNext(res.data.next)
             })
             .catch(err => console.log('Cannot retrieve dreams', err))
     }, [page])
@@ -31,7 +33,9 @@ const DreamsList = props => {
     }
 
     const nextPage = e => {
-        setPage(page + 1)
+        if (next) {
+            setPage(page + 1)
+        }
     }
 
     return (
