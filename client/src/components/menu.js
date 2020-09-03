@@ -6,6 +6,8 @@ const MenuBar = () => (
       <Dropdown item icon='bars' simple>
         <Dropdown.Menu>
           <Dropdown.Item href='/'>Home</Dropdown.Item>
+          <Dropdown.Item href='/register'>Register</Dropdown.Item>
+          <Dropdown.Item href='/signin'>Sign In</Dropdown.Item>
           <Dropdown.Item href='/dashboard'>My Dashboard</Dropdown.Item>
           <Dropdown.Item href='/resources'>Resources</Dropdown.Item>
         </Dropdown.Menu>
