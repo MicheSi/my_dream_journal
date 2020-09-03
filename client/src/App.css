@@ -305,6 +305,7 @@ button.ui.big.button.signoutBtn:hover {
 
 .dreamCard .description {
   line-height: normal;
+  font-size: 1.6rem;
 }
 
 /* edit modal styles */
@@ -364,6 +365,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .dreamDesc {
     font-size: 1.6rem;
   }
+
+  .pagination {
+    margin-top: 3%;
+  }
 }
 
 @media (max-width: 900px) {
@@ -406,22 +411,16 @@ button.ui.icon.right.floated.button.editBtn:hover {
   }
 
   header {
-    flex-direction: column;
     margin-top: 3%;
   }
 
   header h1 {
     margin-left: 0;
-  }
-
-  .menuBar {
-    position: absolute;
-    left: 5%;
-    top: 6.5%;
+    margin-right: 18%;
   }
 
   .buttonsDiv {
-    margin-top: 3%;
+    display: none;
   }
 
   .registerDiv {
@@ -441,6 +440,17 @@ button.ui.icon.right.floated.button.editBtn:hover {
     padding: 3% 0;
   }
 
+  header.dashHeader {
+    width: 90%;
+    justify-content: space-evenly;
+  }
+
+  .myDashboard {
+    margin-left: 10%;
+    margin-right: 21%;
+    
+  }
+
   .dashboard {
     margin: 2% 0 0;
   }
@@ -450,12 +460,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
   }
 
   .ui.button.signoutBtn {
-    position: absolute;
-    top: 7%;
-    right: 5%;
-    width: 70px;
-    height: 30px;
-    padding: 0;
+    display: none;
   }
 
   .dreamsList {
@@ -470,6 +475,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
 @media (max-width: 480px) {
   .homePage {
     background-position-x: 55%;
+    height: 100vh;
   }
 
   header {
@@ -478,6 +484,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   header h1 {
     font-size: 5rem;
+    margin-right: 13%;
   }
 
   .buttonsDiv {
@@ -498,10 +505,6 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   p {
     font-size: 1.4rem;
-  }
-
-  .menuBar {
-    top: 7%;
   }
 
   div.ui.item.simple.dropdown {
@@ -553,10 +556,30 @@ button.ui.icon.right.floated.button.editBtn:hover {
     font-size: 1.4rem;
   }
 
-  .ui.button.signoutBtn {
-    top: 7.5%;
+}
+
+@media (max-width: 420px) {
+  header h1 {
+    font-size: 4.4rem;
   }
-  
+
+  div.ui.item.simple.dropdown {
+    width: 35px;
+    height: 25px;
+  }
+
+  #date {
+    width: 200px;
+  }
+
+  #description {
+    width: 375px;
+  }
+
+  .dreamCard {
+    min-width: 375px;
+    padding-right: 3%;
+  }
 }
 
 @media (max-width: 360px) {
@@ -570,11 +593,9 @@ button.ui.icon.right.floated.button.editBtn:hover {
   }
 
   header h1 {
-    font-size: 3.6rem;
-    margin-left: 7%;
-  }
-  div.ui.item.simple.dropdown {
-    width: 35px;
+    font-size: 4rem;
+    /* margin-left: 7%; */
+    margin-right: 10%;
   }
 
   button.ui.big.animated.button {
@@ -632,8 +653,13 @@ button.ui.icon.right.floated.button.editBtn:hover {
     font-size: 1.2rem;
   }
 
+  .dreamsList h2 {
+    font-size: 3.6rem;
+  }
+
   .dreamCard {
     min-width: 300px;
+    padding-right: 0;
   }
 
   button.ui.big.animated.button.submitNew {
