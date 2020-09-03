@@ -475,6 +475,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
 @media (max-width: 480px) {
   .homePage {
     background-position-x: 55%;
+    height: 100vh;
   }
 
   header {
@@ -483,6 +484,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   header h1 {
     font-size: 5rem;
+    margin-right: 13%;
   }
 
   .buttonsDiv {
@@ -503,10 +505,6 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   p {
     font-size: 1.4rem;
-  }
-
-  .menuBar {
-    top: 7%;
   }
 
   div.ui.item.simple.dropdown {
@@ -558,10 +556,6 @@ button.ui.icon.right.floated.button.editBtn:hover {
     font-size: 1.4rem;
   }
 
-  .ui.button.signoutBtn {
-    top: 7.5%;
-  }
-  
 }
 
 @media (max-width: 360px) {
