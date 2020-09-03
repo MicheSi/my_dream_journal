@@ -15,7 +15,7 @@ const Dashboard = props => {
         <div className='dashContainer'>
             <header className='dashHeader'>
                 <MenuBar/>
-                <h1>My Dashboard</h1>
+                <h1 className='myDashboard'>My Dashboard</h1>
                 <Button className='signoutBtn' size='big' onClick={signOut}>Sign Out</Button>
             </header>
             <div className='dashboard'>

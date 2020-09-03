@@ -305,6 +305,7 @@ button.ui.big.button.signoutBtn:hover {
 
 .dreamCard .description {
   line-height: normal;
+  font-size: 1.6rem;
 }
 
 /* edit modal styles */
@@ -364,6 +365,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .dreamDesc {
     font-size: 1.6rem;
   }
+
+  .pagination {
+    margin-top: 3%;
+  }
 }
 
 @media (max-width: 900px) {
@@ -406,22 +411,16 @@ button.ui.icon.right.floated.button.editBtn:hover {
   }
 
   header {
-    flex-direction: column;
     margin-top: 3%;
   }
 
   header h1 {
     margin-left: 0;
-  }
-
-  .menuBar {
-    position: absolute;
-    left: 5%;
-    top: 6.5%;
+    margin-right: 18%;
   }
 
   .buttonsDiv {
-    margin-top: 3%;
+    display: none;
   }
 
   .registerDiv {
@@ -441,6 +440,17 @@ button.ui.icon.right.floated.button.editBtn:hover {
     padding: 3% 0;
   }
 
+  header.dashHeader {
+    width: 90%;
+    justify-content: space-evenly;
+  }
+
+  .myDashboard {
+    margin-left: 10%;
+    margin-right: 21%;
+    
+  }
+
   .dashboard {
     margin: 2% 0 0;
   }
@@ -450,12 +460,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
   }
 
   .ui.button.signoutBtn {
-    position: absolute;
-    top: 7%;
-    right: 5%;
-    width: 70px;
-    height: 30px;
-    padding: 0;
+    display: none;
   }
 
   .dreamsList {
