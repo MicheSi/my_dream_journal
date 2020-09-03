@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Card, Header, Icon, Modal, Form } from 'semantic-ui-react';
+import { Button, Card, Icon, Modal, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const DreamCard = props => {

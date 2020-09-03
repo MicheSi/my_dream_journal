@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-// import { Pagination } from 'semantic-ui-react';
-import {Button} from 'semantic-ui-react';
+import { Button, Popup } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
@@ -9,6 +7,7 @@ import DreamCard from './dreamCard';
 const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
     const [page, setPage] = useState(1)
+    const [next, setNext] = useState()
 
     // getting user id from local storage
     const id = localStorage.getItem('id')
@@ -20,6 +19,7 @@ const DreamsList = props => {
             .then(res => {
                 console.log(res)
                 setDreams(res.data.dreamResults)
+                setNext(res.data.next)
             })
             .catch(err => console.log('Cannot retrieve dreams', err))
     }, [page])
@@ -31,7 +31,9 @@ const DreamsList = props => {
     }
 
     const nextPage = e => {
-        setPage(page + 1)
+        if (next) {
+            setPage(page + 1)
+        }
     }
 
     return (
@@ -51,16 +53,16 @@ const DreamsList = props => {
             })}
             </div>
             <div className='pagination'>
-            <Button className='prev' size='big' icon='arrow left' onClick={prevPage}></Button>
-            <Button className='prev' size='big' icon='arrow right' onClick={nextPage}></Button>
-            {/* <Pagination size='lg' aria-label="Page navigation example">
-                <PaginationItem>
-                    <PaginationLink onClick={prevPage} previous href=""/>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink onClick={nextPage} next href="" />
-                </PaginationItem>
-            </Pagination> */}
+                <Popup
+                 content='View Previous Dream'
+                 position='top right'
+                 trigger={<Button className='prev' size='big' icon='arrow left' onClick={prevPage}/>}/>
+                <Popup
+                 content='View Next Dream'
+                 position='top left'
+                 trigger={<Button className='prev' size='big' icon='arrow right' onClick={nextPage}/>}/>
+            {/* <Button className='prev' size='big' icon='arrow left' onClick={prevPage}></Button> */}
+            {/* <Button className='prev' size='big' icon='arrow right' onClick={nextPage}></Button> */}
             </div>
         </div>
     )
