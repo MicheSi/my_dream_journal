@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Popup } from 'semantic-ui-react';
+import { Button, Popup, Message } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
@@ -56,11 +56,13 @@ const DreamsList = props => {
                 <Popup
                  content='View Previous Dream'
                  position='top right'
-                 trigger={<Button className='prev' size='big' icon='arrow left' onClick={prevPage}/>}/>
+                 trigger={<Button className='prev' size='big' icon='arrow left' onClick={prevPage}/>}
+                />
                 <Popup
                  content='View Next Dream'
                  position='top left'
-                 trigger={<Button className='prev' size='big' icon='arrow right' onClick={nextPage}/>}/>
+                 trigger={<Button className='prev' size='big' icon='arrow right' onClick={nextPage}/>}
+                />
             {/* <Button className='prev' size='big' icon='arrow left' onClick={prevPage}></Button> */}
             {/* <Button className='prev' size='big' icon='arrow right' onClick={nextPage}></Button> */}
             </div>
