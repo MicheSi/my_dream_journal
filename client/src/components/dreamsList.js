@@ -53,8 +53,14 @@ const DreamsList = props => {
             })}
             </div>
             <div className='pagination'>
-                <Popup content='View Previous Dream' trigger={<Button className='prev' size='big' icon='arrow left' onClick={prevPage}/>}/>
-                <Popup content='View Next Dream' trigger={<Button className='prev' size='big' icon='arrow right' onClick={nextPage}/>}/>
+                <Popup
+                 content='View Previous Dream'
+                 position='top right'
+                 trigger={<Button className='prev' size='big' icon='arrow left' onClick={prevPage}/>}/>
+                <Popup
+                 content='View Next Dream'
+                 position='top left'
+                 trigger={<Button className='prev' size='big' icon='arrow right' onClick={nextPage}/>}/>
             {/* <Button className='prev' size='big' icon='arrow left' onClick={prevPage}></Button> */}
             {/* <Button className='prev' size='big' icon='arrow right' onClick={nextPage}></Button> */}
             </div>
