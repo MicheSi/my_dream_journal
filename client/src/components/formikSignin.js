@@ -17,9 +17,9 @@ const SigninForm = ({values, errors, touched, status}) => {
         <div className='registerDiv signinDiv'>
             <header className='regMenu'>
                 <MenuBar/>
+                <h3 className='signInHeader'>Please Sign In</h3>
             </header>
             <Form className='registerForm'>
-                <h3>Please Sign In</h3>
                 <label htmlFor='username'>Username: </label>
                 <Field
                  type='text'
