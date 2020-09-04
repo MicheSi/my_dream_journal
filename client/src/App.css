@@ -145,17 +145,23 @@ div.item:hover {
 }
 
 .regMenu {
+  justify-content: space-evenly;
+  margin-right: 31%;
+}
+
+.regMenu .menuBar {
   color: black;
+}
+
+.regMenu h3 {
+  font-size: 3.6rem;
 }
 
 .registerForm {
   display: flex;
   flex-direction: column;
   width: 350px;
-}
-
-.registerForm h3 {
-  text-align: center;
+  margin-top: 4%;
 }
 
 #username, #password {
@@ -217,6 +223,10 @@ button.ui.animated.left.floated.button.submitBtn:hover {
   background-attachment: fixed;
   height: 100vh;
   width: 100%;
+}
+
+.signInHeader {
+  margin-right: 1%;
 }
 
 /* dashboard styles */

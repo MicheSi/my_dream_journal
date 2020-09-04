@@ -17,9 +17,10 @@ const RegisterForm = ({values, errors, touched, status}) => {
         <div className='registerDiv'>
             <header className='regMenu'>
                 <MenuBar/>
+                <h3>Register your Account</h3>
             </header>
             <Form className='registerForm'>
-                <h3>Register your Account</h3>
+                
                 <label htmlFor='username'>Username: </label>
                 <Field
                  type='text'
