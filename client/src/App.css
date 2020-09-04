@@ -349,12 +349,18 @@ button.ui.icon.right.floated.button.editBtn:hover {
   height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+}
+
+.resourceHeader {
+  margin-left: 10%;
+  margin-top: 4%;
 }
 
 .resourcesDiv h1 {
   color: orangered;
+  margin-top: 15%;
 }
 
 /* Media Queries */
@@ -379,6 +385,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .pagination {
     margin-top: 3%;
   }
+
+  .resourcesDiv h1 {
+    margin-top: 20%;
+  }
 }
 
 @media (max-width: 900px) {
@@ -396,6 +406,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   .btnText {
     width: 45px;
+  }
+
+  .resourcesDiv h1 {
+    margin-top: 25%;
   }
 }
 
@@ -479,6 +493,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   .dreamCard {
     min-width: 500px;
+  }
+
+  .resourcesDiv h1 {
+    margin-top: 30%;
   }
 }
 
@@ -566,6 +584,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
     font-size: 1.4rem;
   }
 
+  .resourcesDiv h1 {
+    margin-top: 40%;
+  }
+
 }
 
 @media (max-width: 420px) {
@@ -589,6 +611,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .dreamCard {
     min-width: 375px;
     padding-right: 3%;
+  }
+
+  .resourcesDiv h1 {
+    margin-top: 45%;
   }
 }
 
@@ -683,6 +709,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   .dreamDesc {
     font-size: 1.2rem;
+  }
+
+  .resourcesDiv h1 {
+    margin-top: 50%;
   }
 
 }
