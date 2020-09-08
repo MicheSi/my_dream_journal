@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Popup, Message } from 'semantic-ui-react';
+import { Button, Popup } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
@@ -24,12 +24,14 @@ const DreamsList = props => {
             .catch(err => console.log('Cannot retrieve dreams', err))
     }, [page])
 
+    // go to previous dream
     const prevPage = e => {
         if (page > 1) {
             setPage(page - 1)
         }
     }
 
+    // go to next dream
     const nextPage = e => {
         if (next) {
             setPage(page + 1)
@@ -63,8 +65,6 @@ const DreamsList = props => {
                  position='top left'
                  trigger={<Button className='prev' size='big' icon='arrow right' onClick={nextPage}/>}
                 />
-            {/* <Button className='prev' size='big' icon='arrow left' onClick={prevPage}></Button> */}
-            {/* <Button className='prev' size='big' icon='arrow right' onClick={nextPage}></Button> */}
             </div>
         </div>
     )

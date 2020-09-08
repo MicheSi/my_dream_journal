@@ -11,7 +11,6 @@ import Dashboard from './components/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
 import Resources from './components/resources';
 
-
 function App() {
   const [dreams, setDreams] = useState([])
 
