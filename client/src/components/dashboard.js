@@ -5,8 +5,6 @@ import { Button } from 'semantic-ui-react';
 import MenuBar from './menu';
 
 const Dashboard = props => {
-    const [loading, setLoading] = useState(false)
-
     // code to clear local storage upon user sign out
     const signOut = () => {
         localStorage.clear();

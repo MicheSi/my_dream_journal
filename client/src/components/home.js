@@ -18,13 +18,6 @@ const Home = () => {
                     a series of thoughts, images and sensations occurring in a person's mind during sleep
                 </p>
                 <div className='aboutDreams'>
-                    {/* <p className='dreamMeaning'>Do dreams have a deeper meaning?</p>
-                    <p>
-                        Some psychologists think dreams are just the result of random brain activity. 
-                        Others think dreams do have a deeper meaning, agreeing with Sigmund Freud's theory of dream interpretation.
-                        Freud believed that dream interpretation was the "royal road" to the unconscious. 
-                        He thought all dreams are forms of wish fulfillment, revealing your deepest desires.
-                    </p> */}
                     <div className='aboutApp'>
                         <p className='write'>Keeping a Dream Journal</p>
                         <p>

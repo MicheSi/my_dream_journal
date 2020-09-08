@@ -4,6 +4,7 @@ import { Dropdown } from 'semantic-ui-react';
 const MenuBar = () => {
   const loggedIn = localStorage.getItem('token')
 
+  // routes to dashboard or signin based on if user is logged
   const dashboard = () => {
     if (loggedIn) {
       window.location.href='/dashboard'
@@ -13,6 +14,7 @@ const MenuBar = () => {
     }
   }
 
+  // clear token and reroute to home page as sign out
   const signOut = () => {
     localStorage.clear();
     window.location.href='/'
