@@ -9,6 +9,7 @@ import logger from 'redux-logger';
 
 // component imports
 import App from './App';
+import reducer from './reducers/index';
 
 // style imports
 import './index.css';
