@@ -7,12 +7,13 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
+// style imports
+import './index.css';
+
 // component imports
 import App from './App';
 import reducer from './reducers/index';
 
-// style imports
-import './index.css';
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
@@ -22,7 +23,7 @@ ReactDOM.render(
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </Router>
+    </Router>,
   </Provider>,
   document.getElementById('root')
 );

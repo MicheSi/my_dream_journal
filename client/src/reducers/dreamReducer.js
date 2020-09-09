@@ -4,11 +4,10 @@ const initialState = {
 
 }
 
-const reducer = (state = initialState, action) => {
+export const dreamReducer = (state = initialState, action) => {
     switch(action.type) {
         default:
             return state;
     }
 }
 
-export default dreamReducer;
