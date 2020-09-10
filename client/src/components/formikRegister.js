@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Button, Icon } from 'semantic-ui-react';
-import { withFormik, Form, Field } from 'formik';
+import { withFormik, Form, Field, FormikProvider } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import { addUser } from '../actions/userActions';
 import MenuBar from './menu';
 
 const RegisterForm = ({values, errors, touched, status}) => {
@@ -86,4 +88,6 @@ const FormikRegisterForm = withFormik({
     }
 })(RegisterForm)
 
-export default FormikRegisterForm;
+const AddUser = connect()(FormikRegisterForm)
+
+export default AddUser;
