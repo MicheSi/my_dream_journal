@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Icon, Form, Message } from 'semantic-ui-react';
+import { Button, Icon, Form, Message, Loader } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const NewDream = props => {
@@ -12,6 +12,8 @@ const NewDream = props => {
         description: '',
         user_id: id
     })
+
+    const [loading, setLoading] = useState(false)
 
     // form change handler
     const handleChange = e => {
@@ -26,11 +28,13 @@ const NewDream = props => {
     const addDream = e => {
         e.preventDefault()
         setDream({...dream})
+        setLoading(true)
         AxiosWithAuth()
             .post(`/dreams`, dream)
             .then(res => {
                 console.log('dream', res.data)
                 setDream(res.data)
+                setLoading(false)
                 window.location.reload();
                 // reset form after submit
                 setDream({date: '', description: '', user_id: ''})
@@ -40,6 +44,7 @@ const NewDream = props => {
 
     return(
         <div className='newDreamDiv'>
+            <Loader />
             <Form className='newDreamForm' onSubmit={addDream} error>
                 <Form.Field>
                     <label for='date'>Date: </label>
