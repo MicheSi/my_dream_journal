@@ -3,6 +3,7 @@ import { Button, Popup } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
+import SortDropdown from './sortDropdown';
 
 const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
@@ -41,6 +42,7 @@ const DreamsList = props => {
     return (
         <div className='dreamsList'>
             <h2>My Past Dreams</h2>
+            <SortDropdown />
             <div className='dreams'>
             {dreams.map(dream => {
                 let newDate = moment(dream.date).format('MM/DD/YYYY')

@@ -299,6 +299,14 @@ button.ui.big.button.signoutBtn:hover {
   color: orangered;
 }
 
+.ui.selection.dropdown {
+  width: 150px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin: 3% 0 2%;
+}
+
 .pagination {
   display: flex;
 }
