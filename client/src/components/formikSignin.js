@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Button, Icon } from 'semantic-ui-react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import { signinUser } from '../actions/userActions';
 import MenuBar from './menu';
 
 const SigninForm = ({values, errors, touched, status}) => {
@@ -84,4 +86,11 @@ const FormikSigninForm = withFormik({
     }
 })(SigninForm)
 
-export default FormikSigninForm;
+const mapStateToProps = state => ({
+    isLoading: state.loading,
+    error: state.error,
+    username: state.username,
+    password: state.password
+})
+
+export default connect(mapStateToProps, {signinUser})(FormikSigninForm);
