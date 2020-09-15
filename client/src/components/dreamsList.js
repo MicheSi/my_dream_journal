@@ -42,7 +42,7 @@ const DreamsList = props => {
     return (
         <div className='dreamsList'>
             <h2>My Past Dreams</h2>
-            <SortDropdown />
+            {/* <SortDropdown /> */}
             <div className='dreams'>
             {dreams.map(dream => {
                 let newDate = moment(dream.date).format('MM/DD/YYYY')
