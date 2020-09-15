@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon } from 'semantic-ui-react';
-import { withFormik, Form, Field, FormikProvider } from 'formik';
+import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import { addUser } from '../actions/userActions';
@@ -88,6 +88,11 @@ const FormikRegisterForm = withFormik({
     }
 })(RegisterForm)
 
-const AddUser = connect()(FormikRegisterForm)
+const mapStateToProps = state => ({
+    isLoading: state.loading,
+    error: state.error,
+    username: state.username,
+    password: state.password
+})
 
-export default AddUser;
+export default connect(mapStateToProps, {addUser})(FormikRegisterForm);
