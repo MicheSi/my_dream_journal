@@ -13,9 +13,12 @@ export const DELETE_DREAMS_SUCCESS = 'DELETE_DREAM_SUCCESS'
 export const DELETE_DREAMS_FAILED = 'DELETE_DREAM_FAILED'
 
 export const fetchDreams = () => dispatch => {
+    const id = localStorage.getItem('id')
+    const page = 1
+
     dispatch({type: FETCH_DREAMS_LOADING})
     AxiosWithAuth()
-    .post('')
+    .get(`/dreams/users/${id}?page=${page}&limit=1`)
     .then(res => {
         dispatch({type: FETCH_DREAMS_SUCCESS, payload: res.data})
     })
@@ -24,24 +27,26 @@ export const fetchDreams = () => dispatch => {
     })
 }
 
-export const editDreams = () => dispatch => {
+export const editDreams = (props) => dispatch => {
     dispatch({type: EDIT_DREAMS_LOADING})
     AxiosWithAuth()
-    .post('')
+    .put(`/dreams/${props.id}`)
     .then(res => {
         dispatch({type: EDIT_DREAMS_SUCCESS, payload: res.data})
+        window.location.reload()
     })
     .catch(err => {
         dispatch({type: EDIT_DREAMS_FAILED, payload: err.response})
     })
 }
 
-export const deleteDreams = () => dispatch => {
+export const deleteDreams = (props) => dispatch => {
     dispatch({type: DELETE_DREAMS_LOADING})
     AxiosWithAuth()
-    .post('')
+    .post(`/dreams/${props.id}`)
     .then(res => {
         dispatch({type: DELETE_DREAMS_SUCCESS, payload: res.data})
+        window.location.reload()
     })
     .catch(err => {
         dispatch({type: DELETE_DREAMS_FAILED, payload: err.response})
