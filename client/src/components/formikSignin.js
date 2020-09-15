@@ -8,12 +8,12 @@ import { signinUser } from '../actions/userActions';
 import MenuBar from './menu';
 
 const SigninForm = ({values, errors, touched, status}) => {
-    const [user, setUser] = useState([])
+    // const [user, setUser] = useState([])
     
-    useEffect(() => {
-        console.log('Status change', status);
-        status && setUser(user => [...user, status])
-    }, [status])
+    // useEffect(() => {
+    //     console.log('Status change', status);
+    //     status && setUser(user => [...user, status])
+    // }, [status])
 
     return (
         <div className='registerDiv signinDiv'>
