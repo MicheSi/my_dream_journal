@@ -63,6 +63,23 @@ export const dreamReducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload
             }
+        case DELETE_DREAMS_LOADING:
+            return {
+                ...state,
+                isLoading: true,
+                error: ''
+            }
+        case DELETE_DREAMS_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                error: '',
+            }
+        case DELETE_DREAMS_FAILED:
+            return {
+                ...state,
+                error: action.payload
+            }
         default:
             return state;
     }

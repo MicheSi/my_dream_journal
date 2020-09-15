@@ -43,7 +43,7 @@ export const editDreams = (props) => dispatch => {
 export const deleteDreams = (props) => dispatch => {
     dispatch({type: DELETE_DREAMS_LOADING})
     AxiosWithAuth()
-    .post(`/dreams/${props.id}`)
+    .delete(`/dreams/${props.id}`)
     .then(res => {
         dispatch({type: DELETE_DREAMS_SUCCESS, payload: res.data})
         window.location.reload()
