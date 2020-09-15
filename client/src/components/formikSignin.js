@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Button, Icon } from 'semantic-ui-react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import { signinUser } from '../actions/userActions';
 import MenuBar from './menu';
 
 const SigninForm = ({values, errors, touched, status}) => {
-    const [user, setUser] = useState([])
+    // const [user, setUser] = useState([])
     
-    useEffect(() => {
-        console.log('Status change', status);
-        status && setUser(user => [...user, status])
-    }, [status])
+    // useEffect(() => {
+    //     console.log('Status change', status);
+    //     status && setUser(user => [...user, status])
+    // }, [status])
 
     return (
         <div className='registerDiv signinDiv'>
@@ -84,4 +86,11 @@ const FormikSigninForm = withFormik({
     }
 })(SigninForm)
 
-export default FormikSigninForm;
+const mapStateToProps = state => ({
+    isLoading: state.loading,
+    error: state.error,
+    username: state.username,
+    password: state.password
+})
+
+export default connect(mapStateToProps, {signinUser})(FormikSigninForm);
