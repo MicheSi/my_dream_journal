@@ -44,7 +44,25 @@ export const dreamReducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload
             }
-
+        case EDIT_DREAMS_LOADING:
+            return {
+                ...state,
+                isLoading: true,
+                error: ''
+            }
+        case EDIT_DREAMS_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                error: '',
+                date: action.payload,
+                description: action.payload
+            }
+        case EDIT_DREAMS_FAILED:
+            return {
+                ...state,
+                error: action.payload
+            }
         default:
             return state;
     }
