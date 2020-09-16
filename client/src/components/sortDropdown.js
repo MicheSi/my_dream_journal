@@ -1,5 +1,6 @@
-import React from 'react';
-import { Dropdown, Input } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Form } from 'semantic-ui-react';
+import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const sortOptions = [
     {
@@ -14,13 +15,18 @@ const sortOptions = [
     },
 ]
 
-const SortDropdown = () => (
-    <Dropdown
-    placeholder='Sort Dreams'
-    selection
-    options={sortOptions}
-  />
+const SortDropdown = (props) => {
+
+    return (
+        <div className='sort'>
+            <Form>
+                <select name='sortBy'>
+                    <option name='sortBy' value='desc'>Newest to Oldest</option>
+                    <option name='sortBy' value='asc'>Oldest to Newest</option>
+                </select>
+            </Form>
+        </div>
+    )
+}
     
-)
-  
-  export default SortDropdown;
+export default SortDropdown;

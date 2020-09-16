@@ -4,6 +4,8 @@ export const FETCH_DREAMS_LOADING = 'FETCH_DREAM_LOADING'
 export const FETCH_DREAMS_SUCCESS = 'FETCH_DREAM_SUCCESS'
 export const FETCH_DREAMS_FAILED = 'FETCH_DREAM_FAILED'
 
+export const SET_NEXT_SUCCESS = 'SET_NEXT_SUCCESS'
+
 export const EDIT_DREAMS_LOADING = 'EDIT_DREAM_LOADING'
 export const EDIT_DREAMS_SUCCESS = 'EDIT_DREAM_SUCCESS'
 export const EDIT_DREAMS_FAILED = 'EDIT_DREAM_FAILED'
@@ -20,7 +22,8 @@ export const fetchDreams = () => dispatch => {
     AxiosWithAuth()
     .get(`/dreams/users/${id}?page=${page}&limit=1`)
     .then(res => {
-        dispatch({type: FETCH_DREAMS_SUCCESS, payload: res.data})
+        dispatch({type: FETCH_DREAMS_SUCCESS, payload: res.data.dreamResults})
+        dispatch({type: SET_NEXT_SUCCESS, payload: res.data.next})
     })
     .catch(err => {
         dispatch({type: FETCH_DREAMS_FAILED, payload: err.response})

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Button, Popup } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
 import SortDropdown from './sortDropdown';
+import { fetchDreams } from '../actions/dreamActions';
 
 const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
@@ -18,6 +20,7 @@ const DreamsList = props => {
         AxiosWithAuth()
             .get(`/dreams/users/${id}?page=${page}&limit=1`)
             .then(res => {
+                console.log('this is props', props)
                 console.log(res)
                 setDreams(res.data.dreamResults)
                 setNext(res.data.next)
@@ -71,5 +74,15 @@ const DreamsList = props => {
         </div>
     )
 }
+
+// const mapStateToProps = state => ({
+//     isLoading: state.isLoading,
+//     error: state.error,
+//     dreams: state.dreams,
+//     page: state.page,
+//     next: state.next
+// })
+
+// export default connect(mapStateToProps, {fetchDreams})(DreamsList);
 
 export default DreamsList;
