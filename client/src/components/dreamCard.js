@@ -57,7 +57,6 @@ const DreamCard = props => {
                 window.location.reload()
             })
             .catch(err => console.log('Unable to delete dream', err))
-
     }
 
     return (
