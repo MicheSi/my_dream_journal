@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon } from 'semantic-ui-react';
 import { withFormik, Form, Field } from 'formik';
@@ -7,13 +7,7 @@ import AxiosWithAuth from '../utils/AxiosWithAuth';
 import { addUser } from '../actions/userActions';
 import MenuBar from './menu';
 
-const RegisterForm = ({values, errors, touched, status}) => {
-    // const [user, setUser] = useState([])
-    
-    // useEffect(() => {
-    //     console.log('Status change', status);
-    //     status && setUser(user => [...user, status])
-    // }, [status])
+const RegisterForm = ({values, errors, touched}) => {
 
     return (
         <div className='registerDiv'>
@@ -22,7 +16,6 @@ const RegisterForm = ({values, errors, touched, status}) => {
                 <h3>Register your Account</h3>
             </header>
             <Form className='registerForm'>
-                
                 <label htmlFor='username'>Username: </label>
                 <Field
                  type='text'
