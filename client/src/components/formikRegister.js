@@ -82,7 +82,7 @@ const FormikRegisterForm = withFormik({
 })(RegisterForm)
 
 const mapStateToProps = state => ({
-    isLoading: state.loading,
+    isLoading: state.isLoading,
     error: state.error,
     username: state.username,
     password: state.password

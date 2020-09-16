@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Button, Popup } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import { fetchDreams } from '../actions/dreamActions';
 import DreamCard from './dreamCard';
 import SortDropdown from './sortDropdown';
 
@@ -72,4 +74,14 @@ const DreamsList = props => {
     )
 }
 
-export default DreamsList;
+const mapStateToProps = state => ({
+    isLoading: state.isLoading,
+    error: state.error,
+    date: state.date,
+    description: state.description,
+    user_id: state.user_id,
+    page: state.page,
+    next: state.next
+})
+
+export default connect(mapStateToProps, {fetchDreams})(DreamsList);
