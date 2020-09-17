@@ -17,6 +17,8 @@ const DreamCard = props => {
     const [dream, setDream] = useState(initialState);
     // modal state
     const [open, setOpen] = useState(false)
+    const [deleteOpen, setDeleteOpen] = useState(false)
+    const [saveOpen, setSaveOpen] = useState(false)
 
     // set props to selected dream
     useEffect(() => {
@@ -67,6 +69,8 @@ const DreamCard = props => {
                     <Card.Description className='dreamDesc'>
                         {props.description}
                     </Card.Description>
+
+                    {/* Code for Modal to edit or delete dream */}
                     <Modal
                         size='small'
                         onClose={() => setOpen(false)}
@@ -77,6 +81,7 @@ const DreamCard = props => {
                         <Modal.Header>Edit Dream</Modal.Header>
                         <Modal.Content>
                             <Modal.Description>
+                                {/* code for edit form */}
                                 <Form className='editForm' onSubmit={editDream} >
                                     <Form.Field>
                                         <label for='date'>Date: </label>
@@ -106,14 +111,60 @@ const DreamCard = props => {
                             </Modal.Description>
                         </Modal.Content>
                         <Modal.Actions>
-                            <Button color='red' onClick={deleteDream}>
+                            <Button color='red' onClick={() => setDeleteOpen(true)}>
                                     <Icon name='trash'/> Delete
                             </Button>
-                            <Button color='teal' onClick={editDream}>
+                            <Button color='teal' onClick={() => setSaveOpen(true)}>
                                 <Icon name='save'/> Save
                             </Button>
                             <Button icon='close' onClick={() => setOpen(false)}></Button>
                         </Modal.Actions>
+                        {/* Confirm delete modal */}
+                        <Modal
+                            onClose={() => setDeleteOpen(false)}
+                            open={deleteOpen}
+                            size='mini'
+                        >
+                            <Modal.Header>Confirm Delete</Modal.Header>
+                            <Modal.Content>
+                                <p>Are you sure you want to delete this dream?</p>
+                            </Modal.Content>
+                            <Modal.Actions>
+                                <Button
+                                content='Cancel'
+                                onClick={() => setDeleteOpen(false)}
+                                />
+                                <Button
+                                color='red'
+                                icon='check'
+                                content='Yes, Delete'
+                                onClick={deleteDream}
+                                />
+                            </Modal.Actions>
+                        </Modal>
+                        {/* confirm edit modal */}
+                        <Modal
+                            onClose={() => setSaveOpen(false)}
+                            open={saveOpen}
+                            size='mini'
+                        >
+                            <Modal.Header>Confirm Edit</Modal.Header>
+                            <Modal.Content>
+                                <p>Are you sure you want to edit this dream?</p>
+                            </Modal.Content>
+                            <Modal.Actions>
+                                <Button
+                                content='Cancel'
+                                onClick={() => setSaveOpen(false)}
+                                />
+                                <Button
+                                color='teal'
+                                icon='check'
+                                content='Yes, Edit'
+                                onClick={editDream}
+                                />
+                            </Modal.Actions>
+                        </Modal>
                     </Modal>
                 </Card.Content>
             </Card>

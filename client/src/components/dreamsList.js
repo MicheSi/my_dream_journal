@@ -17,16 +17,22 @@ const DreamsList = props => {
 
     // this retrieves dreams for the logged in user
     useEffect(() => {
+        console.log(props)
         AxiosWithAuth()
             .get(`/dreams/users/${id}?page=${page}&limit=1`)
             .then(res => {
-                console.log('this is props', props)
                 console.log(res)
                 setDreams(res.data.dreamResults)
                 setNext(res.data.next)
             })
             .catch(err => console.log('Cannot retrieve dreams', err))
     }, [page])
+
+    // const {fetchDreams} = props
+
+    // useEffect(() => {
+    //     fetchDreams()
+    // }, [fetchDreams])
 
     // go to previous dream
     const prevPage = e => {
