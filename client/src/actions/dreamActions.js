@@ -19,11 +19,12 @@ export const fetchDreams = () => dispatch => {
     const page = 1
 
     dispatch({type: FETCH_DREAMS_LOADING})
-    AxiosWithAuth()
+    return AxiosWithAuth()
     .get(`/dreams/users/${id}?page=${page}&limit=1`)
     .then(res => {
         dispatch({type: FETCH_DREAMS_SUCCESS, payload: res.data.dreamResults})
-        dispatch({type: SET_NEXT_SUCCESS, payload: res.data.next})
+        // dispatch({type: SET_NEXT_SUCCESS, payload: res.data.next})
+        return res.data.dreamResults
     })
     .catch(err => {
         dispatch({type: FETCH_DREAMS_FAILED, payload: err.response})

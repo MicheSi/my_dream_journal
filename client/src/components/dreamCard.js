@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Card, Icon, Modal, Form } from 'semantic-ui-react';
+import { Button, Card, Icon, Modal, Form, Confirm } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 
 const DreamCard = props => {
@@ -17,6 +17,7 @@ const DreamCard = props => {
     const [dream, setDream] = useState(initialState);
     // modal state
     const [open, setOpen] = useState(false)
+    const [deleteOpen, setDeleteOpen] = useState(false)
 
     // set props to selected dream
     useEffect(() => {
@@ -106,7 +107,7 @@ const DreamCard = props => {
                             </Modal.Description>
                         </Modal.Content>
                         <Modal.Actions>
-                            <Button color='red' onClick={deleteDream}>
+                            <Button color='red' onClick={() => setDeleteOpen(true)}>
                                     <Icon name='trash'/> Delete
                             </Button>
                             <Button color='teal' onClick={editDream}>
@@ -114,6 +115,28 @@ const DreamCard = props => {
                             </Button>
                             <Button icon='close' onClick={() => setOpen(false)}></Button>
                         </Modal.Actions>
+                        <Modal
+                            onClose={() => setDeleteOpen(false)}
+                            open={deleteOpen}
+                            size='small'
+                        >
+                            <Modal.Header>Comfirm</Modal.Header>
+                            <Modal.Content>
+                                <p>Are you sure you want to delete this dream?</p>
+                            </Modal.Content>
+                            <Modal.Actions>
+                                <Button
+                                icon='check'
+                                content='Cancel'
+                                onClick={() => setDeleteOpen(false)}
+                                />
+                                <Button
+                                icon='check'
+                                content='Yes, Delete'
+                                onClick={deleteDream}
+                                />
+                            </Modal.Actions>
+                        </Modal>
                     </Modal>
                 </Card.Content>
             </Card>
