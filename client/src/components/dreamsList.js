@@ -81,14 +81,14 @@ const DreamsList = props => {
     )
 }
 
-const mapStateToProps = state => ({
-    isLoading: state.isLoading,
-    error: state.error,
-    dreams: state.dreams,
-    page: state.page,
-    next: state.next
-})
+// const mapStateToProps = state => ({
+//     isLoading: state.isLoading,
+//     error: state.error,
+//     dreams: state.dreams,
+//     page: state.page,
+//     next: state.next
+// })
 
-export default connect(mapStateToProps, {fetchDreams})(DreamsList);
+// export default connect(mapStateToProps, {fetchDreams})(DreamsList);
 
-// export default DreamsList;
+export default DreamsList;
