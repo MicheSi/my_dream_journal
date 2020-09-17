@@ -21,7 +21,7 @@ function findByUser(user_id) {
         .join('users as u', 'u.id', 'd.user_id')
         .select('d.id', 'd.date', 'd.description')
         .orderBy('d.date', 'desc')
-        // .limit(1, 1)
+        .orderBy('d.id', 'desc')
         .where('d.user_id', user_id)
 }
 
