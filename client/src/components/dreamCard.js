@@ -148,9 +148,9 @@ const DreamCard = props => {
                             open={saveOpen}
                             size='mini'
                         >
-                            <Modal.Header>Confirm Edit</Modal.Header>
+                            <Modal.Header>Confirm Update</Modal.Header>
                             <Modal.Content>
-                                <p>Are you sure you want to edit this dream?</p>
+                                <p>Are you sure you want to update this dream?</p>
                             </Modal.Content>
                             <Modal.Actions>
                                 <Button
@@ -160,7 +160,7 @@ const DreamCard = props => {
                                 <Button
                                 color='teal'
                                 icon='check'
-                                content='Yes, Edit'
+                                content='Yes, Update'
                                 onClick={editDream}
                                 />
                             </Modal.Actions>
