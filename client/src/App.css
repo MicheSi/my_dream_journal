@@ -748,6 +748,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
   #date {
     width: 150px;
     height: 30px;
+    font-size: 1.2rem;
   }
 
   #description {
@@ -777,12 +778,8 @@ button.ui.icon.right.floated.button.editBtn:hover {
     font-size: 1.2rem;
   }
 
-  .ui.small.scrolling.modal.transition {
-    width: 340px;
-  }
-
-  .ui.small.scrolling.modal.transition #description {
-    width: 325px;
+  .ui.small.modal.transition.visible.active {
+    width: 320px;
   }
 
   .resourcesDiv h1 {
