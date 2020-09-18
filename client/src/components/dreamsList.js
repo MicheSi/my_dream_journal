@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Button, Popup, Message } from 'semantic-ui-react';
+import { Form, Button, Popup, Message } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
-import SortDropdown from './sortDropdown';
 import { fetchDreams } from '../actions/dreamActions';
 
 const DreamsList = props => {
@@ -17,7 +16,6 @@ const DreamsList = props => {
 
     // this retrieves dreams for the logged in user
     useEffect(() => {
-        console.log(props)
         AxiosWithAuth()
             .get(`/dreams/users/${id}?page=${page}&limit=1`)
             .then(res => {
@@ -48,10 +46,25 @@ const DreamsList = props => {
         }
     }
 
+    const sortDreams = e => {
+        console.log(e.target.value)
+        if (e.target.value === 'asc') {
+            setDreams(dreams.reverse())
+            window.location.reload()
+        }
+    }
+
     return (
         <div className='dreamsList'>
             <h2>My Past Dreams</h2>
-            {/* <SortDropdown /> */}
+            {/* <div className='sort'>
+                <Form onChange={sortDreams}>
+                    <select name='sortBy'>
+                        <option name='sortBy' value='desc'>Newest to Oldest</option>
+                        <option name='sortBy' value='asc'>Oldest to Newest</option>
+                    </select>
+            </Form>
+            </div> */}
             <div className='dreams'>
             {dreams.map(dream => {
                 let newDate = moment(dream.date).format('MM/DD/YYYY')
