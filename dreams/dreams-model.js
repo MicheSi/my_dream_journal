@@ -4,7 +4,6 @@ module.exports = {
     find,
     findById,
     findByUser,
-    findByUserLimit,
     add,
     update,
     remove
@@ -22,14 +21,6 @@ function findByUser(user_id) {
         .select('d.id', 'd.date', 'd.description')
         .orderBy('d.date', 'desc')
         .orderBy('d.id', 'desc')
-        .where('d.user_id', user_id)
-}
-
-function findByUserLimit(user_id) {
-    return db('dreams as d')
-        .join('users as u', 'u.id', 'd.user_id')
-        .select('d.id', 'd.date', 'd.description')
-        .limit(1)
         .where('d.user_id', user_id)
 }
 
