@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Icon, Form, Message, Loader } from 'semantic-ui-react';
+import { Button, Icon, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
+import moment from 'moment';
 
 const NewDream = props => {
     // retrieve user id from local storage
@@ -12,8 +13,6 @@ const NewDream = props => {
         description: '',
         user_id: id
     })
-
-    const [loading, setLoading] = useState(false)
 
     // form change handler
     const handleChange = e => {
@@ -28,13 +27,11 @@ const NewDream = props => {
     const addDream = e => {
         e.preventDefault()
         setDream({...dream})
-        setLoading(true)
         AxiosWithAuth()
             .post(`/dreams`, dream)
             .then(res => {
                 console.log('dream', res.data)
                 setDream(res.data)
-                setLoading(false)
                 window.location.reload();
                 // reset form after submit
                 setDream({date: '', description: '', user_id: ''})
@@ -44,7 +41,6 @@ const NewDream = props => {
 
     return(
         <div className='newDreamDiv'>
-            <Loader />
             <Form className='newDreamForm' onSubmit={addDream} error>
                 <Form.Field>
                     <label for='date'>Date: </label>
@@ -54,6 +50,7 @@ const NewDream = props => {
                      name='date'
                      id='date'
                      placeholder='Date'
+                     max={moment().format('YYYY-MM-DD')}
                      value={dream.date}
                      onChange={handleChange}
                     />
