@@ -327,6 +327,15 @@ button.ui.big.button.signoutBtn:hover {
   font-size: 1.6rem;
 }
 
+.dreamDesc {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.dreamDesc::-webkit-scrollbar {
+  display: block;
+}
+
 /* edit modal styles */
 .ui.modal>.content {
   display: flex;
@@ -377,6 +386,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .dreamCard {
     width: 500px;
   }
+
+  .dreamDesc {
+    max-height: 375px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -391,6 +404,10 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   .ui.card > .content > .header:not(.ui) {
     font-size: 1.8rem;
+  }
+
+  #description, .dreamCard {
+    width: 700px;
   }
 
   .dreamDesc {
@@ -423,6 +440,14 @@ button.ui.icon.right.floated.button.editBtn:hover {
     width: 45px;
   }
 
+  #date {
+    width: 275px;
+  }
+
+  #description, .dreamCard {
+    width: 600px;
+  }
+
   .resourcesDiv h1 {
     margin-top: 25%;
   }
@@ -441,6 +466,20 @@ button.ui.icon.right.floated.button.editBtn:hover {
     width: 80%;
     margin-right: 10%;
   }
+
+  #date {
+    width: 250px;
+  }
+
+  #description, .dreamCard {
+    width: 575px;
+  }
+
+  .dreamDesc, .dreamDate {
+    padding-right: 3%;
+    padding-left: 2%;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -612,6 +651,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
   #description {
     width: 375px;
   }
+
 
   .dreamCard {
     width: 375px;
