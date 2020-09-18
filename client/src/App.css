@@ -518,6 +518,24 @@ button.ui.icon.right.floated.button.editBtn:hover {
     width: 475px;
   }
 
+  .ui.small.scrolling.modal.transition {
+    width: 475px;
+  }
+
+  form.ui.form.editForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ui.small.scrolling.modal.transition #description {
+    width: 400px;
+  }
+
+  .ui.mini.modal.transition.visible.active {
+    width: 270px;
+  }
+
   .resourcesDiv h1 {
     margin-top: 30%;
   }
@@ -607,6 +625,18 @@ button.ui.icon.right.floated.button.editBtn:hover {
     font-size: 1.4rem;
   }
 
+  .ui.small.scrolling.modal.transition {
+    width: 400px;
+  }
+
+  .ui.small.scrolling.modal.transition #date {
+    width: 200px;
+  }
+
+  .ui.small.scrolling.modal.transition #description {
+    width: 350px;
+  }
+
   .resourcesDiv h1 {
     margin-top: 40%;
   }
@@ -634,6 +664,19 @@ button.ui.icon.right.floated.button.editBtn:hover {
   .dreamCard {
     width: 325px;
     padding-right: 3%;
+  }
+
+  .ui.small.scrolling.modal.transition {
+    width: 375px;
+  }
+
+  .ui.small.scrolling.modal.transition #date {
+    width: 175px;
+    height: 35px;
+  }
+
+  .ui.small.scrolling.modal.transition #description {
+    width: 325px;
   }
 
   .resourcesDiv h1 {
@@ -732,6 +775,14 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
   .dreamDesc {
     font-size: 1.2rem;
+  }
+
+  .ui.small.scrolling.modal.transition {
+    width: 340px;
+  }
+
+  .ui.small.scrolling.modal.transition #description {
+    width: 325px;
   }
 
   .resourcesDiv h1 {
