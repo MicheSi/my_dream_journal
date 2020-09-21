@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Form, Button, Popup, Message } from 'semantic-ui-react';
+import { Button, Popup } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
@@ -16,6 +16,7 @@ const DreamsList = props => {
 
     // this retrieves dreams for the logged in user
     useEffect(() => {
+
         AxiosWithAuth()
             .get(`/dreams/users/${id}?page=${page}&limit=1`)
             .then(res => {
@@ -57,6 +58,7 @@ const DreamsList = props => {
     return (
         <div className='dreamsList'>
             <h2>My Past Dreams</h2>
+            <a className='viewAll' href='/alldreams'>View All Dreams</a>
             {/* <div className='sort'>
                 <Form onChange={sortDreams}>
                     <select name='sortBy'>

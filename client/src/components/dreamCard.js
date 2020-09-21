@@ -62,7 +62,7 @@ const DreamCard = props => {
     }
 
     return (
-        <div className='dreamCard'>
+        <div className='dreamCard allDreamCard'>
             <Card>
                 <Card.Content>
                     <Card.Header className='dreamDate'>{props.date}</Card.Header>

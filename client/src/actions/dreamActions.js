@@ -17,10 +17,11 @@ export const DELETE_DREAMS_FAILED = 'DELETE_DREAM_FAILED'
 export const fetchDreams = () => dispatch => {
     const id = localStorage.getItem('id')
     const page = 1
+    const limit = 10
 
     dispatch({type: FETCH_DREAMS_LOADING})
     return AxiosWithAuth()
-    .get(`/dreams/users/${id}?page=${page}&limit=1`)
+    .get(`/dreams/users/${id}?page=${page}&limit=${limit}`)
     .then(res => {
         dispatch({type: FETCH_DREAMS_SUCCESS, payload: res.data.dreamResults})
         // dispatch({type: SET_NEXT_SUCCESS, payload: res.data.next})

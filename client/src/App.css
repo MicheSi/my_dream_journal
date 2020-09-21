@@ -299,6 +299,16 @@ button.ui.big.button.signoutBtn:hover {
   color: orangered;
 }
 
+.viewAll {
+  color:lightgray;
+  font-size: 1.6rem;
+  margin: 2% 0;
+}
+
+.viewAll:hover {
+  color: #8a5dfe;
+}
+
 .ui.selection.dropdown {
   width: 150px;
   height: 30px;
@@ -341,7 +351,6 @@ button.ui.big.button.signoutBtn:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #211f2c; */
 }
 
 .editForm.ui.form .field>label {
@@ -356,6 +365,35 @@ button.ui.icon.right.floated.button.editBtn:hover {
   background-color: orangered;
   color: white;
 }
+
+/* All Dreams styles */
+.allDreamsList h2 {
+  color: orangered;
+}
+
+.allDreams {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.allDreamCard div.ui.card {
+  background-color: rgba(220, 220, 220, .7);
+}
+
+.allDreamCard .dreamDesc {
+  height: 300px;
+}
+
+.returnToDash {
+  font-size: 1.6rem;
+  color: lightgray
+}
+
+.returnToDash:hover {
+  color:#8a5dfe;
+}
+
 
 /* resources styles */
 .resourcesDiv {
