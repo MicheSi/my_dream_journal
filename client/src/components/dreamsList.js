@@ -58,6 +58,7 @@ const DreamsList = props => {
     return (
         <div className='dreamsList'>
             <h2>My Past Dreams</h2>
+            <a className='viewAll' href='/alldreams'>View All Dreams</a>
             {/* <div className='sort'>
                 <Form onChange={sortDreams}>
                     <select name='sortBy'>

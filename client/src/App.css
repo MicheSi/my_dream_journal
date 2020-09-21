@@ -299,6 +299,16 @@ button.ui.big.button.signoutBtn:hover {
   color: orangered;
 }
 
+.viewAll {
+  color:lightgray;
+  font-size: 1.6rem;
+  margin: 2% 0;
+}
+
+.viewAll:hover {
+  color: #8a5dfe;
+}
+
 .ui.selection.dropdown {
   width: 150px;
   height: 30px;
@@ -373,6 +383,15 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
 .allDreamCard .dreamDesc {
   height: 300px;
+}
+
+.returnToDash {
+  font-size: 1.6rem;
+  color: lightgray
+}
+
+.returnToDash:hover {
+  color:#8a5dfe;
 }
 
 

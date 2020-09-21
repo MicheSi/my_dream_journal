@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import moment from 'moment';
 import DreamCard from './dreamCard';
-import { Button } from 'semantic-ui-react';
 import MenuBar from './menu';
 
 
@@ -40,17 +39,12 @@ const AllDreams = props => {
         }
     }
 
-    const signOut = () => {
-        localStorage.clear();
-        window.location.href='/'
-    }
-
     return (
         <div className='dashContainer allDreamsList'>
             <header className='dashHeader'>
                 <MenuBar/>
                 <h1 className='myDashboard'>My Dreams</h1>
-                <Button className='signoutBtn' size='big' onClick={signOut}>Sign Out</Button>
+                <a className='returnToDash' href='/dashboard'>Return to Dashboard</a>
             </header>
             <div className='allDreams'>
             {dreams.map(dream => {
