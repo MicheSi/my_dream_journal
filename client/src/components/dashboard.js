@@ -3,6 +3,7 @@ import NewDream from './newDream';
 import DreamsList from './dreamsList';
 import { Button } from 'semantic-ui-react';
 import MenuBar from './menu';
+import Footer from './footer';
 
 const Dashboard = props => {
     // code to clear local storage upon user sign out
@@ -22,6 +23,7 @@ const Dashboard = props => {
                 <NewDream />
                 <DreamsList /> 
             </div>
+            <Footer />
         </div>
     )
 }
