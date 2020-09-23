@@ -76,8 +76,7 @@ const FormikSigninForm = withFormik({
             })
             .catch(err => {
                 console.log('Sign in failed', err)
-                setFieldError('username', 'Please check username')
-                setFieldError('password', 'Please check password')
+                setFieldError('password', 'Please check username and/or password')
             })
     }
 })(SigninForm)

@@ -12,7 +12,7 @@ const RegisterForm = ({values, errors, touched}) => {
     return (
         <div className='registerDiv'>
             <header className='regMenu'>
-                <MenuBar/>
+                {/* <MenuBar/> */}
                 <h3>Register your Account</h3>
             </header>
             <Form className='registerForm'>

@@ -37,7 +37,7 @@ header {
 
 header h1 {
   color: orangered;
-  margin-left: 6%;
+  margin-left: 15%;
 }
 
 .aboutDiv {
@@ -99,6 +99,12 @@ button.ui.big.animated.button:hover {
 }
 
 /* Menu styles */
+.menuBar {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+}
+
 div.ui.item.simple.dropdown {
   background-color: #e0e1e2;
   width: 50px;
@@ -132,7 +138,7 @@ div.item:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2% 3%;
+  padding: 3% 4%;
   color: white;
   background-color: #211f2c;
   background-image: url('./images/laptop.svg');
@@ -144,8 +150,8 @@ div.item:hover {
 }
 
 .regMenu {
-  justify-content: space-evenly;
-  margin-right: 31%;
+  justify-content: center;
+  /* margin-right: 31%; */
 }
 
 .regMenu .menuBar {

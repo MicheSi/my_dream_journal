@@ -2,7 +2,6 @@ import React from 'react';
 import NewDream from './newDream';
 import DreamsList from './dreamsList';
 import { Button } from 'semantic-ui-react';
-import MenuBar from './menu';
 import Footer from './footer';
 
 const Dashboard = props => {
@@ -15,7 +14,7 @@ const Dashboard = props => {
     return (
         <div className='dashContainer'>
             <header className='dashHeader'>
-                <MenuBar/>
+                <div className='spacer'></div>
                 <h1 className='myDashboard'>My Dashboard</h1>
                 <Button className='signoutBtn' size='big' onClick={signOut}>Sign Out</Button>
             </header>

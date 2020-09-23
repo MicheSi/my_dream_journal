@@ -61,7 +61,7 @@ const AllDreams = props => {
     return (
         <div className='dashContainer allDreamsList'>
             <header className='dashHeader'>
-                <MenuBar/>
+                <div className='spacer'></div>
                 <h1 className='myDashboard'>My Dreams</h1>
                 <a className='returnToDash' href='/dashboard'>Return to Dashboard</a>
             </header>

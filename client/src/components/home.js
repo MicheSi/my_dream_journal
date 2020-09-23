@@ -7,7 +7,8 @@ const Home = () => {
     return (
         <div className='homePage'>
             <header className='homeHeader'>
-                <MenuBar />
+                {/* <MenuBar /> */}
+                <div className='spacer'></div>
                 <h1>My Dream Journal</h1>
                 <NavButtons />
             </header>

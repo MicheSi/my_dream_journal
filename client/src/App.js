@@ -11,6 +11,7 @@ import Dashboard from './components/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
 import Resources from './components/resources';
 import AllDreams from './components/allDreams';
+import MenuBar from './components/menu';
 
 function App() {
   const [dreams, setDreams] = useState([])
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+      <MenuBar />
       <Switch>
         <Route path='/register' component={RegisterForm}/>
         <Route path='/signin' component={SigninForm}/>
