@@ -3,6 +3,7 @@ import AxiosWithAuth from '../utils/AxiosWithAuth';
 import moment from 'moment';
 import DreamCard from './dreamCard';
 import MenuBar from './menu';
+import Footer from './footer';
 
 
 const AllDreams = props => {
@@ -59,6 +60,7 @@ const AllDreams = props => {
                 )           
             })}
             </div>
+            <Footer />
         </div>
 
     )
