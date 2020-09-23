@@ -23,6 +23,7 @@ const DreamCard = props => {
     // set props to selected dream
     useEffect(() => {
         const dreamToEdit = props
+        console.log('this is props', props)
 
         if (dreamToEdit) {
             setDream(dreamToEdit)

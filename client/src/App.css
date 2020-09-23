@@ -481,8 +481,9 @@ footer p {
     font-size: 1.8rem;
   }
 
+
   #description, .dreamCard {
-    width: 700px;
+    max-width: 700px;
   }
 
   .dreamDesc {
@@ -496,6 +497,7 @@ footer p {
   .resourcesDiv h1 {
     margin-top: 20%;
   }
+
 }
 
 @media (max-width: 900px) {
@@ -516,11 +518,11 @@ footer p {
   }
 
   #date {
-    width: 275px;
+    max-width: 275px;
   }
 
   #description, .dreamCard {
-    width: 600px;
+    max-width: 600px;
   }
 
   .resourcesDiv h1 {
@@ -540,11 +542,11 @@ footer p {
   }
 
   #date {
-    width: 250px;
+    max-width: 250px;
   }
 
   #description, .dreamCard {
-    width: 575px;
+    max-width: 575px;
   }
 
   .dreamDesc, .dreamDate {
@@ -617,11 +619,11 @@ footer p {
   }
 
   #date {
-    width: 275px;
+    max-width: 275px;
   }
 
   #description {
-    width: 475px;
+    max-width: 475px;
   }
 
   .dreamCard {
@@ -716,11 +718,11 @@ footer p {
   }
 
   #date {
-    width: 225px;
+    max-width: 225px;
   }
 
   #description {
-    width: 375px;
+    max-width: 375px;
   }
 
 
@@ -765,11 +767,11 @@ footer p {
   }
 
   #date {
-    width: 185px;
+    max-width: 185px;
   }
 
   #description {
-    width: 325px;
+    max-width: 325px;
   }
 
   .dreamCard {
@@ -857,13 +859,13 @@ footer p {
   }
 
   #date {
-    width: 150px;
+    max-width: 150px;
     height: 30px;
     font-size: 1.2rem;
   }
 
   #description {
-    width: 275px;
+    max-width: 275px;
     font-size: 1.2rem;
   }
 
