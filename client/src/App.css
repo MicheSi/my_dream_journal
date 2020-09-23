@@ -386,11 +386,34 @@ button.ui.icon.right.floated.button.editBtn:hover {
 
 .returnToDash {
   font-size: 1.6rem;
-  color: lightgray
+  color: white;
 }
 
 .returnToDash:hover {
   color:#8a5dfe;
+}
+
+.changeView {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 89%;
+  margin-top: 3%;
+}
+
+.view {
+  margin-right: 1%;
+  color: white;
+}
+
+.dreamsPerPage {
+  margin-left: 1%;
+  color: white;
+}
+
+
+.allDreamsPagination {
+  margin-top: 5%;
 }
 
 /* resources styles */

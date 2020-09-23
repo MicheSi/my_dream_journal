@@ -4,12 +4,14 @@ import moment from 'moment';
 import DreamCard from './dreamCard';
 import MenuBar from './menu';
 import Footer from './footer';
+import { Button, Popup, Form } from 'semantic-ui-react';
 
 
 const AllDreams = props => {
     const [dreams, setDreams] = useState([]);
     const [page, setPage] = useState(1)
     const [next, setNext] = useState()
+    const [limit, setLimit] = useState(4)
 
     // getting user id from local storage
     const id = localStorage.getItem('id')
@@ -17,7 +19,7 @@ const AllDreams = props => {
     // this retrieves dreams for the logged in user
     useEffect(() => {
         AxiosWithAuth()
-            .get(`/dreams/users/${id}?page=${page}&limit=10`)
+            .get(`/dreams/users/${id}?page=${page}&limit=${limit}`)
             .then(res => {
                 console.log(res)
                 setDreams(res.data.dreamResults)
@@ -40,6 +42,10 @@ const AllDreams = props => {
         }
     }
 
+    const changeView = e => {
+
+    }
+
     return (
         <div className='dashContainer allDreamsList'>
             <header className='dashHeader'>
@@ -47,6 +53,17 @@ const AllDreams = props => {
                 <h1 className='myDashboard'>My Dreams</h1>
                 <a className='returnToDash' href='/dashboard'>Return to Dashboard</a>
             </header>
+            <div className='changeView'>
+                <p className='view'>View</p>
+                <Form className='changeForm' onChange={changeView}>
+                    <select name='changeView'>
+                        <option name='changeView' value='4'>4</option>
+                        <option name='changeView' value='8'>8</option>
+                        <option name='changeView' value='8'>8</option>
+                    </select>
+                </Form>
+                <p className='dreamsPerPage'>Dreams per Page</p>
+            </div>
             <div className='allDreams'>
             {dreams.map(dream => {
                 let newDate = moment(dream.date).format('MM/DD/YYYY')
@@ -59,6 +76,18 @@ const AllDreams = props => {
                     />
                 )           
             })}
+            </div>
+            <div className='pagination allDreamsPagination'>
+                <Popup
+                 content='View Previous Page'
+                 position='top right'
+                 trigger={<Button className='prev' size='big' icon='arrow left' onClick={prevPage}/>}
+                />
+                <Popup
+                 content='View Next Page'
+                 position='top left'
+                 trigger={<Button className='prev' size='big' icon='arrow right' onClick={nextPage}/>}
+                />
             </div>
             <Footer />
         </div>
