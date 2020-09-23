@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuBar from './menu';
 import NavButtons from './navButtons';
+import Footer from '../components/footer';
 
 const Home = () => {
     return (
@@ -34,6 +35,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
