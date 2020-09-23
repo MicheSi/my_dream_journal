@@ -43,7 +43,19 @@ const AllDreams = props => {
     }
 
     const changeView = e => {
-
+        console.log(e.target.name, e.target.value)
+        setLimit({
+            ...limit,
+            [e.target.name]: e.target.value
+        })
+        AxiosWithAuth()
+            .get(`/dreams/users/${id}?page=${page}&limit=${e.target.value}`)
+            .then(res => {
+                console.log(res)
+                setDreams(res.data.dreamResults)
+                setNext(res.data.next)
+            })
+            .catch(err => console.log('Cannot retrieve dreams', err))
     }
 
     return (
@@ -56,10 +68,11 @@ const AllDreams = props => {
             <div className='changeView'>
                 <p className='view'>View</p>
                 <Form className='changeForm' onChange={changeView}>
-                    <select name='changeView'>
-                        <option name='changeView' value='4'>4</option>
-                        <option name='changeView' value='8'>8</option>
-                        <option name='changeView' value='8'>8</option>
+                    <select name='dreamDisplay'>
+                        <option name='dreamDisplay' value='4'>4</option>
+                        <option name='dreamDisplay' value='8'>8</option>
+                        <option name='dreamDisplay' value='12'>12</option>
+                        <option name='dreamDisplay' value='16'>16</option>
                     </select>
                 </Form>
                 <p className='dreamsPerPage'>Dreams per Page</p>
