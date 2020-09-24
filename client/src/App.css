@@ -579,9 +579,17 @@ footer p {
     max-width: 600px;
   }
 
+  .resourceHeader h1 {
+    font-size: 4.6rem;
+  }
+
   .dreamWebsites {
-    margin-top: 7%;
+    margin-top: 8%;
     width: 100%;
+  }
+
+  .dreamWebsites h2 {
+    font-size: 4rem;
   }
 
   p.journeyIntoDreams {
@@ -595,10 +603,6 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  .resourcesDiv {
-    background-position-x: 30%;
-  }
-
   .aboutDiv {
     width: 80%;
     margin-right: 10%;
@@ -615,6 +619,32 @@ footer p {
   .dreamDesc, .dreamDate {
     padding-right: 3%;
     padding-left: 2%;
+  }
+
+  .resourcesDiv {
+    background-position: left;
+  }
+
+  .resourceHeader h1 {
+    font-size: 4.2rem;
+  }
+
+  .dreamWebsites {
+    margin-top: 10%;
+  }
+
+  .dreamWebsites h2 {
+    font-size: 3.6rem;
+  }
+
+  p.journeyIntoDreams {
+    margin-left: 11%;
+    margin-top: 6%;
+  }
+
+  p.cafeAuSoul {
+    margin-left: 35%;
+    margin-top: 9.5%;
   }
 
 }
@@ -711,8 +741,36 @@ footer p {
     width: 270px;
   }
 
-  .resourcesDiv h1 {
-    margin-top: 30%;
+  .resourceHeader {
+    width: 100%;
+    margin-top: 6%;
+  }
+
+  .resourceHeader h1 {
+    font-size: 3.4rem;
+    margin-right: 0;
+  }
+
+  .resourceHeader p {
+    width: 75%;
+  }
+
+  .dreamWebsites {
+    width: 95%;
+  }
+
+  .dreamWebsites p {
+    font-size: 1.6rem;
+  }
+
+  p.journeyIntoDreams {
+    margin-left: 18%;
+    margin-top: 7%;
+  }
+
+  p.cafeAuSoul {
+    margin-left: 50%;
+    margin-top: 14%;
   }
 }
 
