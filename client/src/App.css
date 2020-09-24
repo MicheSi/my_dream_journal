@@ -434,16 +434,20 @@ button.ui.icon.right.floated.button.editBtn:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 3% 4%;
 }
 
 .resourceHeader {
-  margin-left: 10%;
-  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
 
-.resourcesDiv h1 {
+.dreamMeaning {
   color: orangered;
-  margin-top: 15%;
+  margin-left: 0;
+  font-size: 4.8rem;
 }
 
 /* Footer styles */
