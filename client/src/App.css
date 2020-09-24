@@ -506,6 +506,15 @@ footer p {
   .dreamDesc {
     max-height: 375px;
   }
+
+  p.journeyIntoDreams {
+    margin-top: 5.5%;
+  }
+
+  p.cafeAuSoul {
+    margin-top: 8%;
+    margin-left: 20%;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -535,8 +544,12 @@ footer p {
     margin-top: 3%;
   }
 
-  .resourcesDiv h1 {
-    margin-top: 20%;
+  .dreamWebsites {
+    margin-top: 5%;
+  }
+
+  p.journeyIntoDreams {
+    margin-top: 6%;
   }
 
 }
@@ -566,13 +579,22 @@ footer p {
     max-width: 600px;
   }
 
-  .resourcesDiv h1 {
-    margin-top: 25%;
+  .dreamWebsites {
+    margin-top: 7%;
+    width: 100%;
   }
+
+  p.journeyIntoDreams {
+    margin-left: .5%;
+  }
+
+  p.cafeAuSoul {
+    margin-left: 12%;
+  }
+  
 }
 
 @media (max-width: 768px) {
-
   .resourcesDiv {
     background-position-x: 30%;
   }
