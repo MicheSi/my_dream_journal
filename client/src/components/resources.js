@@ -12,10 +12,11 @@ const Resources = () => {
                     He thought all dreams are forms of wish fulfillment, revealing your deepest desires.
                 </p>
             </header> 
-            <div>
-
-            </div>
-                    
+            <div className='dreamWebsites'>
+                <h2>Analyze your dreams</h2>
+                <a href='https://journeyintodreams.com/dream-dictionary/' target='_blank'><p className='journeyIntoDreams'>journeyintodreams.com</p></a>
+                <a href='https://cafeausoul.com/dreams/dreamdictionary' target='_blank'><p className='cafeAuSoul'>cafeausoul.com</p></a>
+            </div>          
         </div>
     )
 }

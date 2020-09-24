@@ -425,7 +425,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
 /* resources styles */
 .resourcesDiv {
   background-color: #211f2c;
-  background-image: url('./images/under_construction.svg');
+  background-image: url('./images/books.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -447,7 +447,44 @@ button.ui.icon.right.floated.button.editBtn:hover {
 .dreamMeaning {
   color: orangered;
   margin-left: 0;
-  font-size: 4.8rem;
+  font-size: 5.2rem;
+}
+
+.resourceHeader p {
+  width: 65%;
+  margin-top: 5%;
+  line-height: 1.5;
+}
+
+.dreamWebsites {
+  width: 85%;
+  margin-top: 8%;
+}
+
+.dreamWebsites h2 {
+  color: orangered;
+}
+
+.dreamWebsites p {
+  color: white;
+  font-size: 2rem;
+}
+
+p.journeyIntoDreams, p.cafeAuSoul {
+  margin-top: 9%;
+  color: black;
+}
+
+p.journeyIntoDreams {
+  margin-left: 2%;
+}
+
+p.cafeAuSoul {
+  margin-left: 22%;
+}
+
+p.journeyIntoDreams:hover, p.cafeAuSoul:hover {
+  color: white;
 }
 
 /* Footer styles */
