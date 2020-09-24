@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Button, Popup } from 'semantic-ui-react';
+import { Button, Popup, Form } from 'semantic-ui-react';
 import moment from 'moment';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import DreamCard from './dreamCard';
-import { fetchDreams } from '../actions/dreamActions';
 
 const DreamsList = props => {
     const [dreams, setDreams] = useState([]);
@@ -27,13 +25,6 @@ const DreamsList = props => {
             .catch(err => console.log('Cannot retrieve dreams', err))
     }, [page])
 
-    // const {fetchDreams} = props
-
-    // useEffect(() => {
-    //     fetchDreams()
-    // }, [fetchDreams])
-
-    // go to previous dream
     const prevPage = e => {
         if (page > 1) {
             setPage(page - 1)
@@ -47,26 +38,10 @@ const DreamsList = props => {
         }
     }
 
-    const sortDreams = e => {
-        console.log(e.target.value)
-        if (e.target.value === 'asc') {
-            setDreams(dreams.reverse())
-            window.location.reload()
-        }
-    }
-
     return (
         <div className='dreamsList'>
             <h2>My Past Dreams</h2>
             <a className='viewAll' href='/alldreams'>View All Dreams</a>
-            {/* <div className='sort'>
-                <Form onChange={sortDreams}>
-                    <select name='sortBy'>
-                        <option name='sortBy' value='desc'>Newest to Oldest</option>
-                        <option name='sortBy' value='asc'>Oldest to Newest</option>
-                    </select>
-            </Form>
-            </div> */}
             <div className='dreams'>
             {dreams.map(dream => {
                 let newDate = moment(dream.date).format('MM/DD/YYYY')
@@ -95,15 +70,5 @@ const DreamsList = props => {
         </div>
     )
 }
-
-// const mapStateToProps = state => ({
-//     isLoading: state.isLoading,
-//     error: state.error,
-//     dreams: state.dreams,
-//     page: state.page,
-//     next: state.next
-// })
-
-// export default connect(mapStateToProps, {fetchDreams})(DreamsList);
 
 export default DreamsList;

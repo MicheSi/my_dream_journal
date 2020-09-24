@@ -425,7 +425,7 @@ button.ui.icon.right.floated.button.editBtn:hover {
 /* resources styles */
 .resourcesDiv {
   background-color: #211f2c;
-  background-image: url('./images/under_construction.svg');
+  background-image: url('./images/books.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -434,16 +434,58 @@ button.ui.icon.right.floated.button.editBtn:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 3% 4%;
 }
 
 .resourceHeader {
-  margin-left: 10%;
-  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
 
-.resourcesDiv h1 {
+.dreamMeaning {
   color: orangered;
-  margin-top: 15%;
+  margin-left: 0;
+  font-size: 5.2rem;
+}
+
+.resourceHeader p {
+  width: 65%;
+  margin-top: 5%;
+  line-height: 1.5;
+}
+
+.dreamWebsites {
+  width: 85%;
+  margin-top: 8%;
+}
+
+.dreamWebsites h2 {
+  color: orangered;
+}
+
+.dreamWebsites p {
+  color: white;
+  font-size: 2rem;
+}
+
+p.journeyIntoDreams, p.cafeAuSoul {
+  margin-top: 5%;
+  color: black;
+}
+
+p.journeyIntoDreams {
+  margin-left: 1%;
+}
+
+p.cafeAuSoul {
+  margin-left: 15%;
+  margin-top: 7%;
+}
+
+p.journeyIntoDreams:hover, p.cafeAuSoul:hover {
+  color: white;
 }
 
 /* Footer styles */
@@ -464,6 +506,16 @@ footer p {
 
   .dreamDesc {
     max-height: 375px;
+  }
+
+  p.journeyIntoDreams {
+    margin-top: 7%;
+    margin-left: 1.5%;
+  }
+
+  p.cafeAuSoul {
+    margin-top: 8%;
+    margin-left: 20%;
   }
 }
 
@@ -494,8 +546,12 @@ footer p {
     margin-top: 3%;
   }
 
-  .resourcesDiv h1 {
-    margin-top: 20%;
+  .dreamWebsites {
+    margin-top: 5%;
+  }
+
+  p.journeyIntoDreams {
+    margin-top: 6%;
   }
 
 }
@@ -525,17 +581,30 @@ footer p {
     max-width: 600px;
   }
 
-  .resourcesDiv h1 {
-    margin-top: 25%;
+  .resourceHeader h1 {
+    font-size: 4.6rem;
   }
+
+  .dreamWebsites {
+    margin-top: 8%;
+    width: 100%;
+  }
+
+  .dreamWebsites h2 {
+    font-size: 4rem;
+  }
+
+  p.journeyIntoDreams {
+    margin-left: .5%;
+  }
+
+  p.cafeAuSoul {
+    margin-left: 12%;
+  }
+  
 }
 
 @media (max-width: 768px) {
-
-  .resourcesDiv {
-    background-position-x: 30%;
-  }
-
   .aboutDiv {
     width: 80%;
     margin-right: 10%;
@@ -552,6 +621,32 @@ footer p {
   .dreamDesc, .dreamDate {
     padding-right: 3%;
     padding-left: 2%;
+  }
+
+  .resourcesDiv {
+    background-position: left;
+  }
+
+  .resourceHeader h1 {
+    font-size: 4.2rem;
+  }
+
+  .dreamWebsites {
+    margin-top: 10%;
+  }
+
+  .dreamWebsites h2 {
+    font-size: 3.6rem;
+  }
+
+  p.journeyIntoDreams {
+    margin-left: 11%;
+    margin-top: 6%;
+  }
+
+  p.cafeAuSoul {
+    margin-left: 35%;
+    margin-top: 9.5%;
   }
 
 }
@@ -648,8 +743,36 @@ footer p {
     width: 270px;
   }
 
-  .resourcesDiv h1 {
-    margin-top: 30%;
+  .resourceHeader {
+    width: 100%;
+    margin-top: 6%;
+  }
+
+  .resourceHeader h1 {
+    font-size: 3.4rem;
+    margin-right: 0;
+  }
+
+  .resourceHeader p {
+    width: 75%;
+  }
+
+  .dreamWebsites {
+    width: 95%;
+  }
+
+  .dreamWebsites p {
+    font-size: 1.6rem;
+  }
+
+  p.journeyIntoDreams {
+    margin-left: 18%;
+    margin-top: 7%;
+  }
+
+  p.cafeAuSoul {
+    margin-left: 50%;
+    margin-top: 14%;
   }
 }
 
@@ -725,7 +848,6 @@ footer p {
     max-width: 375px;
   }
 
-
   .dreamCard {
     width: 375px;
   }
@@ -750,8 +872,23 @@ footer p {
     width: 350px;
   }
 
-  .resourcesDiv h1 {
-    margin-top: 40%;
+  .resourcesDiv {
+    background-position: right;
+  }
+
+  .resourceHeader h1 {
+    font-size: 3rem;
+  }
+
+  .dreamWebsites h2 {
+    font-size: 2.6rem;
+  }
+
+  p.journeyIntoDreams, p.cafeAuSoul {
+    margin-left: 0;
+    margin-top: 2%;
+    color: white;
+    font-size: 1.4rem;
   }
 
 }
@@ -792,8 +929,12 @@ footer p {
     width: 325px;
   }
 
-  .resourcesDiv h1 {
-    margin-top: 45%;
+  .resourceHeader {
+    margin-top: 11%;
+  }
+
+  .dreamWebsites {
+    margin-top: 7%;
   }
 }
 
@@ -895,8 +1036,25 @@ footer p {
     width: 320px;
   }
 
-  .resourcesDiv h1 {
-    margin-top: 50%;
+  .resourceHeader {
+    margin-top: 15%;
+  }
+
+  .resourceHeader h1 {
+    font-size: 2.4rem;
+  }
+
+  .dreamWebsites {
+    margin-top: 10%;
+    width: 85%;
+  }
+
+  .dreamWebsites h2 {
+    font-size: 2rem;
+  }
+
+  .dreamWebsites p {
+    font-size: 1.2rem;
   }
 
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import MenuBar from './menu';
 import NavButtons from './navButtons';
 import Footer from '../components/footer';
 
@@ -7,7 +6,6 @@ const Home = () => {
     return (
         <div className='homePage'>
             <header className='homeHeader'>
-                {/* <MenuBar /> */}
                 <div className='spacer'></div>
                 <h1>My Dream Journal</h1>
                 <NavButtons />
