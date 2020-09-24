@@ -40,6 +40,7 @@ router.get('/users/:id', (req, res) => {
 
     Dreams.findByUser(id)
         .then(dream => {
+
             if (endIndex < dream.length) {
                 dreamResults.next = {
                     page: page + 1,
