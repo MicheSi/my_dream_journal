@@ -5,6 +5,7 @@ import DreamCard from './dreamCard';
 import MenuBar from './menu';
 import Footer from './footer';
 import { Button, Popup, Form } from 'semantic-ui-react';
+import SearchForm from './searchForm';
 
 
 const AllDreams = props => {
