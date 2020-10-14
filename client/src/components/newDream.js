@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { Button, Icon, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import moment from 'moment';
@@ -39,6 +40,13 @@ const NewDream = props => {
             .catch(err => console.log('Unable to add dream', err))
     }
 
+    // speech recognition set up
+    const {transcript} = useSpeechRecognition()
+
+    if (!SpeechRecognition.browserSupportsSpeechRecognition()){
+        return null
+    }
+
     return(
         <div className='newDreamDiv'>
             <Form className='newDreamForm' onSubmit={addDream} error>
@@ -63,10 +71,12 @@ const NewDream = props => {
                      name='description'
                      id='description'
                      placeholder='Description of Dream'
-                     value={dream.description}
+                     value={dream.description || transcript}
                      onChange={handleChange}
                     />
                 </Form.Field>
+                {/* <Button onClick={SpeechRecognition.startListening}>Start</Button>
+                <Button onClick={SpeechRecognition.stopListening}>Stop</Button> */}
                 <Button className='submitNew' type='submit' animated size='big'>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
