@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Icon, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import moment from 'moment';
+import Dictaphone from './dictaphone';
 
 const NewDream = props => {
     // retrieve user id from local storage
@@ -55,6 +56,7 @@ const NewDream = props => {
                      onChange={handleChange}
                     />
                 </Form.Field>
+                <Dictaphone />
                 <Form.Field>
                     <label for='description'>Description: </label>
                     <textarea
@@ -66,7 +68,6 @@ const NewDream = props => {
                      value={dream.description}
                      onChange={handleChange}
                     />
-                    
                 </Form.Field>
                 
                 <Button className='submitNew' type='submit' animated size='big'>
