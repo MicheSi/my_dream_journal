@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { Button, Icon, Form } from 'semantic-ui-react';
 import AxiosWithAuth from '../utils/AxiosWithAuth';
 import moment from 'moment';
-import Dictaphone from './dictaphone';
 
 const NewDream = props => {
     // retrieve user id from local storage
@@ -14,6 +14,13 @@ const NewDream = props => {
         description: '',
         user_id: id
     })
+
+    // voice to text
+    const { transcript, resetTranscript } = useSpeechRecognition()
+
+    if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
+        return null
+    }
 
     // form change handler
     const handleChange = e => {
@@ -56,7 +63,6 @@ const NewDream = props => {
                      onChange={handleChange}
                     />
                 </Form.Field>
-                <Dictaphone />
                 <Form.Field>
                     <label for='description'>Description: </label>
                     <textarea
@@ -68,8 +74,10 @@ const NewDream = props => {
                      value={dream.description}
                      onChange={handleChange}
                     />
+                    {/* <button onClick={SpeechRecognition.startListening}><i className="fas fa-microphone"></i></button>
+                    <button onClick={SpeechRecognition.stopListening}><i className="fas fa-stop"></i></button>
+                    <button onClick={resetTranscript}><i className="fas fa-undo-alt"></i></button> */}
                 </Form.Field>
-                
                 <Button className='submitNew' type='submit' animated size='big'>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
