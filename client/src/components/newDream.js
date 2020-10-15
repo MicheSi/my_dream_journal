@@ -15,6 +15,13 @@ const NewDream = props => {
         user_id: id
     })
 
+    // voice to text
+    const { transcript, resetTranscript } = useSpeechRecognition()
+
+    if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
+        return null
+    }
+
     // form change handler
     const handleChange = e => {
         console.log(e.target.name, e.target.value)
@@ -38,13 +45,6 @@ const NewDream = props => {
                 setDream({date: '', description: '', user_id: ''})
             })
             .catch(err => console.log('Unable to add dream', err))
-    }
-
-    // speech recognition set up
-    const {transcript} = useSpeechRecognition()
-
-    if (!SpeechRecognition.browserSupportsSpeechRecognition()){
-        return null
     }
 
     return(
@@ -71,12 +71,13 @@ const NewDream = props => {
                      name='description'
                      id='description'
                      placeholder='Description of Dream'
-                     value={dream.description || transcript}
+                     value={dream.description}
                      onChange={handleChange}
                     />
+                    {/* <button onClick={SpeechRecognition.startListening}><i className="fas fa-microphone"></i></button>
+                    <button onClick={SpeechRecognition.stopListening}><i className="fas fa-stop"></i></button>
+                    <button onClick={resetTranscript}><i className="fas fa-undo-alt"></i></button> */}
                 </Form.Field>
-                {/* <Button onClick={SpeechRecognition.startListening}>Start</Button>
-                <Button onClick={SpeechRecognition.stopListening}>Stop</Button> */}
                 <Button className='submitNew' type='submit' animated size='big'>
                     <Button.Content visible>Submit</Button.Content>
                     <Button.Content hidden>
