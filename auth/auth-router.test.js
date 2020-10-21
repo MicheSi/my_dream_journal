@@ -15,7 +15,7 @@ describe('auth router', function () {
         beforeEach(() => {
             return db('users').truncate()
         })
-        
+
         it('status 201 on successful register', function () {
             return request(server)
                 .post('/api/auth/register')
@@ -51,6 +51,46 @@ describe('auth router', function () {
                 })
                 .then(res => {
                     expect(res.body.message).toBe('Welcome TestUsername!')
+                })
+        })
+
+        it('returns 200 status on success', function () {
+            return request(server)
+                .post('/api/auth/signin')
+                .send({
+                    username: 'TestUsername',
+                    password: 'testPassword'
+                })
+                .then(res => {
+                    expect(res.status).toBe(200)
+                })
+        })
+
+        it('returns object with message, id and token on successful login', function () {
+            return request(server)
+                .post('/api/auth/signin')
+                .send({
+                    username: 'TestUsername',
+                    password: 'testPassword'
+                })
+                .then(res => {
+                    expect(res.body).toEqual({
+                        message: res.body.message,
+                        id: res.body.id,
+                        token: res.body.token
+                    })
+                })
+        })
+
+        it('returns 401 if incorrect credentials entered', function () {
+            return request(server)
+                .post('/api/auth/signin')
+                .send({
+                    username: 'TestUsername',
+                    password: 'wrongPassword'
+                })
+                .then(res => {
+                    expect(res.status).toBe(401)
                 })
         })
     })
