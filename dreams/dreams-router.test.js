@@ -57,5 +57,14 @@ describe('dreams router', function () {
                     expect(Array.isArray(res.body)).toBe(true)
                 })
         })
+
+        it('200 on fetching dream by dream id', function () {
+            return request(server)
+                .get('/api/dreams/1')
+                .set('authorization', token)
+                .then(res => {
+                    expect(res.status).toBe(200)
+                })
+        })
     })
 })
