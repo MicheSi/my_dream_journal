@@ -31,7 +31,8 @@ describe('dreams router', function () {
                             password: 'password'
                         })
                         .then(res => {
-                            token = res.body.token
+                            token = res.body.token,
+                            id = res.body.id
                         })
                 })
         })
@@ -49,7 +50,7 @@ describe('dreams router', function () {
                 })
         })
 
-        it('returns an array of dream objects', function () {
+        it('returns an array of all dream objects', function () {
             return request(server)
                 .get('/api/dreams')
                 .set('authorization', token)
@@ -58,13 +59,43 @@ describe('dreams router', function () {
                 })
         })
 
-        it('200 on fetching dream by dream id', function () {
+        it('201 on add new dream success', function () {
             return request(server)
-                .get('/api/dreams/1')
+                .post('/api/dreams')
                 .set('authorization', token)
-                .then(res => {
-                    expect(res.status).toBe(200)
+                .send({
+                    user_id: id,
+                    date: '01/01/2020',
+                    description: 'Test dream'
                 })
+                .then(res => {
+                    expect(res.status).toBe(201)
+                })
+
         })
+
+        // it('200 on fetching dream by dream id', function () {
+        //     return request(server)
+        //         .get('/api/dreams/1')
+        //         .set('authorization', token)
+        //         .then(res => {
+        //             expect(res.status).toBe(200)
+        //         })
+        // })
+
+        // it('returns object with dream info on success', function () {
+        //     return request(server)
+        //         .get('/api/dreams/1')
+        //         .set('authorization', token)
+        //         .then(res => {
+        //             expect(res.body).toEqual({
+        //                 id: res.body.id,
+        //                 date: res.body.date,
+        //                 description: res.body.description,
+        //                 user_id: res.body.user_id,
+        //                 username: res.body.username
+        //             })
+        //         })
+        // })
     })
 })
